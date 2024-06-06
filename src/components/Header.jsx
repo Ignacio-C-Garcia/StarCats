@@ -1,73 +1,98 @@
-import { Row, Col } from "react-bootstrap";
-import Button from "react-bootstrap/Button";
-import Container from "react-bootstrap/Container";
-import Form from "react-bootstrap/Form";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
-import Offcanvas from "react-bootstrap/Offcanvas";
-
-export default function Header() {
-  const expand = "md";
+function Header() {
   return (
-    <Navbar key={expand} expand={expand} className="bg-body-tertiary mb-3">
-      <Container fluid>
-        <Navbar.Brand href="#">
-          <img src="logo.png" style={{ height: 50 }} />
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
-        <Navbar.Offcanvas
-          id={`offcanvasNavbar-expand-${expand}`}
-          aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
-          placement="end"
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid align">
+        <a class="navbar-brand" href="#">
+          <img src="../../public/logo.png" style={{ width: 50 }} />
+          <span>Starcat</span>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
         >
-          <Offcanvas.Header closeButton>
-            <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
-              <img src="logo.png" style={{ height: 50 }} />
-            </Offcanvas.Title>
-          </Offcanvas.Header>
-          <Offcanvas.Body>
-            <Nav className="justify-content-center flex-grow-1 pe-3">
-              <Nav.Link href="#action1">Home</Nav.Link>
-              <Nav.Link href="#action2">Link</Nav.Link>
-              <NavDropdown
-                title="Products"
-                id={`offcanvasNavbarDropdown-expand-${expand}`}
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">
+                Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                Cats
+              </a>
+            </li>
+
+            <div class="dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
               >
-                <Container>
-                  <Row>
-                    <Col>
-                      <NavDropdown.Item href="#action3">
-                        Action1
-                      </NavDropdown.Item>
-                      <NavDropdown.Item href="#action4">
-                        Another action 2
-                      </NavDropdown.Item>
-                    </Col>
-                    <Col>
-                      <NavDropdown.Item href="#action3">
-                        Action 2
-                      </NavDropdown.Item>
-                      <NavDropdown.Item href="#action4">
-                        Another action 2
-                      </NavDropdown.Item>
-                    </Col>
-                  </Row>
-                </Container>
-              </NavDropdown>
-            </Nav>
-            <Form className="d-flex">
-              <Form.Control
-                type="search"
-                placeholder="Search"
-                className="me-2"
-                aria-label="Search"
-              />
-              <Button variant="outline-success">Search</Button>
-            </Form>
-          </Offcanvas.Body>
-        </Navbar.Offcanvas>
-      </Container>
-    </Navbar>
+                Shop
+              </a>
+              <div
+                class="dropdown-menu p-3"
+                aria-labelledby="dropdownMenuButton"
+              >
+                <div class="row row-cols-2 g-1 ">
+                  <div class="col text-center">
+                    <h6>Productos</h6>
+                    <a class="dropdown-item" href="#">
+                      Bebidas
+                    </a>
+                    <a class="dropdown-item" href="#">
+                      Comidas
+                    </a>
+                    <a class="dropdown-item" href="#">
+                      Almuerzos
+                    </a>
+                  </div>
+                  <div class="col text-center">
+                    <h6>Título 2</h6>
+                    <a class="dropdown-item" href="#">
+                      Cafe de especialidad
+                    </a>
+                    <a class="dropdown-item" href="#">
+                      Elemento 2.2
+                    </a>
+                    <a class="dropdown-item" href="#">
+                      Elemento 2.3
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">
+                About Us
+              </a>
+            </li>
+          </ul>
+          <form class="d-flex">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <a class="btn btn-outline-success" type="submit">
+              Search
+            </a>
+          </form>
+        </div>
+      </div>
+    </nav>
   );
 }
+
+export default Header;
