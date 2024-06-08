@@ -1,0 +1,61 @@
+{
+    "cats": [
+      {
+        "image": "https://example.com/image1.jpg",
+        "name": "Venus",
+        "birthdate": "2019-04-23",
+        "age": 5,
+        "personality": "Curious and playful"
+      },
+      {
+        "image": "https://example.com/image2.jpg",
+        "name": "Whiskers",
+        "birthdate": "2017-09-12",
+        "age": 7,
+        "personality": "Calm and affectionate"
+      },
+      {
+        "image": "https://example.com/image3.jpg",
+        "name": "Shadow",
+        "birthdate": "2021-01-08",
+        "age": 3,
+        "personality": "Shy but loving"
+      },
+      {
+        "image": "https://example.com/image4.jpg",
+        "name": "Luna",
+        "birthdate": "2020-11-05",
+        "age": 4,
+        "personality": "Adventurous and brave"
+      },
+      {
+        "image": "https://example.com/image5.jpg",
+        "name": "Simba",
+        "birthdate": "2018-02-17",
+        "age": 6,
+        "personality": "Playful and energetic"
+      },
+      {
+        "image": "https://example.com/image6.jpg",
+        "name": "Bella",
+        "birthdate": "2022-06-30",
+        "age": 2,
+        "personality": "Gentle and friendly"
+      },
+      {
+        "image": "https://example.com/image7.jpg",
+        "name": "Leo",
+        "birthdate": "2016-12-15",
+        "age": 8,
+        "personality": "Independent and quiet"
+      },
+      {
+        "image": "https://example.com/image8.jpg",
+        "name": "Coco",
+        "birthdate": "2023-03-22",
+        "age": 1,
+        "personality": "Curious and playful"
+      }
+    ]
+  }
+  
