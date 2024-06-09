@@ -1,4 +1,3 @@
-import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -12,6 +11,8 @@ const CarouselCats = () => {
     slidesToShow: 4,
     slidesToScroll: 1,
     arrows: true,
+    autoplay: false,
+    autoplaySpeed: 3000,
     responsive: [
       {
         breakpoint: 1200,
@@ -47,29 +48,44 @@ const CarouselCats = () => {
   };
 
   return (
-    <div className="bg-dark">
-      <div className="m-5">
-        <Slider {...settings}>
-          {data.cats.map((cat, index) => (
-            <div key={index} className="p-2">
-              <div className="card p-3">
-                <img
-                  src={`./img/${cat.name.toLowerCase()}.webp`}
-                  className="card-img-top img-fluid object-fit-cover border rounded vh-20"
-                  alt={cat.name}
-                  style={{ width: "100%", height: "300px" }}
-                />
-                <div className="card-body">
-                  <h5 className="card-title">
-                    {cat.name} - Edad: {cat.age}
-                  </h5>
-                  <p className="card-text">{cat.personality}</p>
-                  <p>Cumpleaños: {cat.birthdate}</p>
+    <div className="bg-black text-center p-4">
+      <h2 style={{ color: "#d89d49" }}> Nuestro Staff</h2>
+      <p className="fs-3 text-secondary">
+        Te presentamos a nuestro staff de michis{" "}
+      </p>
+      <div>
+        <div className="container-fluid p-3">
+          <Slider {...settings}>
+            {data.cats.map((cat, index) => (
+              <div key={index} className="p-2">
+                <div className="card bg-black p-3 text-center border border-secondary rounded-4  ">
+                  <img
+                    src={cat.image}
+                    className="card-img-top img-fluid object-fit-cover border border-secondary rounded-0  "
+                    alt={cat.name}
+                    style={{
+                      width: "100%",
+                      height: "300px",
+                      objectFit: "cover",
+                    }}
+                  />
+                  <div className="card-body">
+                    <h5 className="card-title" style={{ color: "#d89d49" }}>
+                      {cat.name}
+                    </h5>
+                    <p className=" text-secondary">
+                      edad: {cat.age}
+                      <br />
+                      {cat.personality}
+                      <br />
+                      Cumpleaños: {cat.birthdate}
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </Slider>
+            ))}
+          </Slider>
+        </div>
       </div>
     </div>
   );
