@@ -58,7 +58,7 @@ const CarouselCats = () => {
           <Slider {...settings}>
             {data.cats.map((cat, index) => (
               <div key={index} className="p-2">
-                <div className="card bg-black p-3 text-center border border-secondary rounded-4  ">
+                <div className="card bg-black p-3 border border-secondary rounded-4  ">
                   <img
                     src={cat.image}
                     className="card-img-top img-fluid object-fit-cover border border-secondary rounded-0  "

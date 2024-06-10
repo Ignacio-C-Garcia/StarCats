@@ -1,63 +1,63 @@
 {
   "cats": [
     {
-      "image": "/img/venus.jpeg",
+      "image": "/img/cats/venus.jpeg",
       "name": "Venus",
       "birthdate": "23 de abril",
       "age": 2,
       "personality": "Curious and playful"
     },
     {
-      "image": "/img/lisa.jpg",
+      "image": "/img/cats/lisa.jpg",
       "name": "Lisa",
       "birthdate": "27 de abril",
       "age": 2,
       "personality": "Curious and playful"
     },
     {
-      "image": "img/whiskers.webp",
+      "image": "img/cats/whiskers.webp",
       "name": "Whiskers",
       "birthdate": "12 de noviembre",
       "age": 7,
       "personality": "Calm and affectionate"
     },
     {
-      "image": "img/luu.jpg",
+      "image": "img/cats/luu.jpg",
       "name": "luu",
       "birthdate": "01 de octubre",
       "age": 3,
       "personality": "Shy but loving"
     },
     {
-      "image": "img/luna.webp",
+      "image": "img/cats/luna.webp",
       "name": "Luna",
       "birthdate": "05 de noviembre",
       "age": 4,
       "personality": "Adventurous and brave"
     },
     {
-      "image": "img/simba.webp",
+      "image": "img/cats/simba.webp",
       "name": "Simba",
       "birthdate": "09 de febrero",
       "age": 6,
       "personality": "Playful and energetic"
     },
     {
-      "image": "img/bella.webp",
+      "image": "img/cats/bella.webp",
       "name": "Bella",
       "birthdate": "30 de julio",
       "age": 2,
       "personality": "Gentle and friendly"
     },
     {
-      "image": "img/leo.webp",
+      "image": "img/cats/leo.webp",
       "name": "Leo",
       "birthdate": "15 de diciembre",
       "age": 8,
       "personality": "Independent and quiet"
     },
     {
-      "image": "img/coco.webp",
+      "image": "img/cats/coco.webp",
       "name": "Coco",
       "birthdate": "29 de marzo",
       "age": 1,

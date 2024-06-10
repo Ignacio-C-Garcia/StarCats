@@ -1,13 +1,12 @@
-
-
+import React from "react";
 import CarouselCats from "../components/CarouselCats";
-
+import CarouselProducts from "../components/CarouselProducts";
 
 function Home() {
   return (
     <>
-    
-      <CarouselCats/>
+      <CarouselProducts />
+      <CarouselCats />
     </>
   );
 }
