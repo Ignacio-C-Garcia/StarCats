@@ -2,6 +2,6 @@
   padding-right: 30px;
 }
 
-.dropdown-menu {
-  width: 400px; /* Ajusta el ancho del dropdown según sea necesario */
+.rounded_right {
+  border-radius: 0 100px 100px 0; /* Redondear solo la derecha */
 }
