@@ -6,7 +6,7 @@
   font-size: large;
 }
 
-main img {
+img {
   max-width: 70%;
   max-height: 100%;
 }
@@ -15,21 +15,21 @@ main img {
   background-color: #ab7a35;
 }
 
-input {
+.main input {
   background-color: #fbebc2;
   font-family: "Franklin Gothic Regular", "Libre Franklin Regular",
     "Arial Narrow", Arial, sans-serif;
 }
 
-button {
+.main button {
   background-color: #ffb64f;
 }
 
-h2 {
+.main h2 {
   color: black;
 }
 
-a {
+.main a {
   color: #333333;
 } 
 
