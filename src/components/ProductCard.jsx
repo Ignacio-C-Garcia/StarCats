@@ -1,29 +1,22 @@
+import styles from "../styles/ProductCard.module.css";
 
-function ProductCard ({ product }) {
+function ProductCard({ product }) {
   return (
-    <div className="card" style={{ background: "#ffd" }}>
-      <img
-        src={product.image}
-        alt={product.alt}
-        style={{ objectFit: 'cover', height: '18.75em' }}
-      />
-      <div className="card-body">
+    <div className={`card ${styles.cardCss}`}>
+      <img src={product.image} alt={product.alt} className="card-img-top" />
+      <div className={`card-body ${styles.cardBody}`}>
         <h5 className="card-title">{product.name}</h5>
         <p className="card-text">{product.description}</p>
-        <div className="d-flex justify-content-between align-items-center">
-          <div className="btn-group">
-            <button
-              type="button"
-              className="btn btn-sm btn-outline-secondary"
-            >
-              Order
-            </button>
-          </div>
+        <div className={styles.cardBottom}>
+          <button type="button" className={`btn ${styles.btn}`}>
+            Order
+          </button>
+
           <small>${product.price}</small>
         </div>
       </div>
     </div>
   );
-};
+}
 
 export default ProductCard;

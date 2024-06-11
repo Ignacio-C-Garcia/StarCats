@@ -1,4 +1,4 @@
-import "../Login.css";
+import styles from "../styles/Login.module.css";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
@@ -15,7 +15,7 @@ const Login = () => {
   };
 
   return (
-    <div className="main">
+    <div className={styles.main}>
       <Container className="vh-100 d-flex justify-content-center">
         <Row>
           <Col
@@ -30,7 +30,7 @@ const Login = () => {
           </Col>
           <Col className="m-0 p-3 d-flex flex-column justify-content-center">
             <h2 className="text-center mb-3 fs-1">Iniciar sesión</h2>
-            <div className="form rounded-4 p-4 w-100">
+            <div className={`rounded-4 p-4 w-100 ${styles.form}`}>
               -- Editar el mensaje de advertencia al no llenar los campos --{" "}
               <br />
               -- Crear formulario (posiblemente sera la configuracion de
