@@ -5,3 +5,7 @@
 .rounded_right {
   border-radius: 0 100px 100px 0; /* Redondear solo la derecha */
 }
+.dropdown-item-selected {
+  background-color: #f8f8f8;
+}
+

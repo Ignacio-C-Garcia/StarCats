@@ -1,9 +1,7 @@
 import { useState } from "react";
-
 export default function DropDown({ info: { name } }) {
-  const [hidden1, setHidden1] = useState(true);
-  const [hidden2, setHidden2] = useState(true);
-  const [hidden3, setHidden3] = useState(true);
+  const [selected, setSelected] = useState(null);
+  const catFromState = ["Café de especialidad", "Postres", "Confitería"];
   return (
     <div className="dropdown">
       <a
@@ -17,42 +15,30 @@ export default function DropDown({ info: { name } }) {
       </a>
       <div
         className="dropdown-menu p-3"
-        style={{ width: !hidden1 || !hidden2 || !hidden3 ? 600 : 300 }}
+        style={{ width: selected != null ? 600 : 300 }}
       >
-        <div className="row">
+        <div className="row no-gutters">
           <div className="col text-center">
             <h6>Categorias</h6>
-            <a
-              className="dropdown-item"
-              id="CatCafe"
-              href="#"
-              onMouseEnter={() => setHidden1(false)}
-            >
-              Café de especialidad
-            </a>
-            <a
-              className="dropdown-item"
-              id="CatPostre"
-              href="#"
-              onMouseEnter={() => setHidden2(false)}
-              onMouseLeave={() => setHidden2(true)}
-            >
-              Postres
-            </a>
-            <a
-              className="dropdown-item"
-              id="CatConfiteria"
-              href="#"
-              onMouseEnter={() => setHidden3(false)}
-              onMouseLeave={() => setHidden3(true)}
-            >
-              Confitería
-            </a>
+            {catFromState.map((category, index) => {
+              return (
+                <a
+                  key={index}
+                  className={`dropdown-item ${
+                    selected === index ? "dropdown-item-selected" : ""
+                  }`}
+                  href="#"
+                  onMouseEnter={() => setSelected(index)}
+                >
+                  {category}
+                </a>
+              );
+            })}
           </div>
-          {(!hidden1 || !hidden2 || !hidden3) && (
+          {selected != null && (
             <div className="col-6 text-center">
               <h6>Productos</h6>
-              {hidden1 ? null : (
+              {selected === 0 && (
                 <div id="ListaCafe">
                   <a className="dropdown-item" href="#">
                     México ATM
@@ -65,7 +51,7 @@ export default function DropDown({ info: { name } }) {
                   </a>
                 </div>
               )}
-              {hidden2 ? null : (
+              {selected === 1 && (
                 <div id="ListaPostres">
                   <a className="dropdown-item" href="#">
                     Tarta de almendras
@@ -78,8 +64,8 @@ export default function DropDown({ info: { name } }) {
                   </a>
                 </div>
               )}
-              {hidden3 ? null : (
-                <div id="ListaConfiteria" className="d-inline-block">
+              {selected === 2 && (
+                <div id="ListaConfiteria">
                   <a className="dropdown-item" href="#">
                     Croissant con jamon y queso
                   </a>
