@@ -1,11 +1,11 @@
 import DropDown from "./Dropdown";
-import styles from "../styles/Dropdown.module.css";
+import styles from "../styles/NavBar.module.css";
 function NavBar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container-fluid align">
         <a className="navbar-brand" href="#">
-          <img src="../../public/logo.png" style={{ width: 50 }} />
+          {/*<img src="" style={{ width: 50 }} />*/}
           <span>Starcat</span>
         </a>
         <button

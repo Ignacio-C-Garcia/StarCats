@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import styles from "../styles/Dropdown.module.css";
+import "bootstrap";
+import styles from "../styles/NavBar.module.css";
 export default function DropDown({ info: { name } }) {
   const [selected, setSelected] = useState(null);
   const catFromState = ["Café de especialidad", "Postres", "Confitería"];
