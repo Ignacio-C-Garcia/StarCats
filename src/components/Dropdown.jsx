@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import styles from "../styles/Dropdown.module.css";
 export default function DropDown({ info: { name } }) {
   const [selected, setSelected] = useState(null);
   const catFromState = ["Café de especialidad", "Postres", "Confitería"];
@@ -27,7 +28,7 @@ export default function DropDown({ info: { name } }) {
                   <a
                     key={index}
                     className={`border-0 rounded-3 list-group-item list-group-item-action ${
-                      selected === index ? "dropdown-item-selected" : ""
+                      selected === index ? styles["dropdown-item-selected"] : ""
                     }`}
                     href="#"
                     onMouseEnter={() => setSelected(index)}

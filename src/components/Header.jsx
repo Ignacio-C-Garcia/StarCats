@@ -1,5 +1,5 @@
 import DropDown from "./Dropdown";
-
+import styles from "../styles/Dropdown.module.css";
 function Header() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -54,7 +54,7 @@ function Header() {
               />
 
               <button
-                className="btn btn-outline-secondary rounded_right btn-sm searchInputButton"
+                className={`btn btn-outline-secondary ${styles.rounded_right} btn-sm searchInputButton`}
                 type="button"
                 id="button-addon1"
               >
