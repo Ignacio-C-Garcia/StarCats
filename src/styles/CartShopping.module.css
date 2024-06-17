@@ -1,0 +1,26 @@
+body {
+  background-color: white;
+}
+
+p {
+  font-family: "Franklin Gothic Regular", "Libre Franklin Regular",
+    "Arial Narrow", Arial, sans-serif;
+}
+
+input {
+  height: 40px;
+  width: 100px;
+}
+
+.individualProduct {
+  max-height: 200px;
+}
+
+.productPic {
+  height: 120px;
+}
+
+.discountBtn {
+  background-color: black;
+  color: white;
+}
