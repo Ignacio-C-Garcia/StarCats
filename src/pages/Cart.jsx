@@ -139,9 +139,9 @@ function Cart() {
             </div>
           </Col>
           <Col md={4}>
-            <Card className="p-3">
+            <Card className="p-3 border rounded-4">
               <Card.Body>
-                <Card.Title className="mb-4">Resumen del Pedido</Card.Title>
+                <h4 className="mb-4">Resumen del Pedido</h4>
                 <div className="d-flex justify-content-between mb-2">
                   <span>Total parcial:</span>
                   <span>${totals.subtotal.toFixed(2)}</span>
@@ -169,7 +169,9 @@ function Cart() {
                     />
                   </Form.Group>
                   <Button
-                    className={`${styles.discountBtn} btn rounded-pill mt-3`}
+                    // className={`${styles.discountBtn} btn rounded-pill mt-3 border-0`}
+                    className={`btn rounded-pill mt-3 border-0`}
+                    variant="dark"
                   >
                     Aplicar
                   </Button>

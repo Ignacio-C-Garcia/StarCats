@@ -1,7 +1,14 @@
 import React from "react";
+import Footer from "../components/Footer";
+import NavBar from "../components/NavBar";
 
 function Products() {
-  return <div>Products</div>;
+  return (
+    <>
+      <NavBar />
+      <Footer />
+    </>
+  );
 }
 
 export default Products;

@@ -1,16 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Chewy&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap");
+
 body {
   background-color: white;
 }
 
-p {
-  font-family: "Franklin Gothic Regular", "Libre Franklin Regular",
-    "Arial Narrow", Arial, sans-serif;
+p,
+span,
+h4,
+input,
+button {
+  font-family: "Hammersmith One", sans-serif;
+}
+
+h2 {
+  font-family: "Chewy", cursive;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+/* h4 {
+  font-family: "Hammersmith One", sans-serif;
 }
 
 input {
-  height: 40px;
-  width: 100px;
-}
+  font-family: "Hammersmith One", sans-serif;
+} */
 
 .individualProduct {
   max-height: 200px;
@@ -20,7 +35,6 @@ input {
   height: 120px;
 }
 
-.discountBtn {
-  background-color: black;
-  color: white;
+.discountBtn:hover {
+  background-color: rgb(63, 63, 63);
 }
