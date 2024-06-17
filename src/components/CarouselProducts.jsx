@@ -4,6 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import ProductCard from "./ProductCard.jsx";
 import data from "./coffee.json";
+import styles from '../styles/ProductCard.module.css';
 
 function CarouselProducts() {
   const settings = {
@@ -50,7 +51,7 @@ function CarouselProducts() {
   };
 
   return (
-    <div className="bg-black border rounded p-4">
+    <div className={`p-4  ${styles.carousel}`}>
       <h2 className="text-center"> Productos</h2>
       <Slider {...settings} className="m-3">
         {data.map((product, index) => (

@@ -2,6 +2,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import data from "./cats.json";
+import styles from "../styles/CarouselCats.module.css"; // Import your custom CSS module
 
 const CarouselCats = () => {
   const settings = {
@@ -48,44 +49,37 @@ const CarouselCats = () => {
   };
 
   return (
-    <div className="bg-black text-center p-4">
-      <h2 style={{ color: "#d89d49" }}> Nuestro Staff</h2>
-      <p className="fs-3 text-secondary">
-        Te presentamos a nuestro staff de michis{" "}
+    <div className={`text-center p-4 ${styles.carouselContainer}`}>
+      <h2 className={styles.title}>Nuestro Staff</h2>
+      <p className={`fs-3 ${styles.subtitle}`}>
+        Te presentamos a nuestro staff de michis
       </p>
-      <div>
-        <div className="container-fluid p-3">
-          <Slider {...settings}>
-            {data.cats.map((cat, index) => (
-              <div key={index} className="p-2">
-                <div className="card bg-black p-3 border border-secondary rounded-4  ">
-                  <img
-                    src={cat.image}
-                    className="card-img-top img-fluid object-fit-cover border border-secondary rounded-0  "
-                    alt={cat.name}
-                    style={{
-                      width: "100%",
-                      height: "300px",
-                      objectFit: "cover",
-                    }}
-                  />
-                  <div className="card-body">
-                    <h5 className="card-title" style={{ color: "#d89d49" }}>
-                      {cat.name}
-                    </h5>
-                    <p className=" text-secondary">
-                      edad: {cat.age}
-                      <br />
-                      {cat.personality}
-                      <br />
-                      Cumpleaños: {cat.birthdate}
-                    </p>
-                  </div>
+      <div className="container p-3">
+        <Slider {...settings}>
+          {data.cats.map((cat, index) => (
+            <div key={index} className={`${styles["card-body"]} p-3`}>
+              <div className={` ${styles.card}`}>
+                <img
+                  src={cat.image}
+                  className={`card-img-top img-fluid ${styles.cardImage}`}
+                  alt={cat.name}
+                />
+                <div className="card-body">
+                  <h5 className={`card-title ${styles.cardTitle}`}>
+                    {cat.name}
+                  </h5>
+                  <p className={styles.cardText}>
+                    Edad: {cat.age}
+                    <br />
+                    {cat.personality}
+                    <br />
+                    Cumpleaños: {cat.birthdate}
+                  </p>
                 </div>
               </div>
-            ))}
-          </Slider>
-        </div>
+            </div>
+          ))}
+        </Slider>
       </div>
     </div>
   );

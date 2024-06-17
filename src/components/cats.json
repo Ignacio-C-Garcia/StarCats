@@ -3,7 +3,7 @@
     {
       "image": "/img/cats/venus.jpeg",
       "name": "Venus",
-      "birthdate": "23 de abril",
+      "birthdate": "8 de agosto",
       "age": 2,
       "personality": "Curious and playful"
     },
@@ -23,7 +23,7 @@
     },
     {
       "image": "img/cats/luu.jpg",
-      "name": "luu",
+      "name": "Luu",
       "birthdate": "01 de octubre",
       "age": 3,
       "personality": "Shy but loving"
