@@ -15,7 +15,7 @@ const Login = () => {
   };
 
   return (
-    <div className={styles.main}>
+    <>
       <Container className="vh-100 d-flex justify-content-center">
         <Row>
           <Col
@@ -24,7 +24,7 @@ const Login = () => {
             lg={{ span: 6, order: "first" }}
             className="m-0 p-3 d-flex justify-content-center"
           >
-            <a href="/" className="d-flex justify-content-center">
+            <a href="/" className="d-flex align-items-center">
               <img src="/logostarcats.svg" alt="starcat-logo" />
             </a>
           </Col>
@@ -68,14 +68,14 @@ const Login = () => {
                   </button>
                 </div>
               </form>
-              <div class="d-flex gap-1">
-                <Link to="/signup" class="flex-fill">
-                  <button class="p-2 border-0 rounded-pill w-100">
+              <div className="d-flex gap-1">
+                <Link to="/signup" className="flex-fill">
+                  <button className="p-2 border-0 rounded-pill w-100">
                     Registrarse
                   </button>
                 </Link>
-                <Link to="" class="flex-fill">
-                  <button class="p-2 border-0 rounded-pill w-100">
+                <Link to="" className="flex-fill">
+                  <button className="p-2 border-0 rounded-pill w-100">
                     ¿Olvidaste la contraseña?
                   </button>
                 </Link>
@@ -85,7 +85,7 @@ const Login = () => {
         </Row>
       </Container>
       <Footer />
-    </div>
+    </>
   );
 };
 

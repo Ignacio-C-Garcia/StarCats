@@ -1,13 +1,13 @@
- .main {
+body {
   background-color: #d89d49;
-  background-color: #f5f5f5;
+  /* background-color: #f5f5f5; */
   font-family: "Franklin Gothic Medium", "Libre Franklin Semibold",
     "Arial Narrow", Arial, sans-serif;
   font-size: large;
 }
 
 img {
-  max-width: 70%;
+  max-width: 100%;
   max-height: 100%;
 }
 
@@ -15,22 +15,20 @@ img {
   background-color: #ab7a35;
 }
 
-.main input {
+input {
   background-color: #fbebc2;
   font-family: "Franklin Gothic Regular", "Libre Franklin Regular",
     "Arial Narrow", Arial, sans-serif;
 }
 
-.main button {
+button {
   background-color: #ffb64f;
 }
 
-.main h2 {
+h2 {
   color: black;
 }
 
-.main a {
+a {
   color: #333333;
-} 
-
-
+}

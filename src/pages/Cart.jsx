@@ -1,0 +1,187 @@
+import {
+  Container,
+  Row,
+  Col,
+  Card,
+  Form,
+  Button,
+  InputGroup,
+} from "react-bootstrap";
+import styles from "../styles/CartShopping.module.css";
+import Footer from "../components/Footer";
+import Navbar from "../components/NavBar";
+
+import React, { useState } from "react";
+
+function Cart() {
+  const [quantities, setQuantities] = useState({
+    Americano: 0,
+    Cappuccino: 0,
+  });
+
+  const handleQuantityChange = (product, change) => {
+    setQuantities((prevQuantities) => {
+      const newQuantity = Math.max(0, prevQuantities[product] + change); // Ensure quantity doesn't go below 0
+      return {
+        ...prevQuantities,
+        [product]: newQuantity,
+      };
+    });
+  };
+
+  const prices = {
+    Americano: 2.99,
+    Cappuccino: 4.99,
+  };
+
+  const calculateTotal = () => {
+    let subtotal = 0;
+    Object.keys(quantities).forEach((product) => {
+      subtotal += quantities[product] * prices[product];
+    });
+
+    const discount = 0.1 * subtotal; // Example discount
+    const taxRate = 0.21; // Example tax rate (21%)
+    const tax = taxRate * subtotal;
+    const total = subtotal - discount + tax;
+
+    return { subtotal, discount, tax, total };
+  };
+
+  const totals = calculateTotal();
+
+  return (
+    <>
+      <Navbar />
+      <Container className="mt-4 mb-4">
+        <Row>
+          <h2>Tu carrito</h2>
+          <Col md={8} className="d-flex flex-column gap-3">
+            <div
+              className={`${styles.individualProduct} d-flex flex-row align-items-center gap-3 border rounded-4 p-2`}
+            >
+              <div className="col d-flex align-items-center">
+                <img
+                  src="/img/coffee/Americano.png"
+                  alt=""
+                  className={`${styles.productPic}`}
+                />
+              </div>
+              <div className="productInfo col d-flex justify-content-center flex-column">
+                <h4>Americano</h4>
+                <p>$2.99</p>
+              </div>
+              <div className="col">
+                <InputGroup className="border rounded-pill d-flex flex-row border p-1">
+                  <Button
+                    variant="rounded-end-circle"
+                    onClick={() => handleQuantityChange("Cappuccino", -1)}
+                  >
+                    -
+                  </Button>
+                  <Form.Control
+                    type="number"
+                    className="border-0 text-center"
+                    value={quantities.Cappuccino}
+                    readOnly
+                  />
+                  <Button
+                    variant="rounded-end-circle"
+                    onClick={() => handleQuantityChange("Cappuccino", 1)}
+                  >
+                    +
+                  </Button>
+                </InputGroup>
+              </div>
+              <div className="col d-flex justify-content-center">
+                <p>${(quantities.Americano * prices.Americano).toFixed(2)}</p>
+              </div>
+            </div>
+            <div
+              className={`${styles.individualProduct} d-flex flex-row align-items-center gap-3 border rounded-4 p-2`}
+            >
+              <div className="col d-flex align-items-center">
+                <img
+                  src="/img/coffee/Capuchino.png"
+                  alt=""
+                  className={`${styles.productPic}`}
+                />
+              </div>
+              <div className="productInfo col d-flex justify-content-center flex-column">
+                <h4>Cappuccino</h4>
+                <p>$4.99</p>
+              </div>
+              <div className="col">
+                <InputGroup className="border rounded-pill d-flex flex-row border p-1">
+                  <Button
+                    variant="rounded-end-circle"
+                    onClick={() => handleQuantityChange("Cappuccino", -1)}
+                  >
+                    -
+                  </Button>
+                  <Form.Control
+                    type="number"
+                    className="border-0 text-center"
+                    value={quantities.Cappuccino}
+                    readOnly
+                  />
+                  <Button
+                    variant="rounded-end-circle"
+                    onClick={() => handleQuantityChange("Cappuccino", 1)}
+                  >
+                    +
+                  </Button>
+                </InputGroup>
+              </div>
+              <div className="col d-flex justify-content-center">
+                <p>${(quantities.Cappuccino * prices.Cappuccino).toFixed(2)}</p>
+              </div>
+            </div>
+          </Col>
+          <Col md={4}>
+            <Card className="p-3">
+              <Card.Body>
+                <Card.Title className="mb-4">Resumen del Pedido</Card.Title>
+                <div className="d-flex justify-content-between mb-2">
+                  <span>Total parcial:</span>
+                  <span>${totals.subtotal.toFixed(2)}</span>
+                </div>
+                <div className="d-flex justify-content-between mb-2">
+                  <span>Descuentos:</span>
+                  <span>${totals.discount.toFixed(2)}</span>
+                </div>
+                <div className="d-flex justify-content-between mb-2">
+                  <span>IVA (21%):</span>
+                  <span>${totals.tax.toFixed(2)}</span>
+                </div>
+                <hr />
+                <div className="d-flex justify-content-between mb-2">
+                  <span>Total:</span>
+                  <span>${totals.total.toFixed(2)}</span>
+                </div>
+                <Form className="mt-4">
+                  <Form.Group controlId="formDiscountCode">
+                    <Form.Label>Código de Descuento</Form.Label>
+                    <Form.Control
+                      type="text"
+                      placeholder="Introduce tu código"
+                      className="rounded-pill"
+                    />
+                  </Form.Group>
+                  <Button
+                    className={`${styles.discountBtn} btn rounded-pill mt-3`}
+                  >
+                    Aplicar
+                  </Button>
+                </Form>
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
+      </Container>
+      <Footer />
+    </>
+  );
+}
+
+export default Cart;
