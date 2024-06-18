@@ -1,12 +1,11 @@
-import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import ProductCard from "./ProductCard.jsx";
 import data from "./coffee.json";
-import styles from '../styles/ProductCard.module.css';
+import styles from "../styles/ProductCard.module.css";
 
-function CarouselProducts() {
+function CarouselProducts({ products }) {
   const settings = {
     dots: true,
     infinite: true,
@@ -54,7 +53,7 @@ function CarouselProducts() {
     <div className={`p-4 ${styles.carousel}`}>
       <h2 className="text-center"> Productos</h2>
       <Slider {...settings} className="m-3">
-        {data.map((product, index) => (
+        {products.map((product, index) => (
           <div key={index} className="p-3">
             <ProductCard product={product} />
           </div>
