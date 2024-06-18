@@ -55,7 +55,7 @@ function CarouselCats({ cats }) {
       </p>
       <div className="container-fluid  p-3">
         <Slider {...settings}>
-          {data.cats.map((cat, index) => (
+          {cats.map((cat, index) => (
             <div key={index} className={` p-3`}>
               <div className={` ${styles.card}`}>
                 <img
