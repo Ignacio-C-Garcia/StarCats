@@ -1,10 +1,9 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import data from "./cats.json";
 import styles from "../styles/CarouselCats.module.css"; // Import your custom CSS module
 
-const CarouselCats = () => {
+function CarouselCats({ cats }) {
   const settings = {
     dots: true,
     infinite: true,
@@ -56,11 +55,11 @@ const CarouselCats = () => {
       </p>
       <div className="container p-3">
         <Slider {...settings}>
-          {data.cats.map((cat, index) => (
+          {cats.map((cat, index) => (
             <div key={index} className={`${styles["card-body"]} p-3`}>
               <div className={` ${styles.card}`}>
                 <img
-                  src={cat.image}
+                  src={import.meta.env.VITE_CAT_IMG_PATH + cat.pic}
                   className={`card-img-top img-fluid ${styles.cardImage}`}
                   alt={cat.name}
                 />
@@ -83,6 +82,6 @@ const CarouselCats = () => {
       </div>
     </div>
   );
-};
+}
 
 export default CarouselCats;
