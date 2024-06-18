@@ -28,44 +28,30 @@
     "price": 5.49
   },
   {
-    "image": "/img/coffee/Cafe Vainilla.png",
-    "alt": "Café Vainilla",
-    "name": "Café Vainilla",
-    "description": "Un café aromático con un toque de vainilla.",
-    "price": 4.29
-  },
-  {
-    "image": "/img/coffee/Cafe de filtro.png",
-    "alt": "Café de Filtro",
-    "name": "Café de Filtro",
-    "description": "Un café de filtro fresco y suave.",
-    "price": 3.99
-  },
-  {
-    "image": "/img/coffee/Cold Brew.png",
-    "alt": "Cold Brew",
-    "name": "Cold Brew",
+    "image": "/img/coffee/Flat White.png",
+    "alt": "Flat White",
+    "name": "Flat White",
     "description": "Un café suave y refrescante, preparado en frío durante 20 horas.",
     "price": 4.79
   },
   {
-    "image": "/img/coffee/Cold Brew con Nubes.png",
-    "alt": "Cold Brew con Nubes",
-    "name": "Cold Brew con Nubes",
+    "image": "/img/coffee/Caramel Macchiato.png",
+    "alt": "Caramel Macchiato",
+    "name": "Caramel Macchiato",
     "description": "Cold Brew servido sobre nubes de algodón de azúcar.",
     "price": 5.29
   },
   {
-    "image": "/img/coffee/Frappuccino de Café.png",
-    "alt": "Frappuccino de Café",
-    "name": "Frappuccino de Café",
+    "image": "/img/coffee/Dulce de leche latte.png",
+    "alt": "Dulce de leche latte",
+    "name": "Dulce de leche latte",
     "description": "Una bebida helada y cremosa con café, mezclada con hielo y crema batida.",
     "price": 6.29
   },
   {
-    "image": "/img/coffee/Frappuccino de Caramelo.png",
-    "alt": "Frappuccino de Caramelo",
-    "name": "Frappuccino de Caramelo",
+    "image": "/img/coffee/Mocha Blanco.png",
+    "alt": "Mocha Blanco",
+    "name": "Mocha Blanco",
     "description": "Una bebida helada y cremosa con sabor a caramelo, mezclada con hielo y crema batida.",
     "price": 6.79
   }

@@ -1,29 +1,40 @@
 @import url("https://fonts.googleapis.com/css2?family=Chewy&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap");
 
+@import url("https://fonts.googleapis.com/css2?family=Montserrat=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Poppinsswap");
+
 .carouselContainer {
-  background-color: #1a1a1a;
+  background-color: #ffffee;
   text-align: center;
   padding: 4%;
+  
 }
 
 .title {
-  color: #fcf402;
+  color: #cf933f;
   font-family: "Chewy", cursive;
   font-size: 2.5rem;
   margin-bottom: 1rem;
 }
 
 .subtitle {
-  color: #d3d3d3;
+  color: black;
   font-family: "Hammersmith One", sans-serif;
 }
 
 .card {
-  background-color: #2c2c2c;
-  transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out;
-  height: 50vh;
-  border-radius: 20px;
+  background-color: #ffffee00;
+  border-radius: 10px;
+  transition: transform 0.3s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 1);
+  min-height: 550px;
+  min-width: 240x;
+}
+
+.cardContent{
+  padding: 20px;
 }
 
 .card:hover {
@@ -31,21 +42,22 @@
 }
 
 .cardImage {
-  height: 300px;
+  height: 350px;
   object-fit: cover;
-  border-radius: 20px 20px 0 0;
+  border-radius: 0px 10px 0 0;
+  width: 100%;
 }
 
 .cardTitle {
-  color: #fcf402;
-  font-family: "Chewy", cursive;
+  color: #cf933f;
+  font-family: "Chewy", normal;
   font-size: 4vh;
   margin-top: 2rem;
 }
 
 .cardText {
-  color: #d3d3d3;
+  color: black;
   font-family: "Hammersmith One", sans-serif;
-  font-size: 2vh;
+  font-size: 1.75vh;
   margin-top: 0.5rem;
 }

@@ -64,27 +64,24 @@ h1 {
 }
 
 /* Section Categories and carousel products */
+
 .containerCategory {
   background-image: url(paper.png);
-  padding: 2%;
+  padding: 1.8%;
 }
+
 
 /* cards */
-
-.containerCategory {
-  background-image: url(paper.png);
-  padding: 1.7%;
-}
-
 .card {
-  border: 6px dashed #000;
-  border-radius: 12.75px;
+  border: 5.4px dashed #000;
+  border-radius: 11.475px;
   background-color: rgba(255, 255, 255, 0);
-  width: 85.85%;
+  width: 75%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 17px;
+  margin: 20px;
   transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out;
 }
 
@@ -94,21 +91,21 @@ h1 {
 }
 
 .card img {
-  width: 75;
-  height: 75%;
+  width: 67.5%;
+  height: 67.5%;
   object-fit: contain;
 }
 
 .containerCategory h2 {
   font-family: "Hammersmith One";
-  font-size: 3.4vw;
+  font-size: 3.06vw;
   text-align: center;
 }
 
 .containerCategory p {
   font-family: "Hammersmith One";
-  font-size: 2.7vw;
-  margin: 17px;
+  font-size: 2.43vw;
+  margin: 15.3px;
   margin-top: 0;
 }
 
@@ -116,27 +113,23 @@ h1 {
   background-color: #ffffee;
   display: flex;
   align-items: center;
-  border-radius: 12.75px;
-  width: 100%;
-  height: 42.5px;
+  border-radius: 11.475px;
+  height: 42px;
+  width: 92.5%;
+  margin-right: 4vw;;
+  margin-left: 1.5vw;
+
 }
 
 a {
   color: #000;
   font-family: "Hammersmith One";
   font-weight: bold;
-  font-size: 1.7vh;
+  font-size: 1.53vh; 
   text-decoration: none;
 }
 
-.paintedSection a {
-  color: #000;
-  font-family: "Hammersmith One";
-  font-weight: bold;
-  font-size: 1.7vh;
-  text-decoration: none;
-  transition: color 0.3s ease-in-out;
-}
+
 
 .paintedSection a:hover {
   color: #fcf402;

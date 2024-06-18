@@ -20,7 +20,7 @@ function CarouselProducts() {
       {
         breakpoint: 1200,
         settings: {
-          slidesToShow: 4,
+          slidesToShow: 3,
           slidesToScroll: 1,
           infinite: true,
           dots: true,
@@ -29,7 +29,7 @@ function CarouselProducts() {
       {
         breakpoint: 992,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 2,
           slidesToScroll: 1,
         },
       },
@@ -51,7 +51,7 @@ function CarouselProducts() {
   };
 
   return (
-    <div className={`p-4  ${styles.carousel}`}>
+    <div className={`p-4 ${styles.carousel}`}>
       <h2 className="text-center"> Productos</h2>
       <Slider {...settings} className="m-3">
         {data.map((product, index) => (
