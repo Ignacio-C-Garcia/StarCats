@@ -1,3 +1,4 @@
+import React from "react";
 import styles from "../styles/Home.module.css";
 import CarouselCats from "../components/CarouselCats";
 import CarouselProducts from "../components/CarouselProducts";
@@ -60,57 +61,80 @@ function Home() {
             <button className={styles.btnLeft}>
               <i className="bi bi-arrow-right"></i>
             </button>
-            <button className={styles.btnRight}>See our menu</button>
+            <button className={styles.btnRight}>Ver el menú</button>
           </div>
         </div>
       </header>
-
       <section className={styles.containerCategory}>
-        <div className="container-fluid">
+        <div className="container-fluid ">
           <div className="row">
-            <h2>Categories</h2>
-            <div className=" col-12 col-xs-12 col-lg-3 col-md-  d-flex align-items-center justify-content-center">
-              <p>CADA PRODUCTO, UN COMPROMISO CON LA EXCELENCIA</p>
+            <h2>Categorias</h2>
+            <div
+              className={`"col-12 col-sm-12 col-lg-3 col-md-6 d-flex align-items-center`}
+            >
+              <p className="m-5">
+                CADA PRODUCTO, UN <br /> COMPROMISO CON LA <br /> EXCELENCIA
+              </p>
             </div>
 
-            <div className=" col-12 col-xs-12 col-lg-3 col-md-  d-flex justify-content-center">
-              <div className={`card ${styles.card}`}>
+            <div className="col-12 col-sm-12 col-lg-3 col-md-6 d-flex ">
+              <div className={styles.card}>
                 <img
                   src="img/categorias/cupcoffee.png"
                   alt="Cup of coffee"
-                  className="img-fluid "
+                  className="img-fluid"
                 />
+                <a className="d-lg-none fs-3 mt-4" href="">
+                  DRINK
+                </a>
               </div>
             </div>
 
-            <div className=" col-12 col-xs-12 col-lg-3 col-md-  d-flex justify-content-center">
-              <div className={`card ${styles.card}`}>
+            <div className="col-12 col-sm-12 col-lg-3 col-md-6 d-flex ">
+              <div className={styles.card}>
                 <img
                   src="img/categorias/medialuna.png"
                   alt="Medialuna"
-                  className="img-fluid "
+                  className="img-fluid"
                 />
+                <a className="d-lg-none fs-3 mt-4" href="">
+                  BAKERY
+                </a>
               </div>
             </div>
 
-            <div className=" col-12 col-xs-12 col-lg-3 col-md-  d-flex justify-content-center">
-              <div className={`card ${styles.card}`}>
+            <div className="col-12 col-sm-12 col-lg-3 col-md-6 d-flex ">
+              <div className={styles.card}>
                 <img
                   src="img/categorias/beans.png"
                   alt="Coffee beans"
-                  className="img-fluid "
+                  className="img-fluid"
                 />
+                <a className="d-lg-none fs-3 mt-4" href="">
+                  BEANS
+                </a>
               </div>
             </div>
-          </div>
-          <div className="row justify-content-end mt-4 ">
-            <div className="col-6 col-md-9">
+            <div className="row m-4 justify-content-center mt-4 d-none d-lg-flex">
               <div
-                className={` d-flex justify-content-around ${styles.paintedSection}`}
+                className={` ${styles.paintedSection}`}
               >
-                <a href="">DRINK</a>
-                <a href="">BAKERY</a>
-                <a href="">BEANS</a>
+                <div className="col-12 col-sm-12 col-lg-3 col-md-6 "></div>
+                <div className="col-12 col-sm-12 col-lg-3 col-md-6  d-flex justify-content-start   ">
+                  <a className="fs-2 p-3" href="">
+                    DRINK
+                  </a>
+                </div>
+                <div className="col-12 col-sm-12 col-lg-3 col-md-6 d-flex justify-content-center  ">
+                  <a className="fs-2 p-5" href="">
+                    BAKERY
+                  </a>
+                </div>
+                <div className="col-12 col-sm-12 col-lg-3 col-md-6 d-flex justify-content-end  ">
+                  <a className="fs-2 p-5" href="">
+                    BEANS
+                  </a>
+                </div>
               </div>
             </div>
           </div>

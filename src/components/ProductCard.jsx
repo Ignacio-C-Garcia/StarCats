@@ -11,10 +11,12 @@ function ProductCard({ product }) {
         />
       </div>
       <div>
-        <div className={styles.cardContent}>
-          <h5 className="card-title">{product.name}</h5>
-          <small className="text-muted m-2 fs-4 fw-bold">
-            ${product.price}
+        <div className={` ${styles.cardContent}`}>
+          <h5 className={`${styles.title}`}>
+            <strong>{product.name}</strong>
+          </h5>
+          <small className=" m-2 fs-4 ">
+            <strong>${product.price}</strong>
           </small>
           <button type="button" className={` ${styles.btn}`}>
             Agregar al carrito

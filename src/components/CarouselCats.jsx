@@ -1,7 +1,7 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import styles from "../styles/CarouselCats.module.css"; // Import your custom CSS module
+import styles from "../styles/CarouselCats.module.css";
 
 function CarouselCats({ cats }) {
   const settings = {
@@ -17,7 +17,7 @@ function CarouselCats({ cats }) {
       {
         breakpoint: 1200,
         settings: {
-          slidesToShow: 4,
+          slidesToShow: 3,
           slidesToScroll: 1,
           infinite: true,
           dots: true,
@@ -26,7 +26,7 @@ function CarouselCats({ cats }) {
       {
         breakpoint: 992,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 2,
           slidesToScroll: 1,
         },
       },
@@ -53,17 +53,17 @@ function CarouselCats({ cats }) {
       <p className={`fs-3 ${styles.subtitle}`}>
         Te presentamos a nuestro staff de michis
       </p>
-      <div className="container p-3">
+      <div className="container-fluid  p-3">
         <Slider {...settings}>
           {cats.map((cat, index) => (
-            <div key={index} className={`${styles["card-body"]} p-3`}>
+            <div key={index} className={` p-3`}>
               <div className={` ${styles.card}`}>
                 <img
                   src={import.meta.env.VITE_CAT_IMG_PATH + cat.pic}
-                  className={`card-img-top img-fluid ${styles.cardImage}`}
+                  className={` ${styles.cardImage}`}
                   alt={cat.name}
                 />
-                <div className="card-body">
+                <div className={` ${styles.cardContent}`}>
                   <h5 className={`card-title ${styles.cardTitle}`}>
                     {cat.name}
                   </h5>

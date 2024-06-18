@@ -14,13 +14,7 @@
       "age": 2,
       "personality": "Curious and playful"
     },
-    {
-      "image": "img/cats/whiskers.webp",
-      "name": "Whiskers",
-      "birthdate": "12 de noviembre",
-      "age": 7,
-      "personality": "Calm and affectionate"
-    },
+    
     {
       "image": "img/cats/luu.jpg",
       "name": "Luu",
@@ -35,33 +29,13 @@
       "age": 4,
       "personality": "Adventurous and brave"
     },
-    {
-      "image": "img/cats/simba.webp",
-      "name": "Simba",
-      "birthdate": "09 de febrero",
-      "age": 6,
-      "personality": "Playful and energetic"
-    },
-    {
-      "image": "img/cats/bella.webp",
-      "name": "Bella",
-      "birthdate": "30 de julio",
-      "age": 2,
-      "personality": "Gentle and friendly"
-    },
+
     {
       "image": "img/cats/leo.webp",
       "name": "Leo",
       "birthdate": "15 de diciembre",
       "age": 8,
       "personality": "Independent and quiet"
-    },
-    {
-      "image": "img/cats/coco.webp",
-      "name": "Coco",
-      "birthdate": "29 de marzo",
-      "age": 1,
-      "personality": "Curious and playful"
     }
   ]
 }

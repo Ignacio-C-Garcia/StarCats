@@ -1,26 +1,30 @@
 @import url("https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap");
 
 .cardCss {
-  background-color: #d6d4cb;
+  background-color: #ffffee;
   border-radius: 40px;
   transition: 0.3s;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   font-family: "Hammersmith One";
+  min-width: 240x;
+  min-height: 550px;
 }
 
 .cardCss:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: 0.3s;
+  box-shadow: 1px 1px 1px  #ffffee;
 }
-
+.title {
+  font-size: 2rem;
+  text-align: center;
+}
 .cardContent {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
+  overflow: hidden;
 }
 
 .img-container {
@@ -35,7 +39,7 @@
 }
 
 .img {
-  object-fit: cover;
+  object-fit: contain;
   height: 100%;
   width: 100%;
 }
@@ -54,4 +58,10 @@
 .btn:hover {
   transform: scale(1.05);
   transition: 0.3s;
+}
+
+/* carousel  */
+
+.carousel {
+  background-color: black;
 }
