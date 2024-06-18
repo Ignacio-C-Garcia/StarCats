@@ -3,6 +3,7 @@ import styles from "../styles/Home.module.css";
 import CarouselCats from "../components/CarouselCats";
 import CarouselProducts from "../components/CarouselProducts";
 import Footer from "../components/Footer";
+import NavBar from "../components/NavBar/";
 import { useEffect, useState } from "react";
 function Home() {
   const [products, setProducts] = useState([]);
@@ -44,6 +45,7 @@ function Home() {
   return (
     <>
       <header>
+        <NavBar />
         <div>
           <div>
             <h1>STARCATS</h1>
@@ -72,7 +74,7 @@ function Home() {
             <div
               className={`"col-12 col-sm-12 col-lg-3 col-md-6 d-flex align-items-center`}
             >
-              <p className="m-5">
+              <p>
                 CADA PRODUCTO, UN <br /> COMPROMISO CON LA <br /> EXCELENCIA
               </p>
             </div>
@@ -115,26 +117,25 @@ function Home() {
                 </a>
               </div>
             </div>
-            <div className="row m-4 justify-content-center mt-4 d-none d-lg-flex">
-              <div
-                className={` ${styles.paintedSection}`}
-              >
-                <div className="col-12 col-sm-12 col-lg-3 col-md-6 "></div>
-                <div className="col-12 col-sm-12 col-lg-3 col-md-6  d-flex justify-content-start   ">
-                  <a className="fs-2 p-3" href="">
-                    DRINK
-                  </a>
-                </div>
-                <div className="col-12 col-sm-12 col-lg-3 col-md-6 d-flex justify-content-center  ">
-                  <a className="fs-2 p-5" href="">
-                    BAKERY
-                  </a>
-                </div>
-                <div className="col-12 col-sm-12 col-lg-3 col-md-6 d-flex justify-content-end  ">
-                  <a className="fs-2 p-5" href="">
-                    BEANS
-                  </a>
-                </div>
+          </div>
+
+          <div className="row mt-3 justify-content-center d-none d-lg-flex ">
+            <div className={` ${styles.paintedSection}`}>
+              <div className="col-12 col-sm-12 col-lg-3 col-md-6 "></div>
+              <div className="col-12 col-sm-12 col-lg-3 col-md-6  d-flex justify-content-center   ">
+                <a className="fs-2 " href="">
+                  CAFÉ
+                </a>
+              </div>
+              <div className="col-12 col-sm-12 col-lg-3 col-md-6 d-flex justify-content-center  ">
+                <a className="fs-2 " href="">
+                  PASTELERÍA
+                </a>
+              </div>
+              <div className="col-12 col-sm-12 col-lg-3 col-md-6 d-flex justify-content-center  ">
+                <a className="fs-2 " href="">
+                  GRANOS
+                </a>
               </div>
             </div>
           </div>

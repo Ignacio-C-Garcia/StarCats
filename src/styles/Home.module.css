@@ -70,19 +70,19 @@ h1 {
   padding: 1.8%;
 }
 
-
 /* cards */
 .card {
   border: 5.4px dashed #000;
   border-radius: 11.475px;
   background-color: rgba(255, 255, 255, 0);
-  width: 75%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 20px;
   transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out;
+  margin-top: 12.5px;
+  padding: 0;
 }
 
 .card:hover {
@@ -105,7 +105,6 @@ h1 {
 .containerCategory p {
   font-family: "Hammersmith One";
   font-size: 2.43vw;
-  margin: 15.3px;
   margin-top: 0;
 }
 
@@ -115,21 +114,15 @@ h1 {
   align-items: center;
   border-radius: 11.475px;
   height: 42px;
-  width: 92.5%;
-  margin-right: 4vw;;
-  margin-left: 1.5vw;
-
 }
 
 a {
   color: #000;
   font-family: "Hammersmith One";
   font-weight: bold;
-  font-size: 1.53vh; 
+  font-size: 1.53vh;
   text-decoration: none;
 }
-
-
 
 .paintedSection a:hover {
   color: #fcf402;
