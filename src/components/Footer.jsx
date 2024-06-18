@@ -20,26 +20,26 @@ function Footer() {
             <ul className="list-unstyled mb-0">
               <li className="mb-2">
                 <Link to="/" className="text-decoration-none text-dark">
-                  Home
+                  Inicio
                 </Link>
               </li>
               <li className="mb-2">
                 <Link to="/about" className="text-decoration-none text-dark">
-                  About Us
+                  Sobre nosotros
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="text-decoration-none text-dark">
+                {/* <Link to="/contact" className="text-decoration-none text-dark">
                   Contact
-                </Link>
+                </Link> */}
               </li>
             </ul>
           </div>
 
           <div className="col-md-3">
             <p className="mb-1">123 Cat Street, Meowtown, CA 12345</p>
-            <p className="mb-1">Phone: (555) 555-5555</p>
-            <p className="mb-0">Open 7 days a week, 8am - 6pm</p>
+            <p className="mb-1">Teléfono: (555) 555-5555</p>
+            <p className="mb-0">Abierto , de 8am a 6pm</p>
           </div>
 
           <div className="col-3 ">

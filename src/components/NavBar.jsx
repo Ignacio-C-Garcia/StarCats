@@ -4,7 +4,7 @@ function NavBar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container-fluid align">
-        <a className="navbar-brand" href="#">
+        <a className="navbar-brand" href="/">
           {/*<img src="" style={{ width: 50 }} />*/}
           <span>Starcat</span>
         </a>
@@ -22,22 +22,22 @@ function NavBar() {
         <div className=" navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">
-                Home
+              <a className="nav-link active" aria-current="page" href="/">
+                Inicio
               </a>
             </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">
+            {/* <li className="nav-item">
+              <a className="nav-link" href="/contact">
                 Contact
               </a>
-            </li>
+            </li> */}
 
             <li>
               <DropDown info={{ name: "Shop" }}></DropDown>
             </li>
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">
-                About Us
+              <a className="nav-link active" aria-current="page" href="/about">
+                Sobre nosotros
               </a>
             </li>
           </ul>
@@ -58,20 +58,20 @@ function NavBar() {
                 type="button"
                 id="button-addon1"
               >
-                Search
+                Buscar
               </button>
             </div>
           </div>
           <div className="d-flex p-3 text-center">
             <div className="shoppingCartIcon">
-              <a href="#" className="nav-link">
-                Cart
+              <a href="/cart" className="nav-link">
+                Carrito
               </a>
             </div>
             <span className="px-2">|</span>
             <div className="shoppingCartIcon">
-              <a href="#" className="nav-link">
-                Log In
+              <a href="/login" className="nav-link">
+                Iniciar sesión
               </a>
             </div>
           </div>
