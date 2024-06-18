@@ -1,5 +1,6 @@
 import DropDown from "./Dropdown";
 import styles from "../styles/NavBar.module.css";
+
 function NavBar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -28,7 +29,7 @@ function NavBar() {
             </li>
             <li className="nav-item">
               <a className="nav-link" href="/products">
-                Products
+                Productos
               </a>
             </li>
 

@@ -31,9 +31,12 @@ function Footer() {
                 </Link>
               </li>
               <li>
-                {/* <Link to="/contact" className="text-decoration-none text-dark">
-                  Contact
-                </Link> */}
+                <Link
+                  to="/Productos"
+                  className="text-decoration-none text-dark"
+                >
+                  Productos
+                </Link>
               </li>
             </ul>
           </div>
