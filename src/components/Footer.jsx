@@ -21,12 +21,12 @@ function Footer() {
           <div className="col-lg-3 col-md-6 mb-4">
             <ul className="list-unstyled mb-0">
               <li className="mb-2">
-                <Link to="/" className="text-decoration-none text-dark">
+                <Link to="/" className="text-decoration-none text-white">
                   Inicio
                 </Link>
               </li>
               <li className="mb-2">
-                <Link to="/about" className="text-decoration-none text-dark">
+                <Link to="/about" className="text-decoration-none text-white">
                   Sobre nosotros
                 </Link>
               </li>
