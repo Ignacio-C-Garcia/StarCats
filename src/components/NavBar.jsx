@@ -26,11 +26,11 @@ function NavBar() {
                 Inicio
               </a>
             </li>
-            {/* <li className="nav-item">
-              <a className="nav-link" href="/contact">
-                Contact
+            <li className="nav-item">
+              <a className="nav-link" href="/products">
+                Products
               </a>
-            </li> */}
+            </li>
 
             <li>
               <DropDown info={{ name: "Shop" }}></DropDown>

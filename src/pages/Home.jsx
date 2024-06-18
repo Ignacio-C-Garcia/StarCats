@@ -63,7 +63,9 @@ function Home() {
             <button className={styles.btnLeft}>
               <i className="bi bi-arrow-right"></i>
             </button>
-            <button className={styles.btnRight}>Ver el menú</button>
+            <button className={styles.btnRight} href="/products">
+              Ver el menú
+            </button>
           </div>
         </div>
       </header>
