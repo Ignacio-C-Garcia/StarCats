@@ -5,7 +5,7 @@
   background-image: url(paper.png);
 }
 
-.title {
+.aboutTitle {
   position: relative;
   font-size: 48px;
   color: #fcf402;
@@ -13,7 +13,7 @@
   right: 0;
 }
 
-#team {
+.team {
   background-image: url(https://i.pinimg.com/564x/ba/53/e2/ba53e2e28dfb63d10e4e7b7ea6145da3.jpg);
 }
 
