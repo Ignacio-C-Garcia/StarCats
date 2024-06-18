@@ -1,40 +1,46 @@
 [
   {
-    "image": "/img/coffee/Capuchino.png",
+    "id": 1,
+    "image": "/img/coffee/cappuccino.png",
     "alt": "Cappuccino",
     "name": "Cappuccino",
     "description": "Un cappuccino rico y espumoso con un toque de chocolate.",
     "price": 4.99
   },
   {
-    "image": "/img/coffee/Skinny Vainilla Latte.png",
+    "id": 2,
+    "image": "/img/coffee/latte-vanilla-skinny.png",
     "alt": "Latte",
-    "name": "Latte Vainilla",
+    "name": "Skinny Latte Vainilla",
     "description": "Un latte suave y cremoso con la mezcla perfecta de espresso y leche vaporizada, con un toque de vainilla.",
     "price": 4.49
   },
   {
-    "image": "/img/coffee/Americano.png",
+    "id": 3,
+    "image": "/img/coffee/americano.png",
     "alt": "Americano",
     "name": "Americano",
     "description": "Un espresso fuerte y audaz, con agua caliente.",
     "price": 2.99
   },
   {
-    "image": "/img/coffee/Mocha.png",
+    "id": 4,
+    "image": "/img/coffee/moccha.png",
     "alt": "Mocha",
     "name": "Mocha",
     "description": "Un delicioso mocha con una mezcla de espresso, chocolate y leche vaporizada.",
     "price": 5.49
   },
   {
-    "image": "/img/coffee/Cafe Vainilla.png",
+    "id": 5,
+    "image": "/img/coffee/latte-vanilla.png",
     "alt": "Café Vainilla",
     "name": "Café Vainilla",
     "description": "Un café aromático con un toque de vainilla.",
     "price": 4.29
   },
   {
+    "id": 6,
     "image": "/img/coffee/Cafe de filtro.png",
     "alt": "Café de Filtro",
     "name": "Café de Filtro",
@@ -42,6 +48,7 @@
     "price": 3.99
   },
   {
+    "id": 7,
     "image": "/img/coffee/Cold Brew.png",
     "alt": "Cold Brew",
     "name": "Cold Brew",
@@ -49,6 +56,7 @@
     "price": 4.79
   },
   {
+    "id": 8,
     "image": "/img/coffee/Cold Brew con Nubes.png",
     "alt": "Cold Brew con Nubes",
     "name": "Cold Brew con Nubes",
@@ -56,6 +64,7 @@
     "price": 5.29
   },
   {
+    "id": 9,
     "image": "/img/coffee/Frappuccino de Café.png",
     "alt": "Frappuccino de Café",
     "name": "Frappuccino de Café",
@@ -63,6 +72,7 @@
     "price": 6.29
   },
   {
+    "id": 10,
     "image": "/img/coffee/Frappuccino de Caramelo.png",
     "alt": "Frappuccino de Caramelo",
     "name": "Frappuccino de Caramelo",

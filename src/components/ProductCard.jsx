@@ -9,7 +9,9 @@ function ProductCard({ product }) {
       <div>
         <div className={styles.cardContent}>
           <h5 className="card-title">{product.name}</h5>
-          <small className="text-muted m-2 fs-4 fw-bold">${product.price}</small>
+          <small className="text-muted m-2 fs-4 fw-bold">
+            ${product.price}
+          </small>
           <button type="button" className={` ${styles.btn}`}>
             Agregar al carrito
           </button>
