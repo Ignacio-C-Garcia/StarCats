@@ -1,0 +1,85 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url(paper.png);       
+}
+
+.container {
+    max-width: 960px;
+    margin: auto;
+    overflow: hidden;
+}
+
+#team{
+    background-image: url(https://i.pinimg.com/564x/ba/53/e2/ba53e2e28dfb63d10e4e7b7ea6145da3.jpg);
+}
+
+header {
+    color: #f7e92c;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    color: #f7e92c;
+}
+
+
+section {
+    padding: 50px 0;
+}
+
+section h2 {
+    font-size: 2rem;
+    color: #f7e92c;
+}
+
+section p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+section ul li {
+    margin-bottom: 10px;
+}
+
+
+.img-fluid {
+    width: 300px;
+    height: 300px;
+    background-size: cover;
+    border-radius: 50%;
+    border: 10px solid rgb(83, 82, 81);
+    transition: transform 0.3s ease-in-out;
+}
+
+.img-fluid:hover {
+    transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fadeIn {
+    animation-name: fadeIn;
+    animation-duration: 1s;
+}
+
+.bi-icon {
+    font-size: 3rem;
+    margin: 0 5px;
+  }
