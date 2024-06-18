@@ -1,7 +1,7 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import styles from "../styles/CarouselCats.module.css"; // Import your custom CSS module
+import styles from "../styles/CarouselCats.module.css";
 
 function CarouselCats({ cats }) {
   const settings = {
