@@ -10,7 +10,7 @@ function Footer() {
             <span className="h4 d-flex">StarCats</span>
             <a href="#" className="icon-link ">
               <img
-                src="/logostarcats.svg"
+                src="/logostarcats-light.svg"
                 alt="Cat Cafe Logo"
                 width={80}
                 height={80}
