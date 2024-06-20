@@ -12,7 +12,7 @@ import styles from "../styles/CartShopping.module.css";
 import Footer from "../components/Footer";
 import Navbar from "../components/NavBar";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 // import { CartContext } from "../context/CartContext";
 
 // const { cart } = useContext(CartContext);
@@ -66,7 +66,7 @@ function Cart() {
             >
               <div className="col d-flex align-items-center">
                 <img
-                  src="/img/coffee/Americano.png"
+                  src="/img/coffee/americano.png"
                   alt=""
                   className={`${styles.productPic}`}
                 />
@@ -106,7 +106,7 @@ function Cart() {
             >
               <div className="col d-flex align-items-center">
                 <img
-                  src="/img/coffee/Capuchino.png"
+                  src="/img/coffee/cappuccino.png"
                   alt=""
                   className={`${styles.productPic}`}
                 />
