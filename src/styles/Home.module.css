@@ -34,7 +34,6 @@ h1 {
   left: 12%;
   top: 67.5%;
   padding: 0;
-  font-size: 1.275vw;
   display: flex;
   width: 18vw;
 }
@@ -42,25 +41,28 @@ h1 {
 .btnLeft {
   background-color: black;
   color: #fcf402;
-  padding: 0.85vw;
+  padding: 0.9vw;
   border-radius: 42.5px 0 0 42.5px;
   width: 18%;
   margin-right: 1.7px;
   border: none;
+  font-size: 1.25vw;
 }
 
 .btnRight {
   flex-grow: 1;
-  padding: 0.85vw 1.7vw;
+  padding: 0.85vw;
   background-color: black;
   color: #ffffee;
   border-radius: 0 42.5px 42.5px 0;
   border: none;
+  font-size: 1.25vw;
 }
 
 .btnLeft:active,
 .btnRight:active {
   transform: scale(0.95);
+  transition: 0.2s;
 }
 
 /* Section Categories and carousel products */

@@ -14,26 +14,28 @@ function Footer() {
                 alt="Cat Cafe Logo"
                 width={80}
                 height={80}
-                className=" bg-white "
               />
             </a>
           </div>
           <div className="col-lg-3 col-md-6 mb-4">
             <ul className="list-unstyled mb-0">
               <li className="mb-2">
-                <Link to="/" className="text-decoration-none text-white">
+                <Link to="/" className="text-decoration-none text-white fs-6">
                   Inicio
                 </Link>
               </li>
               <li className="mb-2">
-                <Link to="/about" className="text-decoration-none text-white">
+                <Link
+                  to="/about"
+                  className="text-decoration-none text-white fs-6"
+                >
                   Sobre nosotros
                 </Link>
               </li>
               <li>
                 <Link
                   to="/Productos"
-                  className="text-decoration-none text-dark"
+                  className="text-decoration-none text-white fs-6"
                 >
                   Productos
                 </Link>
@@ -59,7 +61,7 @@ function Footer() {
           <div className="col-lg-3 col-md-6 mb-4">
             <p className="mb-1">123 Cat Street, Meowtown, CA 12345</p>
             <p className="mb-1">Teléfono: (555) 555-5555</p>
-            <p className="mb-0">Abierto , de 8am a 6pm</p>
+            <p className="mb-0">Abierto de 8am a 6pm</p>
           </div>
         </div>
       </div>

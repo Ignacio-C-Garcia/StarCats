@@ -7,11 +7,15 @@ import {
   Button,
   InputGroup,
 } from "react-bootstrap";
+
 import styles from "../styles/CartShopping.module.css";
 import Footer from "../components/Footer";
 import Navbar from "../components/NavBar";
 
 import React, { useState } from "react";
+// import { CartContext } from "../context/CartContext";
+
+// const { cart } = useContext(CartContext);
 
 function Cart() {
   const [quantities, setQuantities] = useState({

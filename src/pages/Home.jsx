@@ -60,12 +60,20 @@ function Home() {
             className={`img-fluid ${styles.headerImage}`}
           />
           <div className={styles.btnHeader}>
-            <button className={styles.btnLeft}>
-              <i className="bi bi-arrow-right" href="/products"></i>
-            </button>
-            <button className={styles.btnRight} href="/products">
+            <a
+              className={`${styles.btnLeft} d-flex justify-content-center`}
+              href="/products"
+              role="button"
+            >
+              <i className="bi bi-arrow-right"></i>
+            </a>
+            <a
+              className={`${styles.btnRight}  d-flex justify-content-center`}
+              href="/products"
+              role="button"
+            >
               Ver el menú
-            </button>
+            </a>
           </div>
         </div>
       </header>

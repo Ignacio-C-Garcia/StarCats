@@ -48,7 +48,7 @@ function NavBar() {
               <input
                 type="text"
                 id="searchInput"
-                className="form-control"
+                className="form-control rounded-start-pill"
                 placeholder=""
                 aria-label="Example text with button addon"
                 aria-describedby="button-addon1"

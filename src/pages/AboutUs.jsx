@@ -1,7 +1,5 @@
 import React from "react";
-// import "../styles/AboutUs.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-// import { BiLinkedin, BiGithub } from "react-icons";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import styles from "../styles/AboutUs.module.css";
@@ -13,15 +11,17 @@ function AboutUs() {
     <div className={`${styles.about}`}>
       <NavBar />
       <Container>
-        <h1 className={`${styles.aboutTitle} mt-4`}>Sobre nosotros</h1>
+        <h1 className={`${styles.aboutTitle} mt-4 text-center`}>
+          Sobre nosotros
+        </h1>
 
         <div className="mt-4 mb-4">
+          {/* Mission and Vision Section */}
           <section id="mission-vision-1">
             <Row className="align-items-center">
               <Col
-                md={{ span: 6 }}
-                xs={{ span: 6, order: "last" }}
-                className="col-md-6 d-flex justify-content-center"
+                md={6}
+                className="d-flex justify-content-center order-md-1 order-2"
               >
                 <img
                   src="https://i.pinimg.com/originals/da/9f/4a/da9f4a89b3eeefedc675aa25536235d8.jpg"
@@ -29,7 +29,7 @@ function AboutUs() {
                   alt="Imagen de la misión"
                 />
               </Col>
-              <Col md={{ span: 6 }} xs={{ span: 6, order: "first" }}>
+              <Col md={6} className="order-md-2 order-1">
                 <h2>Nuestra Misión</h2>
                 <p>
                   Nuestra misión es Lorem ipsum dolor sit amet, consectetur
@@ -39,8 +39,8 @@ function AboutUs() {
                 </p>
               </Col>
             </Row>
-            <div className="row align-items-center mt-5">
-              <div className="col-md-6">
+            <Row className="align-items-center mt-5">
+              <Col md={6} className="order-md-1 order-2">
                 <h2>Nuestra visión</h2>
                 <ul>
                   <li>
@@ -65,27 +65,35 @@ function AboutUs() {
                     ambiente.
                   </li>
                 </ul>
-              </div>
-              <div className="col-md-6 d-flex justify-content-center">
+              </Col>
+              <Col
+                md={6}
+                className="d-flex justify-content-center order-md-2 order-1"
+              >
                 <img
                   src="https://www.pleated-jeans.com/wp-content/uploads/2014/06/cute-overload-1.jpg"
                   className={`${styles.michiPhoto}`}
                   alt="Imagen de valores"
                 />
-              </div>
-            </div>
+              </Col>
+            </Row>
           </section>
+
+          {/* Values Section */}
           <section id="mission-vision-2">
-            <div className="container">
-              <div className="row align-items-center">
-                <div className="col-md-6 d-flex justify-content-center">
+            <Container>
+              <Row className="align-items-center">
+                <Col
+                  md={6}
+                  className="d-flex justify-content-center order-md-1 order-2"
+                >
                   <img
                     src="https://i.pinimg.com/originals/f4/65/f8/f465f8b2e3537d1e20396a3613aebf46.jpg"
                     className={`${styles.michiPhoto}`}
                     alt="Imagen de la misión 2"
                   />
-                </div>
-                <div className="col-md-6">
+                </Col>
+                <Col md={6} className="order-md-2 order-1">
                   <h2>Nuestros valores</h2>
                   <p>
                     Nuestra misión es Lorem ipsum dolor sit amet consectetur
@@ -93,11 +101,13 @@ function AboutUs() {
                     cumque dicta, sunt eaque nihil laboriosam quaerat autem.
                     Minus, illo enim a vitae repellendus cum dicta alias?
                   </p>
-                </div>
-              </div>
-            </div>
+                </Col>
+              </Row>
+            </Container>
           </section>
-          <section id="team" className={`py-5`}>
+
+          {/* Team Section */}
+          <section id="team" className="py-5">
             <div>
               <h2 className="text-center">Nuestro Equipo</h2>
               <p className="text-center">
@@ -105,60 +115,62 @@ function AboutUs() {
                 dedicados que aportan una amplia gama de habilidades y
                 experiencia.
               </p>
-              <div className="row">
-                <div className="col-md-3">
-                  <div className="text-center">
+              <Row>
+                <Col md={3} className="text-center">
+                  <div className={`${styles.imageContainer}`}>
                     <img
                       src="https://i.pinimg.com/564x/54/08/39/5408399b4f0e4137961ef81ee61289c9.jpg"
-                      className={`${styles.michiPhoto}`}
-                      alt=""
+                      className={`img-fluid ${styles.michiPhoto}`}
+                      alt="Ignacio Castellan"
                     />
-                    <p>Ignacio Castellan</p>
-                    {/*<BiLinkedin />*/}
-                    {/*<BiGithub />*/}
                   </div>
-                </div>
-                <div className="col-md-3">
-                  <div className="text-center">
+                  <p>Ignacio Castellan</p>
+                  {/* <BiLinkedin /> */}
+                  {/* <BiGithub /> */}
+                </Col>
+                <Col md={3} className="text-center">
+                  <div className={`${styles.imageContainer}`}>
                     <img
                       src="https://i.pinimg.com/originals/80/38/ef/8038ef4599953301e18d739caf1b4d18.jpg"
-                      className={`${styles.michiPhoto}`}
-                      alt=""
+                      className={`img-fluid ${styles.michiPhoto}`}
+                      alt="Jean Franco Pisciottano"
                     />
-                    <p>Jean Franco Pisciottano</p>
-                    {/*<BiLinkedin />*/}
-                    {/*<BiGithub />*/}
                   </div>
-                </div>
-                <div className="col-md-3">
-                  <div className="text-center">
+                  <p>Jean Franco Pisciottano</p>
+                  {/* <BiLinkedin /> */}
+                  {/* <BiGithub /> */}
+                </Col>
+                <Col md={3} className="text-center">
+                  <div className={`${styles.imageContainer}`}>
                     <img
                       src="https://i.pinimg.com/originals/e4/8b/2f/e48b2f53314783acf8b12fbf8ce3fa8e.jpg"
-                      className={`${styles.michiPhoto}`}
-                      alt=""
+                      className={`img-fluid ${styles.michiPhoto}`}
+                      alt="Abril Pereira"
                     />
-                    <p>Abril Pereira</p>
-                    {/*<BiLinkedin />*/}
-                    {/*<BiGithub />*/}
                   </div>
-                </div>
-                <div className="col-md-3">
-                  <div className="text-center">
+                  <p>Abril Pereira</p>
+                  {/* <BiLinkedin /> */}
+                  {/* <BiGithub /> */}
+                </Col>
+                <Col md={3} className="text-center">
+                  <div className={`${styles.imageContainer}`}>
                     <img
                       src="https://i.pinimg.com/originals/ff/a1/56/ffa1564f87643dcb905707ecc3aed565.jpg"
-                      className={`${styles.michiPhoto}`}
-                      alt=""
+                      className={`img-fluid ${styles.michiPhoto}`}
+                      alt="Agustin Acosta"
                     />
-                    <p>Agustin Acosta</p>
-                    {/*<BiLinkedin />*/}
-                    {/*<BiGithub />*/}
                   </div>
-                </div>
-              </div>
+                  <p>Agustin Acosta</p>
+                  {/* <BiLinkedin /> */}
+                  {/* <BiGithub /> */}
+                </Col>
+              </Row>
             </div>
           </section>
+
+          {/* Contact Section */}
           <section id="contact" className="py-5">
-            <div className="container">
+            <Container>
               <h2 className="text-center">Contáctanos</h2>
               <p className="text-center">
                 Estamos aquí para responder cualquier pregunta que puedas tener.
@@ -166,9 +178,11 @@ function AboutUs() {
                 <a href="mailto:info@starcats.com">info@starcats.com</a> o a
                 través de nuestras redes sociales.
               </p>
-            </div>
+            </Container>
           </section>
-          <div className="container">
+
+          {/* Contact Form */}
+          <Container>
             <form>
               <div className="mb-3">
                 <label htmlFor="nombre" className="form-label">
@@ -176,19 +190,19 @@ function AboutUs() {
                 </label>
                 <input
                   type="text"
-                  className="form-control"
+                  className="form-control rounded-3"
                   id="nombre"
                   name="nombre"
                   required
                 />
               </div>
-              <div className="mb-3 rounded-4">
+              <div className="mb-3">
                 <label htmlFor="email" className="form-label">
                   Correo Electrónico
                 </label>
                 <input
                   type="email"
-                  className="form-control"
+                  className="form-control rounded-3"
                   id="email"
                   name="email"
                   required
@@ -199,7 +213,7 @@ function AboutUs() {
                   Mensaje
                 </label>
                 <textarea
-                  className="form-control"
+                  className="form-control rounded-3"
                   id="mensaje"
                   name="mensaje"
                   rows="4"
@@ -214,7 +228,7 @@ function AboutUs() {
                 Enviar Mensaje
               </button>
             </form>
-          </div>
+          </Container>
         </div>
       </Container>
       <Footer />

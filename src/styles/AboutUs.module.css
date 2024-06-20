@@ -1,5 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Chewy&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap");
+
 .about {
-  font-family: Arial, sans-serif;
+  font-family: "Hammersmith One", Arial, sans-serif;
   margin: 0;
   padding: 0;
   background-image: url(paper.png);
@@ -43,6 +46,7 @@ section ul li {
   border-radius: 50%;
   border: 10px solid rgb(83, 82, 81);
   transition: transform 0.3s ease-in-out;
+  object-fit: cover;
 }
 
 .michiPhoto:hover {
