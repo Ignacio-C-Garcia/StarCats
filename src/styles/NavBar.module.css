@@ -1,6 +1,18 @@
 .rounded_right {
-  border-radius: 0 100px 100px 0; /* Redondear solo la derecha */
+  border-radius: 0 100px 100px 0;
+  color: white;
 }
-.dropdown-item-selected {
-  background-color: #f8f8f8;
+
+.dropdownMenu {
+  background-color: #000;
+  color: #fff;
+}
+
+.dropdownHeader {
+  color: #fff;
+}
+
+.dropdownItem {
+  background-color: #000;
+  color: #fff;
 }

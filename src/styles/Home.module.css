@@ -110,14 +110,6 @@ h1 {
   margin-top: 0;
 }
 
-.paintedSection {
-  background-color: #ffffee;
-  display: flex;
-  align-items: center;
-  border-radius: 11.475px;
-  height: 42px;
-}
-
 a {
   color: #000;
   font-family: "Hammersmith One";
@@ -126,6 +118,6 @@ a {
   text-decoration: none;
 }
 
-.paintedSection a:hover {
+a:hover {
   color: #fcf402;
 }

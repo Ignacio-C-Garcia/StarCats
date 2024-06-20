@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "../styles/Home.module.css";
 import CarouselCats from "../components/CarouselCats";
 import CarouselProducts from "../components/CarouselProducts";
@@ -82,10 +81,10 @@ function Home() {
           <div className="row">
             <h2>Categorias</h2>
             <div
-              className={`"col-12 col-sm-12 col-lg-3 col-md-6 d-flex align-items-center`}
+              className={`"col-12 col-sm-12 col-lg-3 col-md-6 d-flex align-items-center text-wrap`}
             >
-              <p>
-                CADA PRODUCTO, UN <br /> COMPROMISO CON LA <br /> EXCELENCIA
+              <p className="fs-3">
+                CADA PRODUCTO, UN COMPROMISO CON LA EXCELENCIA
               </p>
             </div>
 
@@ -97,7 +96,7 @@ function Home() {
                   className="img-fluid"
                 />
                 <a className="d-lg-none fs-3 mt-4" href="">
-                  DRINK
+                  CAFÉ
                 </a>
               </div>
             </div>
@@ -110,7 +109,7 @@ function Home() {
                   className="img-fluid"
                 />
                 <a className="d-lg-none fs-3 mt-4" href="">
-                  BAKERY
+                  PASTELERÍA
                 </a>
               </div>
             </div>
@@ -123,27 +122,27 @@ function Home() {
                   className="img-fluid"
                 />
                 <a className="d-lg-none fs-3 mt-4" href="">
-                  BEANS
+                  GRANOS
                 </a>
               </div>
             </div>
           </div>
 
           <div className="row mt-3 justify-content-center d-none d-lg-flex ">
-            <div className={` ${styles.paintedSection}`}>
-              <div className="col-12 col-sm-12 col-lg-3 col-md-6 "></div>
-              <div className="col-12 col-sm-12 col-lg-3 col-md-6  d-flex justify-content-center   ">
-                <a className="fs-2 " href="">
+            <div className={`col-md-6 d-flex justify-content-center `}>
+              <div className=" d-flex justify-content-center col-md-6 "></div>
+              <div className={`col-md-6 d-flex justify-content-center `}>
+                <a className="fs-2 " href="#">
                   CAFÉ
                 </a>
               </div>
-              <div className="col-12 col-sm-12 col-lg-3 col-md-6 d-flex justify-content-center  ">
-                <a className="fs-2 " href="">
+              <div className={`col-md-6 d-flex justify-content-center `}>
+                <a className="fs-2 " href="#">
                   PASTELERÍA
                 </a>
               </div>
-              <div className="col-12 col-sm-12 col-lg-3 col-md-6 d-flex justify-content-center  ">
-                <a className="fs-2 " href="">
+              <div className={`col-md-6 d-flex justify-content-center `}>
+                <a className="fs-2 " href="#">
                   GRANOS
                 </a>
               </div>

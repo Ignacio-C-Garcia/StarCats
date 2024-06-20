@@ -3,14 +3,13 @@ import styles from "../styles/NavBar.module.css";
 
 function NavBar() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-black text-white ">
       <div className="container-fluid align">
         <a className="navbar-brand" href="/">
-          {/*<img src="" style={{ width: 50 }} />*/}
           <span>Starcat</span>
         </a>
         <button
-          className="navbar-toggler "
+          className="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarSupportedContent"
@@ -20,7 +19,7 @@ function NavBar() {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className=" navbar-collapse" id="navbarSupportedContent">
+        <div className="navbar-collapse collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
               <a className="nav-link active" aria-current="page" href="/">
@@ -32,9 +31,8 @@ function NavBar() {
                 Productos
               </a>
             </li>
-
             <li>
-              <DropDown info={{ name: "Shop" }}></DropDown>
+              <DropDown info={{ name: "Shop" }} />
             </li>
             <li className="nav-item">
               <a className="nav-link active" aria-current="page" href="/about">
@@ -42,7 +40,6 @@ function NavBar() {
               </a>
             </li>
           </ul>
-
           <div>
             <div className="input-group">
               <input
@@ -53,7 +50,6 @@ function NavBar() {
                 aria-label="Example text with button addon"
                 aria-describedby="button-addon1"
               />
-
               <button
                 className={`btn btn-outline-secondary ${styles.rounded_right} btn-sm searchInputButton`}
                 type="button"
