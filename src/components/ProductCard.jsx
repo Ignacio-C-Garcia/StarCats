@@ -14,7 +14,7 @@ function ProductCard({ product }) {
         <img
           src={import.meta.env.VITE_IMG_PATH + product.pic}
           alt={product.alt}
-          className={styles.img}
+          className={styles.name}
         />
       </div>
       <div>

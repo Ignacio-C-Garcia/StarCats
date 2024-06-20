@@ -56,7 +56,7 @@ function CarouselCats({ cats }) {
       <div className="container-fluid  p-3">
         <Slider {...settings}>
           {cats.map((cat, index) => (
-            <div key={index} className={` p-3`}>
+            <div key={index} className={`p-3`}>
               <div className={` ${styles.card}`}>
                 <img
                   src={import.meta.env.VITE_CAT_IMG_PATH + cat.pic}

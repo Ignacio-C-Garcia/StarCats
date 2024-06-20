@@ -10,7 +10,7 @@ function Products() {
   return (
     <>
       <NavBar />
-      <Container className="p-5">
+      <Container className="p-5 ">
         <h2 className="text-center mb-5">Menú</h2>
         <div className="m-2">
           <ProductList />

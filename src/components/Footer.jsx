@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 function Footer() {
   return (
-    <footer className="bg-white text-black py-4 border border-black ">
+    <footer className="bg-black text-white py-4">
       <div className="container">
         <div className="row">
           <div className="col-lg-3 col-md-6 mb-4 ">
@@ -13,26 +13,26 @@ function Footer() {
                 alt="Cat Cafe Logo"
                 width={80}
                 height={80}
-                className=" bg-white ms-3 "
+                className=" ms-3 "
               />
             </a>
           </div>
           <div className="col-lg-3 col-md-6 mb-4">
             <ul className="list-unstyled mb-0">
               <li className="">
-                <Link to="/" className="text-decoration-none text-black">
+                <Link to="/" className="text-decoration-none text-white">
                   Inicio
                 </Link>
               </li>
               <li className="">
-                <Link to="/about" className="text-decoration-none text-black">
+                <Link to="/about" className="text-decoration-none text-white">
                   Sobre nosotros
                 </Link>
               </li>
               <li>
                 <Link
                   to="/Productos"
-                  className="text-decoration-none text-black"
+                  className="text-decoration-none text-white"
                 >
                   Productos
                 </Link>
@@ -40,7 +40,7 @@ function Footer() {
               <li>
                 <Link
                   to="/Productos"
-                  className="text-decoration-none text-black"
+                  className="text-decoration-none text-white"
                 >
                   Contacto
                 </Link>
@@ -49,15 +49,15 @@ function Footer() {
           </div>
           <div className="col-lg-3 col-md-6 mb-4">
             <div className="d-flex justify-content-center justify-content-md-start">
-              <a href="/" className="text-black me-3">
+              <a href="/" className="text-white me-3">
                 <i className="bi bi-facebook fs-3"></i>
                 <span className="visually-hidden">Facebook</span>
               </a>
-              <a href="/" className="text-black me-3">
+              <a href="/" className="text-white me-3">
                 <i className="bi bi-twitter fs-3"></i>
                 <span className="visually-hidden">Twitter</span>
               </a>
-              <a href="/" className="text-black">
+              <a href="/" className="text-white">
                 <i className="bi bi-instagram fs-3"></i>
                 <span className="visually-hidden">Instagram</span>
               </a>
