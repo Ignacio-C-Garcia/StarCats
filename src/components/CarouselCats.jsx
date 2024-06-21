@@ -53,7 +53,7 @@ function CarouselCats({ cats }) {
       <p className={`fs-3 ${styles.subtitle}`}>
         Te presentamos a nuestro staff de michis
       </p>
-      <div className="container-fluid  p-3">
+      <div className="container container-fluid  p-3">
         <Slider {...settings}>
           {cats.map((cat, index) => (
             <div key={index} className={`p-3`}>

@@ -4,6 +4,8 @@ import CarouselProducts from "../components/CarouselProducts";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar/";
 import { useEffect, useState } from "react";
+import { Container } from "react-bootstrap";
+
 function Home() {
   const [products, setProducts] = useState([]);
   const [cats, setCats] = useState([]);
@@ -43,8 +45,8 @@ function Home() {
   }, []);
   return (
     <>
+      <NavBar />
       <header>
-        <NavBar />
         <div>
           <div>
             <h1>STARCATS</h1>
@@ -77,7 +79,7 @@ function Home() {
         </div>
       </header>
       <section className={styles.containerCategory}>
-        <div className="container-fluid ">
+        <div className="container container-fluid ">
           <div className="row">
             <h2>Categorias</h2>
             <div
