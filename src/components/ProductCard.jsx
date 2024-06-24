@@ -25,7 +25,11 @@ function ProductCard({ product }) {
           <small className="m-2 fs-4">
             <strong>${product.price}</strong>
           </small>
-          <button type="button" className={` ${styles.btn}`}>
+          <button
+            type="button"
+            onClick={handleShow}
+            className={` ${styles.btn}`}
+          >
             Agregar al carrito
           </button>
         </div>
