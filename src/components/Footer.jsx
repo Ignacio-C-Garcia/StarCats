@@ -5,7 +5,7 @@ function Footer() {
     <footer className="bg-black text-white py-4">
       <div className="container">
         <div className="row">
-          <div className="col-lg-3 col-md-6 mb-4 ">
+          <div className="col-lg-3 col-md-6 col-sm-6 mb-4 ">
             <span className="h4 d-flex">StarCats</span>
             <a href="/">
               <img
@@ -17,7 +17,7 @@ function Footer() {
               />
             </a>
           </div>
-          <div className="col-lg-3 col-md-6 mb-4">
+          <div className="col-lg-3 col-md-6 col-sm-6 mb-4">
             <ul className="list-unstyled mb-0">
               <li className="">
                 <Link to="/" className="text-decoration-none text-white">
@@ -47,7 +47,7 @@ function Footer() {
               </li>
             </ul>
           </div>
-          <div className="col-lg-3 col-md-6 mb-4">
+          <div className="col-lg-3 col-md-6 col-sm-6 mb-4">
             <div className="d-flex justify-content-center justify-content-md-start">
               <a href="/" className="text-white me-3">
                 <i className="bi bi-facebook fs-3"></i>
@@ -63,7 +63,7 @@ function Footer() {
               </a>
             </div>
           </div>
-          <div className="col-lg-3 col-md-6 mb-4">
+          <div className="col-lg-3 col-md-6 col-sm-6 mb-4">
             <p className="mb-1">123 Cat Street, Meowtown, CA 12345</p>
             <p className="mb-1">Teléfono: (555) 555-5555</p>
             <p className="mb-0">Abierto de 8am a 6pm</p>

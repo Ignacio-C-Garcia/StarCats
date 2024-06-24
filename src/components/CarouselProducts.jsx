@@ -12,7 +12,7 @@ function CarouselProducts({ products }) {
     slidesToShow: 4,
     slidesToScroll: 1,
     arrows: true,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 3000,
     responsive: [
       {

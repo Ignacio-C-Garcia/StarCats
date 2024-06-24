@@ -12,24 +12,20 @@ function ProductCard({ product }) {
     <div className={`card ${styles.cardCss}`}>
       <div className={styles["img-container"]} onClick={handleShow}>
         <img
-          src={import.meta.env.VITE_IMG_PATH + product.pic}
+          src={`${import.meta.env.VITE_IMG_PATH}${product.pic}`}
           alt={product.alt}
           className={styles.name}
         />
       </div>
       <div>
-        <div className={` ${styles.cardContent}`}>
-          <h5 className={`${styles.title}`} onClick={handleShow}>
+        <div className={styles.cardContent}>
+          <h5 className={styles.title} onClick={handleShow}>
             <strong>{product.name}</strong>
           </h5>
           <small className="m-2 fs-4">
             <strong>${product.price}</strong>
           </small>
-          <button
-            type="button"
-            onClick={handleShow}
-            className={` ${styles.btn}`}
-          >
+          <button type="button" onClick={handleShow} className={styles.btn}>
             Agregar al carrito
           </button>
         </div>
@@ -41,7 +37,7 @@ function ProductCard({ product }) {
         </Modal.Header>
         <Modal.Body>
           <img
-            src={import.meta.env.VITE_IMG_PATH + product.pic}
+            src={`${import.meta.env.VITE_IMG_PATH}${product.pic}`}
             alt={product.alt}
             className={styles.img}
           />

@@ -28,12 +28,10 @@
   border-radius: 10px;
   transition: transform 0.3s;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 1);
-  min-width: 240x;
 }
 
 .cardContent {
   padding: 20px;
-  width: 300px;
 }
 
 .card:hover {

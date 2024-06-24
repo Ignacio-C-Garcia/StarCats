@@ -80,7 +80,7 @@ function Home() {
       <section className={styles.containerCategory}>
         <div className="container container-fluid ">
           <div className="row">
-            <h2>Categorias</h2>
+            <h2>Categorías</h2>
             <p className="fs-3 text-center">
               CADA PRODUCTO, UN COMPROMISO CON LA EXCELENCIA
             </p>
@@ -91,7 +91,7 @@ function Home() {
                   src="img/categorias/cupcoffee.png"
                   alt="Cup of coffee"
                   className="img-fluid"
-                />
+                /> 
                 <a className="d-lg-none fs-3 mt-4" href="">
                   CAFÉ
                 </a>
