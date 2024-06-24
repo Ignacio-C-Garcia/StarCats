@@ -4,7 +4,6 @@ import CarouselProducts from "../components/CarouselProducts";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar/";
 import { useEffect, useState } from "react";
-import { Container } from "react-bootstrap";
 
 function Home() {
   const [products, setProducts] = useState([]);
@@ -56,7 +55,7 @@ function Home() {
             </p>
           </div>
           <img
-            src="/public/header.png"
+            src="/header.png"
             alt="header image"
             className={`img-fluid ${styles.headerImage}`}
           />
