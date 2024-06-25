@@ -1,0 +1,15 @@
+/* ProductModal.module.css */
+.customModal {
+    max-width: 60%;
+  }
+  
+  .productImage {
+    max-height: 300px;
+    object-fit: cover;
+  }
+  
+  .iconButton {
+    width: 50px; /* Ajusta el tamaño del icono según sea necesario */
+    height: 50px; /* Ajusta el tamaño del icono según sea necesario */
+  }
+  
