@@ -11,6 +11,7 @@ import Contact from "./pages/Contact";
 import AboutUs from "./pages/AboutUs";
 import Register from "./pages/Register";
 import Products from "./pages/Products";
+import Dashboard from "./pages/Dashboard";
 
 function App() {
   const router = createBrowserRouter([
@@ -41,6 +42,10 @@ function App() {
     {
       path: "/contact",
       element: <Contact />,
+    },
+    {
+      path: "/dashboard",
+      element: <Dashboard />,
     },
   ]);
   return <RouterProvider router={router} />;
