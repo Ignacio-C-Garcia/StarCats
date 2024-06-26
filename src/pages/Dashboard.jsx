@@ -2,78 +2,103 @@ import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
 import "react-tabulator/lib/styles.css";
 import { ReactTabulator } from "react-tabulator";
+import { useEffect, useState } from "react";
 
 function Dashboard() {
+  const [data, setData] = useState([]);
+  const [updatedRows, setUpdatedRows] = useState([]);
   const columns = [
-    { title: "Nombre", field: "name", width: 300, editor: "input" },
+    {
+      title: "Id",
+      field: "id",
+      editor: false,
+      width: 50,
+    },
+    {
+      title: "Pic",
+      field: "pic",
+      width: 80,
+      editor: "input",
+    },
+    { title: "Nombre", field: "name", editor: "input", width: 250 },
     {
       title: "Category",
-      field: "category",
-      width: 150,
+      field: "categoryId",
+      width: 100,
       editor: "input",
     },
     {
       title: "Price",
       field: "price",
-      sorter: "number",
-      formatter: "input",
       width: 100,
-      editor: true,
+      editor: "input",
     },
     {
       title: "Stock",
       field: "stock",
-      editor: "input",
-    },
-    {
-      title: "Pic",
-      field: "pic",
-      formatter: "input",
       width: 100,
-      editor: true,
+      editor: "input",
     },
     {
       title: "Description",
       field: "description",
-      width: 300,
-      editor: true,
-    },
-    {
-      title: "Id",
-      field: "id",
-      editor: false,
-      width: 20,
+      editor: "input",
     },
   ];
-  var data = [
-    { id: 1, name: "Oli Bob", age: "12", col: "red", dob: "" },
-    { id: 2, name: "Mary May", age: "1", col: "blue", dob: "14/05/1982" },
-    {
-      id: 3,
-      name: "Christine Lobowski",
-      age: "42",
-      col: "green",
-      dob: "22/05/1982",
-    },
-    {
-      id: 4,
-      name: "Brendon Philips",
-      age: "125",
-      col: "orange",
-      dob: "01/08/1980",
-    },
-    {
-      id: 5,
-      name: "Margret Marmajuke",
-      age: "16",
-      col: "yellow",
-      dob: "31/01/1999",
-    },
-  ];
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          import.meta.env.VITE_API_URL + "/products"
+        );
+        if (!response.ok) {
+          throw new Error("API fetch error, !ok");
+        }
+        const data = await response.json();
+        setData(data.products);
+      } catch (error) {
+        throw new Error(error);
+      }
+    };
+
+    fetchData();
+  }, []);
+  const handleCellEdited = (cell) => {
+    const updatedRow = cell.getRow().getData();
+    setUpdatedRows((prev) => {
+      const updatedIndex = prev.findIndex((row) => row.id === updatedRow.id);
+
+      if (updatedIndex >= 0) {
+        const updatedRowsCopy = [...prev];
+        updatedRowsCopy[updatedIndex] = updatedRow;
+        return updatedRowsCopy;
+      } else {
+        return [...prev, updatedRow];
+      }
+    });
+  };
+  const handleButtonClick = async () => {
+    console.log("Updated Rows:", updatedRows);
+    for (const row of updatedRows) {
+      await fetch(`${import.meta.env.VITE_API_URL}/products/${row.id}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(row),
+      });
+    }
+    alert("actualizado...");
+  };
   return (
     <>
       <NavBar></NavBar>
-      <ReactTabulator data={data} columns={columns} />
+      <ReactTabulator
+        data={data}
+        columns={columns}
+        events={{ cellEdited: handleCellEdited }}
+      />
+      <button onClick={handleButtonClick}>Submit</button>
       <Footer></Footer>
     </>
   );
