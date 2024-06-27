@@ -6,7 +6,6 @@ function ProductModal({ show, setShow, product }) {
   const handleClose = () => setShow(false);
 
   const [isToGo, setIsToGo] = useState("aqui");
-  const [espressoShots, setEspressoShots] = useState(1);
   const [quantity, setQuantity] = useState(1);
   const [volume, setVolume] = useState(250);
 
@@ -21,9 +20,8 @@ function ProductModal({ show, setShow, product }) {
   const handleAddToCart = () => {
     console.log({
       product,
-      size: "mediano",
+      size,
       isToGo,
-      espressoShots,
       quantity,
       volume,
     });
@@ -59,42 +57,14 @@ function ProductModal({ show, setShow, product }) {
             </div>
             <div className="col-12 col-md-6 mt-4">
               <h3>{product.name}</h3>
-              <Form.Group className="mb-3">
-                <div className="d-flex align-items-center">
-                  <Button
-                    variant="outline-primary"
-                    className="me-2"
-                    onClick={decrementQuantity}
-                  >
-                    -
-                  </Button>
-                  <div className="d-flex align-items-center">
-                    <Form.Control
-                      type="text"
-                      value={quantity}
-                      onChange={(e) => {
-                        const value = e.target.value;
-                        setQuantity(value);
-                      }}
-                      style={{ width: "50px", textAlign: "center" }}
-                    />
-                    <Button
-                      variant="outline-primary"
-                      className="ms-2"
-                      onClick={incrementQuantity}
-                    >
-                      +
-                    </Button>
-                  </div>
-                </div>
-              </Form.Group>
+              <hr />
               <Form>
                 <Form.Group className="mb-3">
                   <div className="row">
-                    <div className="col-6 mb-3">
+                    <div className="col-6">
                       <p>Onsite</p>
                       <i
-                        className={`bi bi-cup-straw fs-2  ${
+                        className={`bi bi-cup-straw fs-2 ${
                           isToGo === "aqui" ? styles.selectedIcon : ""
                         } ${styles.hoverIcon}`}
                         onClick={() => handleIsToGoChange("aqui")}
@@ -113,37 +83,74 @@ function ProductModal({ show, setShow, product }) {
                 </Form.Group>
                 <Form.Group className="mb-3">
                   <p>Tamaño</p>
-                  <div className={styles.volumeSelector}>
-                    <div className={styles.volumeOption}>
+                  <hr />
+                  <div className={`d-flex ${styles.volumeSelector}`}>
+                    <div
+                      className={`d-flex flex-column align-items-center ${styles.volumeOption}`}
+                    >
                       <i
-                        className={`bi bi-cup-hot fs-5 ${
+                        className={`bi bi-cup-hot fs-6 ${
                           volume === 250 ? styles.selectedIcon : ""
                         } ${styles.hoverIcon}`}
                         onClick={() => handleVolumeChange(250)}
                       ></i>
-                      <span>250 ml</span>
+                      <span>250ml</span>
                     </div>
-                    <div className={styles.volumeOption}>
+                    <div
+                      className={`d-flex flex-column align-items-center ${styles.volumeOption}`}
+                    >
                       <i
-                        className={`bi bi-cup-hot fs-4  ${
+                        className={`bi bi-cup-hot fs-4 ${
                           volume === 350 ? styles.selectedIcon : ""
                         } ${styles.hoverIcon}`}
                         onClick={() => handleVolumeChange(350)}
                       ></i>
-                      <span>350 ml</span>
+                      <span>350ml</span>
                     </div>
-                    <div className={styles.volumeOption}>
+                    <div
+                      className={`d-flex flex-column align-items-center ${styles.volumeOption}`}
+                    >
                       <i
-                        className={`bi bi-cup-hot fs-3 ${
+                        className={`bi bi-cup-hot fs-2 ${
                           volume === 450 ? styles.selectedIcon : ""
                         } ${styles.hoverIcon}`}
                         onClick={() => handleVolumeChange(450)}
                       ></i>
-                      <span>450 ml</span>
+                      <span>450ml</span>
+                    </div>
+                  </div>
+                  <hr />
+                </Form.Group>
+
+                <Form.Group className="mb-3">
+                  <div className="d-flex align-items-center">
+                    <Button
+                      variant="outline-secondary"
+                      className="me-2"
+                      onClick={decrementQuantity}
+                    >
+                      -
+                    </Button>
+                    <div className="d-flex align-items-center">
+                      <Form.Control
+                        type="text"
+                        value={quantity}
+                        onChange={(e) => {
+                          const value = e.target.value;
+                          setQuantity(value);
+                        }}
+                        className={styles.noHover}
+                      />
+                      <Button
+                        variant="outline-secondary"
+                        className="ms-2"
+                        onClick={incrementQuantity}
+                      >
+                        +
+                      </Button>
                     </div>
                   </div>
                 </Form.Group>
-
                 <p>
                   <strong>Precio: </strong>${product.price}
                 </p>
@@ -154,10 +161,10 @@ function ProductModal({ show, setShow, product }) {
         </div>
       </BootstrapModal.Body>
       <BootstrapModal.Footer>
-        <Button variant="secondary" onClick={handleClose}>
+      <Button className={styles.btnClose} onClick={handleClose}>
           Cerrar
         </Button>
-        <Button variant="primary" onClick={handleAddToCart}>
+        <Button className={styles.btnAddToCart} onClick={handleAddToCart}>
           Añadir al carrito
         </Button>
       </BootstrapModal.Footer>

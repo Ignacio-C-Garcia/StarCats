@@ -2,10 +2,11 @@
 
 .cardCss {
   background-color: #ffffee;
-  border-radius: 40px;
+  border-radius: 42px;
   transition: 0.3s;
   font-family: "Hammersmith One";
   min-height: 400px;
+  border: #1a1a1a;
 }
 
 .cardCss:hover {
