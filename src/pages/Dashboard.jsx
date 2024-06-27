@@ -7,7 +7,20 @@ import { useEffect, useState } from "react";
 function Dashboard() {
   const [data, setData] = useState([]);
   const [updatedRows, setUpdatedRows] = useState([]);
+  const [addedRows, setAddedRows] = useState([]);
   const columns = [
+    {
+      title: "Delete",
+      field: "delete",
+      formatter: "buttonCross",
+      width: 75,
+      hozAlign: "center",
+      cellClick: (e, cell) => {
+        const data = cell.getRow().getData();
+        handleDeleteRow(data.id);
+        setAddedRows((prev) => [...prev, data]);
+      },
+    },
     {
       title: "Id",
       field: "id",
@@ -63,6 +76,11 @@ function Dashboard() {
 
     fetchData();
   }, []);
+  const handleDeleteRow = (id) => {
+    setData((prev) => {
+      return prev.filter((row) => row.id !== id);
+    });
+  };
   const handleCellEdited = (cell) => {
     const updatedRow = cell.getRow().getData();
     setUpdatedRows((prev) => {
@@ -77,8 +95,9 @@ function Dashboard() {
       }
     });
   };
-  const handleButtonClick = async () => {
+  const handleSubmitClick = async () => {
     console.log("Updated Rows:", updatedRows);
+    console.log("Added Rows:", updatedRows);
     for (const row of updatedRows) {
       await fetch(`${import.meta.env.VITE_API_URL}/products/${row.id}`, {
         method: "PATCH",
@@ -88,17 +107,23 @@ function Dashboard() {
         body: JSON.stringify(row),
       });
     }
-    alert("actualizado...");
+    console.log("actualizado");
+  };
+  const handeAddRowClick = () => {
+    setData((prev) => {
+      return [...prev, { id: prev.length + 1 }];
+    });
   };
   return (
     <>
       <NavBar></NavBar>
+      <button onClick={handleSubmitClick}>Submit</button>
+      <button onClick={handeAddRowClick}>AddRow</button>
       <ReactTabulator
         data={data}
         columns={columns}
         events={{ cellEdited: handleCellEdited }}
       />
-      <button onClick={handleButtonClick}>Submit</button>
       <Footer></Footer>
     </>
   );
