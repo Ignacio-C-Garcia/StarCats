@@ -9,7 +9,7 @@ function ProductCard({ product }) {
   const handleShow = () => setShow(true);
 
   return (
-    <div className={`card ${styles.cardCss}`}>
+    <div className={`card border border-black ${styles.cardCss}`}>
       <div className={styles["img-container"]} onClick={handleShow}>
         <img
           src={`${import.meta.env.VITE_IMG_PATH}${product.pic}`}
