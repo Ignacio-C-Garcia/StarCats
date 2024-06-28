@@ -1,11 +1,10 @@
 import { useState } from "react";
-import { Modal, Button } from "react-bootstrap";
+import Modal from "./ProductModal";
 import styles from "../styles/ProductCard.module.css";
 
 function ProductCard({ product }) {
   const [show, setShow] = useState(false);
 
-  const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
   return (
@@ -14,7 +13,7 @@ function ProductCard({ product }) {
         <img
           src={`${import.meta.env.VITE_IMG_PATH}${product.pic}`}
           alt={product.alt}
-          className={styles.name}
+          className={styles.img}
         />
       </div>
       <div>
@@ -29,29 +28,8 @@ function ProductCard({ product }) {
             Agregar al carrito
           </button>
         </div>
+        <Modal show={show} setShow={setShow} product={product} />
       </div>
-
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>{product.name}</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <img
-            src={`${import.meta.env.VITE_IMG_PATH}${product.pic}`}
-            alt={product.alt}
-            className={styles.img}
-          />
-          <p>{product.description}</p>
-          <p>
-            <strong>Precio: </strong>${product.price}
-          </p>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="dark" className="rounded-pill" onClick={handleClose}>
-            Cerrar
-          </Button>
-        </Modal.Footer>
-      </Modal>
     </div>
   );
 }
