@@ -3,11 +3,12 @@ import NavBar from "../components/NavBar";
 import "react-tabulator/lib/styles.css";
 import { ReactTabulator } from "react-tabulator";
 import { useEffect, useState } from "react";
+import AddProductModal from "../components/AddProductModal";
 
 function Dashboard() {
   const [data, setData] = useState([]);
   const [updatedRows, setUpdatedRows] = useState([]);
-  const [addedRows, setAddedRows] = useState([]);
+
   const columns = [
     {
       title: "Delete",
@@ -119,6 +120,8 @@ function Dashboard() {
       <NavBar></NavBar>
       <button onClick={handleSubmitClick}>Submit</button>
       <button onClick={handeAddRowClick}>AddRow</button>
+      <AddProductModal></AddProductModal>
+
       <ReactTabulator
         data={data}
         columns={columns}
