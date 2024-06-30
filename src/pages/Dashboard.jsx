@@ -2,13 +2,34 @@ import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
 import "react-tabulator/lib/styles.css";
 import { ReactTabulator } from "react-tabulator";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import AddProductModal from "../components/AddProductModal";
-
+import { useSelector } from "react-redux";
+import style from "../styles/Dashboard.module.css";
 function Dashboard() {
+  const tableRef = useRef(null);
+  const auth = useSelector((state) => state.auth);
   const [data, setData] = useState([]);
   const [updatedRows, setUpdatedRows] = useState([]);
+  const [deletedRows, setDeletedRows] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          import.meta.env.VITE_API_URL + "/products"
+        );
+        if (!response.ok) {
+          throw new Error("API fetch error, !ok");
+        }
+        const data = await response.json();
+        setData(data.products);
+      } catch (error) {
+        throw new Error(error);
+      }
+    };
 
+    fetchData();
+  }, []);
   const columns = [
     {
       title: "Delete",
@@ -18,8 +39,10 @@ function Dashboard() {
       hozAlign: "center",
       cellClick: (e, cell) => {
         const data = cell.getRow().getData();
-        handleDeleteRow(data.id);
-        setAddedRows((prev) => [...prev, data]);
+        setDeletedRows((prev) => [...prev, data]);
+        setData((prev) => {
+          return prev.filter((row) => row.id !== data.id);
+        });
       },
     },
     {
@@ -39,7 +62,7 @@ function Dashboard() {
       title: "Category",
       field: "categoryId",
       width: 100,
-      editor: "input",
+      editor: "number",
     },
     {
       title: "Price",
@@ -59,29 +82,7 @@ function Dashboard() {
       editor: "input",
     },
   ];
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(
-          import.meta.env.VITE_API_URL + "/products"
-        );
-        if (!response.ok) {
-          throw new Error("API fetch error, !ok");
-        }
-        const data = await response.json();
-        setData(data.products);
-      } catch (error) {
-        throw new Error(error);
-      }
-    };
 
-    fetchData();
-  }, []);
-  const handleDeleteRow = (id) => {
-    setData((prev) => {
-      return prev.filter((row) => row.id !== id);
-    });
-  };
   const handleCellEdited = (cell) => {
     const updatedRow = cell.getRow().getData();
     setUpdatedRows((prev) => {
@@ -98,35 +99,48 @@ function Dashboard() {
   };
   const handleSubmitClick = async () => {
     console.log("Updated Rows:", updatedRows);
-    console.log("Added Rows:", updatedRows);
+    console.log("Deleted Rows:", deletedRows);
     for (const row of updatedRows) {
       await fetch(`${import.meta.env.VITE_API_URL}/products/${row.id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
+          Authorization: auth.token,
         },
         body: JSON.stringify(row),
       });
     }
+    for (const row of deletedRows) {
+      await fetch(`${import.meta.env.VITE_API_URL}/products/${row.id}`, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: auth.token,
+        },
+      });
+    }
     console.log("actualizado");
   };
-  const handeAddRowClick = () => {
-    setData((prev) => {
-      return [...prev, { id: prev.length + 1 }];
-    });
+  const handleFilterChange = (e) => {
+    const value = e.target.value;
+    if (tableRef.current) {
+      tableRef.current.table.setFilter("name", "like", value);
+    }
   };
   return (
     <>
       <NavBar></NavBar>
       <button onClick={handleSubmitClick}>Submit</button>
-      <button onClick={handeAddRowClick}>AddRow</button>
-      <AddProductModal></AddProductModal>
+      <AddProductModal setData={setData}></AddProductModal>
 
-      <ReactTabulator
-        data={data}
-        columns={columns}
-        events={{ cellEdited: handleCellEdited }}
-      />
+      <div className={style["tabulatorTable"]}>
+        <ReactTabulator
+          data={data}
+          columns={columns}
+          events={{ cellEdited: handleCellEdited }}
+          OnRef={tableRef}
+        />
+      </div>
       <Footer></Footer>
     </>
   );

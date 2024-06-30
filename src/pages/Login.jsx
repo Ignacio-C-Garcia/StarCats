@@ -1,20 +1,36 @@
 import styles from "../styles/Login.module.css";
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
 import Footer from "../components/Footer";
-
+import { useSelector, useDispatch } from "react-redux";
+import { saveToken } from "../redux/authReducer";
+import { Navigate } from "react-router-dom";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
-  const handleSubmit = (event) => {
+  const [error, setError] = useState(false);
+  const dispatch = useDispatch();
+  const auth = useSelector((state) => state.auth);
+  const handleSubmit = async (event) => {
     event.preventDefault();
     console.log("Email:", email);
     console.log("Password:", password);
+    const response = await fetch(`${import.meta.env.VITE_API_URL}/tokens`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email, password }),
+    });
+    if (!response.ok) setError(true);
+    else {
+      const data = await response.json();
+      dispatch(saveToken({ token: `Bearer ${data.token}` }));
+    }
   };
 
-  return (
+  return auth.token === "" ? (
     <>
       <Container className="vh-100 d-flex justify-content-center">
         <Row>
@@ -86,6 +102,8 @@ const Login = () => {
       </Container>
       <Footer />
     </>
+  ) : (
+    <Navigate to="/dashboard"></Navigate>
   );
 };
 

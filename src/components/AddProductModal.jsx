@@ -1,12 +1,16 @@
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
-export default function AddProductModal() {
+export default function AddProductModal({ setData }) {
+  const auth = useSelector((state) => state.auth);
+  const [error, setError] = useState(false);
   const [formValues, setFormValues] = useState({
     pic: "",
     name: "",
-    category: "",
+    categoryId: undefined,
     price: 0,
     stock: 0,
+    featured: false,
     description: "",
   });
   const handleInputChange = (e) => {
@@ -16,16 +20,24 @@ export default function AddProductModal() {
       [name]: value,
     });
   };
-  const handleOnSubmit = (e) => {
+  const handleOnSubmit = async (e) => {
     e.preventDefault();
     console.log("estos son los inputs", formValues);
-    fetch(import.meta.env.VITE_API_URL + "/products", {
+    const response = await fetch(import.meta.env.VITE_API_URL + "/products", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        Authorization: auth.token,
       },
       body: JSON.stringify(formValues),
     });
+    if (!response.ok) {
+      setError(true);
+    }
+    if (!response.ok) return setError(true);
+    const data = await response.json();
+    console.log("producto creado", data);
+    setData((prev) => [...prev, data.product]);
   };
   return (
     <>
@@ -95,8 +107,8 @@ export default function AddProductModal() {
                               type="text"
                               className="form-control"
                               id="category"
-                              name="category"
-                              value={formValues.category}
+                              name="categoryId"
+                              value={formValues.categoryId}
                               onChange={handleInputChange}
                               required
                             />
