@@ -9,7 +9,6 @@
   background-color: #ffffee;
   text-align: center;
   padding: 4%;
-  
 }
 
 .title {
@@ -29,11 +28,9 @@
   border-radius: 10px;
   transition: transform 0.3s;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 1);
-  min-height: 550px;
-  min-width: 240x;
 }
 
-.cardContent{
+.cardContent {
   padding: 20px;
 }
 
@@ -42,7 +39,7 @@
 }
 
 .cardImage {
-  height: 350px;
+  height: 250px;
   object-fit: cover;
   border-radius: 10px 10px 0 0;
   width: 100%;

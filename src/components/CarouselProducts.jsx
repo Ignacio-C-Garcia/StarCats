@@ -12,7 +12,7 @@ function CarouselProducts({ products }) {
     slidesToShow: 4,
     slidesToScroll: 1,
     arrows: true,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 3000,
     responsive: [
       {
@@ -50,14 +50,16 @@ function CarouselProducts({ products }) {
 
   return (
     <div className={`p-4 ${styles.carousel}`}>
-      <h2 className="text-center"> Productos</h2>
-      <Slider {...settings} className="m-3">
-        {products.map((product, index) => (
-          <div key={index} className="p-3">
-            <ProductCard product={product} />
-          </div>
-        ))}
-      </Slider>
+      <div className="container">
+        <h2 className="text-center text-white"> Productos</h2>
+        <Slider {...settings} className="m-3">
+          {products.map((product, index) => (
+            <div key={index} className="p-3">
+              <ProductCard product={product} />
+            </div>
+          ))}
+        </Slider>
+      </div>
     </div>
   );
 }

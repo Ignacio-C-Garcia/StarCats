@@ -4,6 +4,7 @@ import CarouselProducts from "../components/CarouselProducts";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar/";
 import { useEffect, useState } from "react";
+
 function Home() {
   const [products, setProducts] = useState([]);
   const [cats, setCats] = useState([]);
@@ -43,8 +44,8 @@ function Home() {
   }, []);
   return (
     <>
+      <NavBar />
       <header>
-        <NavBar />
         <div>
           <div>
             <h1>STARCATS</h1>
@@ -54,7 +55,7 @@ function Home() {
             </p>
           </div>
           <img
-            src="/public/header.png"
+            src="/header.png"
             alt="header image"
             className={`img-fluid ${styles.headerImage}`}
           />
@@ -77,31 +78,27 @@ function Home() {
         </div>
       </header>
       <section className={styles.containerCategory}>
-        <div className="container-fluid ">
+        <div className="container container-fluid ">
           <div className="row">
-            <h2>Categorias</h2>
-            <div
-              className={`"col-12 col-sm-12 col-lg-3 col-md-6 d-flex align-items-center text-wrap`}
-            >
-              <p className="fs-3">
-                CADA PRODUCTO, UN COMPROMISO CON LA EXCELENCIA
-              </p>
-            </div>
+            <h2>Categorías</h2>
+            <p className="fs-3 text-center">
+              CADA PRODUCTO, UN COMPROMISO CON LA EXCELENCIA
+            </p>
 
-            <div className="col-12 col-sm-12 col-lg-3 col-md-6 d-flex ">
+            <div className="col-12 col-sm-12 col-lg-4 col-md-4 d-flex ">
               <div className={styles.card}>
                 <img
                   src="img/categorias/cupcoffee.png"
                   alt="Cup of coffee"
                   className="img-fluid"
-                />
+                /> 
                 <a className="d-lg-none fs-3 mt-4" href="">
                   CAFÉ
                 </a>
               </div>
             </div>
 
-            <div className="col-12 col-sm-12 col-lg-3 col-md-6 d-flex ">
+            <div className="col-12 col-sm-12 col-lg-4 col-md-4 d-flex ">
               <div className={styles.card}>
                 <img
                   src="img/categorias/medialuna.png"
@@ -114,7 +111,7 @@ function Home() {
               </div>
             </div>
 
-            <div className="col-12 col-sm-12 col-lg-3 col-md-6 d-flex ">
+            <div className="col-12 col-sm-12 col-lg-4 col-md-4 d-flex ">
               <div className={styles.card}>
                 <img
                   src="img/categorias/beans.png"
@@ -129,19 +126,18 @@ function Home() {
           </div>
 
           <div className="row mt-3 justify-content-center d-none d-lg-flex ">
-            <div className={`col-md-6 d-flex justify-content-center `}>
-              <div className=" d-flex justify-content-center col-md-6 "></div>
-              <div className={`col-md-6 d-flex justify-content-center `}>
+            <div className={`col-md-7 d-flex justify-content-center `}>
+              <div className={`col-md-7 d-flex justify-content-center `}>
                 <a className="fs-2 " href="#">
                   CAFÉ
                 </a>
               </div>
-              <div className={`col-md-6 d-flex justify-content-center `}>
+              <div className={`col-md-7 d-flex justify-content-center `}>
                 <a className="fs-2 " href="#">
                   PASTELERÍA
                 </a>
               </div>
-              <div className={`col-md-6 d-flex justify-content-center `}>
+              <div className={`col-md-7 d-flex justify-content-center `}>
                 <a className="fs-2 " href="#">
                   GRANOS
                 </a>

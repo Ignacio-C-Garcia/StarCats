@@ -4,7 +4,7 @@ import styles from "../styles/NavBar.module.css";
 function NavBar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-black text-white ">
-      <div className="container-fluid align">
+      <div className="container container-fluid align">
         <a className="navbar-brand" href="/">
           <span>Starcat</span>
         </a>

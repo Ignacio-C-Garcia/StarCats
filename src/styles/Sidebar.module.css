@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Hammersmith&display=swap");
+
+.sidebar {
+  /* background-color: #f2f0eb; */
+  margin-left: 0;
+  /* font-family: ; */
+}
+
+.category {
+  font-family: "Hammersmith One";
+}
+.category h3 {
+  font-size: 24px;
+  margin: 5px 0;
+  cursor: pointer;
+}
+.subcategory {
+  margin-left: 15px;
+}
+.subcategory a {
+  display: block;
+  color: #333;
+  text-decoration: none;
+  margin: 3px 0;
+  font-size: 20px;
+}
+.subcategory a:hover {
+  text-decoration: underline;
+}

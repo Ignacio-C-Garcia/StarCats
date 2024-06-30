@@ -13,9 +13,6 @@ import Footer from "../components/Footer";
 import Navbar from "../components/NavBar";
 
 import React, { useEffect, useState } from "react";
-// import { CartContext } from "../context/CartContext";
-
-// const { cart } = useContext(CartContext);
 
 function Cart() {
   const [quantities, setQuantities] = useState({
@@ -25,7 +22,7 @@ function Cart() {
 
   const handleQuantityChange = (product, change) => {
     setQuantities((prevQuantities) => {
-      const newQuantity = Math.max(0, prevQuantities[product] + change); // Ensure quantity doesn't go below 0
+      const newQuantity = Math.max(0, prevQuantities[product] + change);
       return {
         ...prevQuantities,
         [product]: newQuantity,

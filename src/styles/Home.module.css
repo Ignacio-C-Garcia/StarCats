@@ -75,7 +75,7 @@ h1 {
 /* cards */
 .card {
   border: 5.4px dashed #000;
-  border-radius: 11.475px;
+  border-radius: 10px;
   background-color: rgba(255, 255, 255, 0);
   width: 100%;
   display: flex;
@@ -100,8 +100,8 @@ h1 {
 
 .containerCategory h2 {
   font-family: "Hammersmith One";
-  font-size: 3.06vw;
   text-align: center;
+  color: #000;
 }
 
 .containerCategory p {

@@ -1,8 +1,7 @@
 body {
   background-color: #d89d49;
   /* background-color: #f5f5f5; */
-  font-family: "Franklin Gothic Medium", "Libre Franklin Semibold",
-    "Arial Narrow", Arial, sans-serif;
+
   font-size: large;
 }
 
@@ -17,8 +16,6 @@ img {
 
 input {
   background-color: #fbebc2;
-  font-family: "Franklin Gothic Regular", "Libre Franklin Regular",
-    "Arial Narrow", Arial, sans-serif;
 }
 
 button {
