@@ -6,6 +6,8 @@ import { useEffect, useState, useRef } from "react";
 import AddProductModal from "../components/AddProductModal";
 import { useSelector } from "react-redux";
 import style from "../styles/Dashboard.module.css";
+import "react-tabulator/lib/styles.css";
+import "react-tabulator/css/bootstrap/tabulator_bootstrap.min.css"; 
 function Dashboard() {
   const tableRef = useRef(null);
   const auth = useSelector((state) => state.auth);
