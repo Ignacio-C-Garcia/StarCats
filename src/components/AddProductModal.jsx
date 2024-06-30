@@ -47,7 +47,7 @@ export default function AddProductModal({ setData }) {
         data-bs-toggle="modal"
         data-bs-target="#exampleModal"
       >
-        Launch demo modal
+        Agregar nuevo Producto
       </button>
 
       <div

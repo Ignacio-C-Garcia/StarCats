@@ -7,7 +7,7 @@ import AddProductModal from "../components/AddProductModal";
 import { useSelector } from "react-redux";
 import style from "../styles/Dashboard.module.css";
 import "react-tabulator/lib/styles.css";
-import "react-tabulator/css/bootstrap/tabulator_bootstrap.min.css"; 
+import "react-tabulator/css/bootstrap/tabulator_bootstrap.min.css";
 function Dashboard() {
   const tableRef = useRef(null);
   const auth = useSelector((state) => state.auth);
@@ -37,7 +37,6 @@ function Dashboard() {
       title: "Delete",
       field: "delete",
       formatter: "buttonCross",
-      width: 75,
       hozAlign: "center",
       cellClick: (e, cell) => {
         const data = cell.getRow().getData();
@@ -51,31 +50,26 @@ function Dashboard() {
       title: "Id",
       field: "id",
       editor: false,
-      width: 50,
     },
     {
       title: "Pic",
       field: "pic",
-      width: 80,
       editor: "input",
     },
-    { title: "Nombre", field: "name", editor: "input", width: 250 },
+    { title: "Nombre", field: "name", editor: "input" },
     {
       title: "Category",
       field: "categoryId",
-      width: 100,
       editor: "number",
     },
     {
       title: "Price",
       field: "price",
-      width: 100,
       editor: "input",
     },
     {
       title: "Stock",
       field: "stock",
-      width: 100,
       editor: "input",
     },
     {
@@ -123,16 +117,13 @@ function Dashboard() {
     }
     console.log("actualizado");
   };
-  const handleFilterChange = (e) => {
-    const value = e.target.value;
-    if (tableRef.current) {
-      tableRef.current.table.setFilter("name", "like", value);
-    }
-  };
+
   return (
     <>
       <NavBar></NavBar>
-      <button onClick={handleSubmitClick}>Submit</button>
+      <button className="btn btn-primary m-4" onClick={handleSubmitClick}>
+        Guardar cambios
+      </button>
       <AddProductModal setData={setData}></AddProductModal>
 
       <div className={style["tabulatorTable"]}>
@@ -140,7 +131,9 @@ function Dashboard() {
           data={data}
           columns={columns}
           events={{ cellEdited: handleCellEdited }}
-          OnRef={tableRef}
+          options={{
+            layout: "fitDataStretch",
+          }}
         />
       </div>
       <Footer></Footer>
