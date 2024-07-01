@@ -11,8 +11,9 @@ import Contact from "./pages/Contact";
 import AboutUs from "./pages/AboutUs";
 import Register from "./pages/Register";
 import Products from "./pages/Products";
-import Dashboard from "./pages/Dashboard";
-
+import Dashboard from "./pages/admin/Dashboard";
+import AdminProducts from "./pages/admin/AdminProducts";
+import AdminOrders from "./pages/admin/AdminOrders";
 function App() {
   const router = createBrowserRouter([
     {
@@ -44,8 +45,16 @@ function App() {
       element: <Contact />,
     },
     {
-      path: "/dashboard",
+      path: "/admin/dashboard",
       element: <Dashboard />,
+    },
+    {
+      path: "/admin/productos",
+      element: <AdminProducts />,
+    },
+    {
+      path: "/admin/ordenes",
+      element: <AdminOrders />,
     },
   ]);
   return <RouterProvider router={router} />;

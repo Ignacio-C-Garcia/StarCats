@@ -103,7 +103,7 @@ const Login = () => {
       <Footer />
     </>
   ) : (
-    <Navigate to="/dashboard"></Navigate>
+    <Navigate to="/admin/dashboard"></Navigate>
   );
 };
 

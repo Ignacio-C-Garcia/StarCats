@@ -1,15 +1,13 @@
-import Footer from "../components/Footer";
-import NavBar from "../components/NavBar";
-import "react-tabulator/lib/styles.css";
+import Footer from "../../components/Footer";
+import NavBar from "../../components/NavBar";
 import { ReactTabulator } from "react-tabulator";
-import { useEffect, useState, useRef } from "react";
-import AddProductModal from "../components/AddProductModal";
+import { useEffect, useState } from "react";
+import OrderDetails from "../../components/OrderDetails";
 import { useSelector } from "react-redux";
-import style from "../styles/Dashboard.module.css";
 import "react-tabulator/lib/styles.css";
 import "react-tabulator/css/bootstrap/tabulator_bootstrap.min.css";
+import SideBar from "../../components/adminSideBar";
 function Dashboard() {
-  const tableRef = useRef(null);
   const auth = useSelector((state) => state.auth);
   const [data, setData] = useState([]);
   const [updatedRows, setUpdatedRows] = useState([]);
@@ -17,14 +15,19 @@ function Dashboard() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(
-          import.meta.env.VITE_API_URL + "/products"
-        );
+        const response = await fetch(import.meta.env.VITE_API_URL + "/orders", {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: auth.token,
+          },
+        });
         if (!response.ok) {
           throw new Error("API fetch error, !ok");
         }
-        const data = await response.json();
-        setData(data.products);
+        const { orders } = await response.json();
+        console.log(orders);
+        setData(orders);
       } catch (error) {
         throw new Error(error);
       }
@@ -47,35 +50,43 @@ function Dashboard() {
       },
     },
     {
-      title: "Id",
-      field: "id",
-      editor: false,
-    },
-    {
-      title: "Pic",
-      field: "pic",
-      editor: "input",
-    },
-    { title: "Nombre", field: "name", editor: "input" },
-    {
-      title: "Category",
-      field: "categoryId",
-      editor: "number",
-    },
-    {
-      title: "Price",
-      field: "price",
+      title: "Dirección",
+      field: "address",
       editor: "input",
     },
     {
-      title: "Stock",
-      field: "stock",
+      title: "Usuario",
+      field: "userId",
+    },
+    {
+      title: "Precio Total",
+      field: "products",
+      formatter: (cell) => {
+        const { products } = cell.getRow().getData();
+        console.log(products);
+        let totalPrice = 0;
+        for (const product of products) {
+          totalPrice += product.price * product.qty;
+        }
+        return totalPrice;
+      },
+    },
+    {
+      title: "Estatus",
+      field: "status",
       editor: "input",
     },
     {
-      title: "Description",
-      field: "description",
-      editor: "input",
+      formatter: () => `<button
+        type="button"
+        className="btn btn-primary"
+        data-bs-toggle="modal"
+        data-bs-target="#exampleModal"
+      >
+        Ver detalles
+      </button>`,
+      hozAlign: "center",
+      headerSort: false,
     },
   ];
 
@@ -120,23 +131,31 @@ function Dashboard() {
 
   return (
     <>
-      <NavBar></NavBar>
-      <button className="btn btn-primary m-4" onClick={handleSubmitClick}>
-        Guardar cambios
-      </button>
-      <AddProductModal setData={setData}></AddProductModal>
-
-      <div className={style["tabulatorTable"]}>
-        <ReactTabulator
-          data={data}
-          columns={columns}
-          events={{ cellEdited: handleCellEdited }}
-          options={{
-            layout: "fitDataStretch",
-          }}
-        />
+      <NavBar />
+      <OrderDetails></OrderDetails>
+      <div className="row">
+        <div className="col-2">
+          <SideBar />
+        </div>
+        <div className="col-10">
+          <div className="container">
+            <button className="btn btn-primary m-4" onClick={handleSubmitClick}>
+              Guardar cambios
+            </button>
+            <ReactTabulator
+              data={data}
+              columns={columns}
+              events={{ cellEdited: handleCellEdited }}
+              options={{
+                layout: "fitColumns",
+                responsiveLayout: "collapse",
+              }}
+            />
+          </div>
+        </div>
       </div>
-      <Footer></Footer>
+
+      <Footer />
     </>
   );
 }
