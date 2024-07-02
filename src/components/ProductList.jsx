@@ -27,12 +27,9 @@ const ProductList = () => {
     <Container>
       <Row>
         {products.map((product) => (
-          <div
-            key={product.id}
-            className="container col col-xs-6 col-md-6 col-lg-4 mb-4"
-          >
+          <Col key={product.id} xs={12} md={6} lg={4} mb={4} className="mb-4">
             <ProductCard product={product} />
-          </div>
+          </Col>
         ))}
       </Row>
     </Container>
