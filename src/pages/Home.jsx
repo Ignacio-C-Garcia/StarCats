@@ -89,7 +89,7 @@ function Home() {
             <div className=" col-sm-12 col-lg-4 col-md-4 d-flex justify-content-center">
               <div className={styles.card}>
                 <img
-                  src="img/categorias/cupcoffee.png"
+                  src="img/categories/cupcoffee.png"
                   alt="Cup of coffee"
                   className="img-fluid"
                 />
@@ -102,7 +102,7 @@ function Home() {
             <div className=" col-sm-12 col-lg-4 col-md-4 d-flex justify-content-center  ">
               <div className={styles.card}>
                 <img
-                  src="img/categorias/medialuna.png"
+                  src="img/categories/medialuna.png"
                   alt="Medialuna"
                   className=""
                 />
@@ -115,7 +115,7 @@ function Home() {
             <div className=" col-sm-12 col-lg-4 col-md-4 d-flex  justify-content-center">
               <div className={styles.card}>
                 <img
-                  src="img/categorias/beans.png"
+                  src="img/categories/beans.png"
                   alt="Coffee beans"
                   className="img-fluid"
                 />
