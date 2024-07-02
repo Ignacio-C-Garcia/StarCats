@@ -6,7 +6,7 @@ function Footer() {
       <div className="container">
         <div className="row">
           <div className="col-lg-3 col-md-6 col-sm-6 mb-4 ">
-            <span className="h4 d-flex">StarCats</span>
+            <span className="h4 d-flex">StarCats  &#174; </span>
             <a href="/">
               <img
                 src="/logostarcats-light.svg"

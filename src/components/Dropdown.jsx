@@ -4,7 +4,7 @@ import styles from "../styles/NavBar.module.css";
 
 export default function DropDown({ info: { name } }) {
   const [selected, setSelected] = useState(null);
-  const catFromState = ["Café de especialidad", "Postres", "Confitería"];
+  const catFromState = ["Café en granos", "Bebidas", "Comidas"];
 
   useEffect(() => setSelected(null), []);
 
@@ -20,34 +20,32 @@ export default function DropDown({ info: { name } }) {
         {name}
       </a>
       <div
-        className={`dropdown-menu p-2 ${styles.dropdownMenu}`}
+        className={`dropdown-menu p-2 ${styles.dropdownMenu} text-center`}
         style={{ width: selected != null ? 600 : 300 }}
       >
         <div className="row">
           <div className="col text-center">
-            <h6 className={styles.dropdownHeader}>Categorias</h6>
+            <h6 className={styles.dropdownHeader}>Categorías</h6>
             <div className="list-group">
-              {catFromState.map((category, index) => {
-                return (
-                  <a
-                    key={index}
-                    className={`border-0 rounded-3 list-group-item list-group-item-action ${
-                      selected === index ? styles["dropdown-item-selected"] : styles["dropdownItem"]
-                    }`}
-                    href="#"
-                    onMouseEnter={() => setSelected(index)}
-                  >
-                    {category}
-                  </a>
-                );
-              })}
+              {catFromState.map((category, index) => (
+                <a
+                  key={index}
+                  className={`border-0 rounded-3 list-group-item list-group-item-action ${
+                    selected === index ? styles.dropdownItemSelected : styles.dropdownItem
+                  }`}
+                  href="#"
+                  onMouseEnter={() => setSelected(index)}
+                >
+                  {category}
+                </a>
+              ))}
             </div>
           </div>
           {selected != null && (
             <div className="col-6 text-center">
               <h6 className={styles.dropdownHeader}>Productos</h6>
               {selected === 0 && (
-                <div id="ListaCafe" className="list-group list-group-flush ">
+                <div id="ListaCafe" className="list-group list-group-flush">
                   <a className={`list-group-item list-group-item-action border-0 rounded-3 ${styles.dropdownItem}`} href="#">
                     México ATM
                   </a>
@@ -55,7 +53,7 @@ export default function DropDown({ info: { name } }) {
                     Brasil Crucera
                   </a>
                   <a className={`list-group-item list-group-item-action border-0 rounded-3 ${styles.dropdownItem}`} href="#">
-                    El salvador VV
+                    El Salvador VV
                   </a>
                 </div>
               )}
@@ -68,25 +66,25 @@ export default function DropDown({ info: { name } }) {
                     Postre de coco
                   </a>
                   <a className={`list-group-item list-group-item-action border-0 rounded-3 ${styles.dropdownItem}`} href="#">
-                    Cheesecake de Frutilla
+                    Cheesecake de frutilla
                   </a>
                 </div>
               )}
               {selected === 2 && (
-                <div id="ListaConfiteria" className="list-group">
+                <div id="ListaConfiteria" className="list-group list-group-flush">
                   <a className={`list-group-item list-group-item-action border-0 rounded-3 ${styles.dropdownItem}`} href="#">
-                    Croissant con jamon y queso
+                    Croissant con jamón y queso
                   </a>
                   <a className={`list-group-item list-group-item-action border-0 rounded-3 ${styles.dropdownItem}`} href="#">
-                    Sándwiches Olímpicos de Copetín
+                    Sándwiches olímpicos de copetín
                   </a>
                   <a className={`list-group-item list-group-item-action border-0 rounded-3 ${styles.dropdownItem}`} href="#">
-                    Sándwiches de Atún
+                    Sándwiches de atún
                   </a>
                 </div>
               )}
               <span>
-                <a href="#">see more -</a>
+                <a href="/products">Ver más -</a>
               </span>
             </div>
           )}

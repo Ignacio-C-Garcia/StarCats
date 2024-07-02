@@ -7,8 +7,6 @@
 
 .carouselContainer {
   background-color: #ffffee;
-  text-align: center;
-  padding: 4%;
 }
 
 .title {
@@ -28,10 +26,7 @@
   border-radius: 10px;
   transition: transform 0.3s;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 1);
-}
-
-.cardContent {
-  padding: 20px;
+  height: 550px;
 }
 
 .card:hover {
@@ -40,7 +35,7 @@
 
 .cardImage {
   height: 250px;
-  object-fit: cover;
+  object-fit:cover;
   border-radius: 10px 10px 0 0;
   width: 100%;
 }
@@ -48,13 +43,14 @@
 .cardTitle {
   color: #cf933f;
   font-family: "Chewy", normal;
-  font-size: 4vh;
-  margin-top: 2rem;
+  font-size: 60px;
+  margin-top: 1rem;
 }
 
 .cardText {
   color: black;
   font-family: "Hammersmith One", sans-serif;
-  font-size: 1.75vh;
+  font-size: 25px;
   margin-top: 0.5rem;
+  text-wrap: wrap;
 }

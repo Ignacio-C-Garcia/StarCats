@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Modal as BootstrapModal, Button, Form } from "react-bootstrap";
 import styles from "../styles/ProductModal.module.css";
 
@@ -8,6 +8,7 @@ function ProductModal({ show, setShow, product }) {
   const [isToGo, setIsToGo] = useState("aqui");
   const [quantity, setQuantity] = useState(1);
   const [volume, setVolume] = useState(250);
+  const [totalPrice, setTotalPrice] = useState(product.price);
 
   const handleVolumeChange = (vol) => {
     setVolume(vol);
@@ -20,10 +21,10 @@ function ProductModal({ show, setShow, product }) {
   const handleAddToCart = () => {
     console.log({
       product,
-      size,
       isToGo,
       quantity,
       volume,
+      totalPrice,
     });
     setShow(false);
   };
@@ -38,16 +39,19 @@ function ProductModal({ show, setShow, product }) {
     }
   };
 
+  useEffect(() => {
+    const basePrice = product.price;
+    const volumeMultiplier = volume / 250;
+    const newPrice = basePrice * volumeMultiplier * quantity;
+    setTotalPrice(newPrice.toFixed(2));
+  }, [volume, quantity]);
+
   return (
-    <BootstrapModal
-      show={show}
-      onHide={handleClose}
-      dialogClassName={styles.customModal}
-    >
-      <BootstrapModal.Body>
+    <BootstrapModal show={show} onHide={handleClose}>
+      <BootstrapModal.Body className={styles.body}>
         <div className="container-fluid">
           <div className="row">
-            <div className="col-12 col-md-6 mb-4">
+            <div className="col-lg-6 col-md-6 col-xs col-sm-12">
               <img
                 src={`${import.meta.env.VITE_IMG_PATH}${product.pic}`}
                 alt={product.alt}
@@ -55,14 +59,15 @@ function ProductModal({ show, setShow, product }) {
               />
               <p>{product.description}</p>
             </div>
-            <div className="col-12 col-md-6 mt-4">
+
+            <div className="col-lg-6 col-md-6 col-xs col-sm-12">
               <h3>{product.name}</h3>
               <hr />
               <Form>
                 <Form.Group className="mb-3">
-                  <div className="row">
+                  <div className="row text-center">
                     <div className="col-6">
-                      <p>Onsite</p>
+                      <p>Aquí</p>
                       <i
                         className={`bi bi-cup-straw fs-2 ${
                           isToGo === "aqui" ? styles.selectedIcon : ""
@@ -71,7 +76,7 @@ function ProductModal({ show, setShow, product }) {
                       ></i>
                     </div>
                     <div className="col-6">
-                      <p>Takeaway</p>
+                      <p>llevar</p>
                       <i
                         className={`bi bi-bag fs-2 ${
                           isToGo === "llevar" ? styles.selectedIcon : ""
@@ -81,9 +86,9 @@ function ProductModal({ show, setShow, product }) {
                     </div>
                   </div>
                 </Form.Group>
-                <Form.Group className="mb-3">
-                  <p>Tamaño</p>
+                <Form.Group className="mb-3 text-center">
                   <hr />
+                  <p>Tamaño</p>
                   <div className={`d-flex ${styles.volumeSelector}`}>
                     <div
                       className={`d-flex flex-column align-items-center ${styles.volumeOption}`}
@@ -122,28 +127,31 @@ function ProductModal({ show, setShow, product }) {
                   <hr />
                 </Form.Group>
 
-                <Form.Group className="mb-3">
-                  <div className="d-flex align-items-center">
+                <Form.Group className="mb-2 d-flex justify-content-between">
+                  <p>
+                    <strong>${totalPrice}</strong>
+                  </p>
+                  <div className="d-flex border rounded-pill border-black">
                     <Button
-                      variant="outline-secondary"
-                      className="me-2"
+                      variant="rounded-end-circle"
+                      className="btn rounded-pill border-0"
                       onClick={decrementQuantity}
                     >
                       -
                     </Button>
-                    <div className="d-flex align-items-center">
+                    <div className="d-flex">
                       <Form.Control
                         type="text"
                         value={quantity}
                         onChange={(e) => {
-                          const value = e.target.value;
-                          setQuantity(value);
+                          const value = parseInt(e.target.value, 10);
+                          setQuantity(value || 1); 1
                         }}
-                        className={styles.noHover}
+                        className={`${styles.noHover}`}
                       />
                       <Button
-                        variant="outline-secondary"
-                        className="ms-2"
+                        variant="rounded-end-circle"
+                        className="btn rounded-pill border-0"
                         onClick={incrementQuantity}
                       >
                         +
@@ -151,23 +159,19 @@ function ProductModal({ show, setShow, product }) {
                     </div>
                   </div>
                 </Form.Group>
-                <p>
-                  <strong>Precio: </strong>${product.price}
-                </p>
               </Form>
-              <div className="text-end"></div>
             </div>
           </div>
         </div>
+        <BootstrapModal.Footer className="d-flex justify-content-between">
+          <Button className={styles.btnClose} onClick={handleClose}>
+            Cerrar
+          </Button>
+          <Button className={styles.btnAddToCart} onClick={handleAddToCart}>
+            Añadir al carrito
+          </Button>
+        </BootstrapModal.Footer>
       </BootstrapModal.Body>
-      <BootstrapModal.Footer>
-      <Button className={styles.btnClose} onClick={handleClose}>
-          Cerrar
-        </Button>
-        <Button className={styles.btnAddToCart} onClick={handleAddToCart}>
-          Añadir al carrito
-        </Button>
-      </BootstrapModal.Footer>
     </BootstrapModal>
   );
 }

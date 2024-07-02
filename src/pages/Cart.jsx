@@ -113,7 +113,7 @@ function Cart() {
                 <p>$4.99</p>
               </div>
               <div className="col">
-                <InputGroup className="border rounded-pill d-flex flex-row border p-1">
+                <InputGroup className="border rounded-pill d-flex  ">
                   <Button
                     variant="rounded-end-circle"
                     onClick={() => handleQuantityChange("Cappuccino", -1)}
@@ -170,7 +170,6 @@ function Cart() {
                     />
                   </Form.Group>
                   <Button
-                    // className={`${styles.discountBtn} btn rounded-pill mt-3 border-0`}
                     className={`btn rounded-pill mt-3 border-0`}
                     variant="dark"
                   >

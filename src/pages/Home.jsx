@@ -42,6 +42,7 @@ function Home() {
 
     fetchData();
   }, []);
+
   return (
     <>
       <NavBar />
@@ -57,7 +58,7 @@ function Home() {
           <img
             src="/header.png"
             alt="header image"
-            className={`img-fluid ${styles.headerImage}`}
+            className={`img-fluid  ${styles.headerImage}`}
           />
           <div className={styles.btnHeader}>
             <a
@@ -85,25 +86,25 @@ function Home() {
               CADA PRODUCTO, UN COMPROMISO CON LA EXCELENCIA
             </p>
 
-            <div className="col-12 col-sm-12 col-lg-4 col-md-4 d-flex ">
+            <div className=" col-sm-12 col-lg-4 col-md-4 d-flex justify-content-center">
               <div className={styles.card}>
                 <img
                   src="img/categorias/cupcoffee.png"
                   alt="Cup of coffee"
                   className="img-fluid"
-                /> 
+                />
                 <a className="d-lg-none fs-3 mt-4" href="">
                   CAFÉ
                 </a>
               </div>
             </div>
 
-            <div className="col-12 col-sm-12 col-lg-4 col-md-4 d-flex ">
+            <div className=" col-sm-12 col-lg-4 col-md-4 d-flex justify-content-center  ">
               <div className={styles.card}>
                 <img
                   src="img/categorias/medialuna.png"
                   alt="Medialuna"
-                  className="img-fluid"
+                  className=""
                 />
                 <a className="d-lg-none fs-3 mt-4" href="">
                   PASTELERÍA
@@ -111,7 +112,7 @@ function Home() {
               </div>
             </div>
 
-            <div className="col-12 col-sm-12 col-lg-4 col-md-4 d-flex ">
+            <div className=" col-sm-12 col-lg-4 col-md-4 d-flex  justify-content-center">
               <div className={styles.card}>
                 <img
                   src="img/categorias/beans.png"

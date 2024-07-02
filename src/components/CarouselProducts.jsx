@@ -34,14 +34,14 @@ function CarouselProducts({ products }) {
       {
         breakpoint: 768,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 1,
           slidesToScroll: 1,
         },
       },
       {
         breakpoint: 576,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 12,
           slidesToScroll: 1,
         },
       },
@@ -51,7 +51,7 @@ function CarouselProducts({ products }) {
   return (
     <div className={`p-4 ${styles.carousel}`}>
       <div className="container">
-        <h2 className="text-center text-white"> Productos</h2>
+        <h2 className="text-center text-white pb-4"> Productos</h2>
         <Slider {...settings} className="m-3">
           {products.map((product, index) => (
             <div key={index} className="p-3">
