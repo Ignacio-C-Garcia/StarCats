@@ -24,7 +24,10 @@ function NavBar() {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="navbar-collapse collapse justify-content-center" id="navbarSupportedContent">
+        <div
+          className="navbar-collapse collapse justify-content-center"
+          id="navbarSupportedContent"
+        >
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
               <Link to="/products" className="nav-link"></Link>
@@ -41,7 +44,7 @@ function NavBar() {
           <div></div>
           <div className="d-flex p-3 text-center">
             <div className="shoppingCartIcon">
-              <Link to="/carrito" className="nav-link">
+              <Link to="/cart" className="nav-link">
                 Carrito
               </Link>
             </div>
