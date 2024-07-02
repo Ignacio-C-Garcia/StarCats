@@ -1,0 +1,34 @@
+.tabulator-wrapper {
+  margin: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.tabulator {
+  font-family: Arial, sans-serif;
+}
+
+.tabulator .tabulator-header {
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #ddd;
+}
+
+.tabulator .tabulator-row {
+  border-bottom: 1px solid #eee;
+}
+
+.nested-table {
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: auto;
+}
+
+.nested-table .tabulator {
+  font-size: 0.9em;
+}
+.tabulator {
+  overflow: scroll;
+  height: 100%;
+}
