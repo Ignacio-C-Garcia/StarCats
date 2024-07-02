@@ -51,7 +51,8 @@ function ProductModal({ show, setShow, product }) {
       <BootstrapModal.Body className={styles.body}>
         <div className="container-fluid">
           <div className="row">
-            <div className="col-lg-6 col-md-6 col-xs col-sm-12">
+            <div className="col-lg-6 col-md-6 col-xs col-sm-12 text-center">
+              <h3>{product.name}</h3>
               <img
                 src={`${import.meta.env.VITE_IMG_PATH}${product.pic}`}
                 alt={product.alt}
@@ -60,8 +61,7 @@ function ProductModal({ show, setShow, product }) {
               <p>{product.description}</p>
             </div>
 
-            <div className="col-lg-6 col-md-6 col-xs col-sm-12">
-              <h3>{product.name}</h3>
+            <div className="col-lg-6 col-md-6 col-xs col-sm-12 text-center">
               <hr />
               <Form>
                 <Form.Group className="mb-3">
@@ -145,7 +145,8 @@ function ProductModal({ show, setShow, product }) {
                         value={quantity}
                         onChange={(e) => {
                           const value = parseInt(e.target.value, 10);
-                          setQuantity(value || 1); 1
+                          setQuantity(value || 1);
+                          1;
                         }}
                         className={`${styles.noHover}`}
                       />

@@ -28,7 +28,7 @@ function ProductCard({ product }) {
             Agregar al carrito
           </button>
         </div>
-        <Modal show={show} setShow={setShow} product={product} />
+        <Modal  show={show} setShow={setShow} product={product} />
       </div>
     </div>
   );
