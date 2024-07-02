@@ -4,10 +4,12 @@ import App from "./App.jsx";
 import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
 import authReducer from "./redux/authReducer.jsx";
+import ShoppingCartReducer from "./redux/shoppingCartReducer.jsx";
 
 const store = configureStore({
   reducer: {
     auth: authReducer,
+    shoppingCart: ShoppingCartReducer,
   },
 });
 
