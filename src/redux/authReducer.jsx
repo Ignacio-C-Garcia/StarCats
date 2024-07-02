@@ -9,7 +9,7 @@ const authSlice = createSlice({
       return state;
     },
     removeToken() {
-      return {};
+      return { token: "" };
     },
   },
 });

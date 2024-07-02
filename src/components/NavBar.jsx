@@ -1,13 +1,18 @@
+import { useDispatch, useSelector } from "react-redux";
 import DropDown from "./Dropdown";
 import styles from "../styles/NavBar.module.css";
+import { Link } from "react-router-dom";
+import { removeToken } from "../redux/authReducer";
 
 function NavBar() {
+  const auth = useSelector((state) => state.auth);
+  const dispatch = useDispatch();
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-black text-white">
-      <div className="container container-fluid align-items-center">
-        <a className="navbar-brand" href="/">
-          <span>StarCats</span>
-        </a>
+    <nav className="navbar navbar-expand-lg navbar-dark bg-black text-white ">
+      <div className="container container-fluid align">
+        <Link to="/" className="navbar-brand">
+          <span>Starcat</span>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -22,54 +27,39 @@ function NavBar() {
         <div className="navbar-collapse collapse justify-content-center" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="/">
-                Inicio
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/products">
-                Productos
-              </a>
+              <Link to="/products" className="nav-link"></Link>
             </li>
             <li className="nav-item">
               <DropDown info={{ name: "Shop" }} />
             </li>
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="/about">
-                Sobre nosotros
-              </a>
+              <Link to="/about" className="nav-link active" aria-current="page">
+                Sobre el Proyecto
+              </Link>
             </li>
           </ul>
-          <div className="d-flex justify-content-center">
-            <div className="input-group">
-              <input
-                type="text"
-                id="searchInput"
-                className="form-control rounded-start-pill"
-                placeholder="Buscar producto"
-                aria-label="Buscar"
-                aria-describedby="button-addon1"
-              />
-              <button
-                className={`btn btn-outline-secondary ${styles.rounded_right} btn-sm border-white searchInputButton  rounded-end-pill me-2 text-white`}
-                type="button"
-                id="button-addon1"
-              >
-                Buscar
-              </button>
-            </div>
-          </div>
-          <div className="d-flex align-items-center  mt-2 ">
+          <div></div>
+          <div className="d-flex p-3 text-center">
             <div className="shoppingCartIcon">
-              <a href="/cart" className="nav-link">
+              <Link to="/carrito" className="nav-link">
                 Carrito
-              </a>
+              </Link>
             </div>
             <span className="px-2">|</span>
             <div className="shoppingCartIcon">
-              <a href="/login" className="nav-link">
-                Iniciar sesión
-              </a>
+              {!auth.token ? (
+                <Link to="/login" className="nav-link">
+                  Iniciar Sesión
+                </Link>
+              ) : (
+                <Link
+                  to="/"
+                  className="nav-link"
+                  onClick={() => dispatch(removeToken())}
+                >
+                  Cerrar Sesión
+                </Link>
+              )}
             </div>
           </div>
         </div>
