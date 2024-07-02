@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Modal as BootstrapModal, Button, Form } from "react-bootstrap";
 import styles from "../styles/ProductModal.module.css";
-
+import { useDispatch } from "react-redux";
+import { addProduct } from "../redux/shoppingCartReducer";
 function ProductModal({ show, setShow, product }) {
+  const dispatch = useDispatch();
   const handleClose = () => setShow(false);
 
   const [isToGo, setIsToGo] = useState("aqui");
@@ -26,6 +28,7 @@ function ProductModal({ show, setShow, product }) {
       volume,
       totalPrice,
     });
+    dispatch(addProduct({ ...product, qty: quantity, isToGo, volume }));
     setShow(false);
   };
 
