@@ -9,14 +9,17 @@
 .category {
   font-family: "Hammersmith One";
 }
+
 .category h3 {
   font-size: 24px;
   margin: 5px 0;
   cursor: pointer;
 }
+
 .subcategory {
   margin-left: 15px;
 }
+
 .subcategory a {
   display: block;
   color: #333;
@@ -24,6 +27,7 @@
   margin: 3px 0;
   font-size: 20px;
 }
+
 .subcategory a:hover {
   text-decoration: underline;
 }
