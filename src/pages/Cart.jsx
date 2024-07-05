@@ -12,7 +12,7 @@ import styles from "../styles/CartShopping.module.css";
 import Footer from "../components/Footer";
 import Navbar from "../components/NavBar";
 
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import { useSelector } from "react-redux";
 
 function Cart() {

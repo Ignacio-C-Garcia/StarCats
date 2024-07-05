@@ -56,13 +56,22 @@ function Dashboard() {
   }, []);
 
   const columns = [
-    { title: "Usuario", field: "userId" },
+    {
+      title: "Usuario",
+      field: "user",
+      formatter: (cell) => {
+        return cell.getRow().getData().user.name;
+      },
+    },
     { title: "Estatus", field: "status" },
     { title: "Direccion", field: "address" },
   ];
 
   const nestedColumns = [
-    { title: "Product Name", field: "id" },
+    {
+      title: "Product Name",
+      field: "name",
+    },
     { title: "Product Price", field: "price" },
     { title: "Quantity", field: "qty" },
   ];
