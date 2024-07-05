@@ -1,0 +1,58 @@
+.container {
+  background-color: #d6d4cb;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.spilledCoffee {
+  width: 80%;
+  max-width: 400px;
+  height: auto;
+  margin-top: 20px;
+}
+
+.notFoundText {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.btnHome {
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: #ddb757;
+  color: white;
+  border: none;
+  border-radius: 10px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row;
+  }
+
+  .notFoundText {
+    margin-right: 20px;
+    margin-bottom: 0;
+  }
+
+  .btnHome {
+    margin-top: 0;
+  }
+
+  .spilledCoffee {
+    margin-left: 20px;
+    margin-top: 0;
+  }
+}
