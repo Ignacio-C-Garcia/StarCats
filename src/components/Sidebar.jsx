@@ -2,10 +2,7 @@ import React, { useState } from "react";
 import styles from "../styles/Sidebar.module.css";
 
 const Sidebar = ({ categories, onCategorySelect }) => {
-  const [openCategory, setOpenCategory] = useState(null);
-
   const toggleCategory = (categoryId) => {
-    setOpenCategory(openCategory === categoryId ? null : categoryId);
     onCategorySelect(categoryId);
   };
 

@@ -3,26 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 
 import ProductCard from "./ProductCard";
 
-const ProductList = () => {
-  const [products, setProducts] = useState([]);
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(
-          import.meta.env.VITE_API_URL + "/products"
-        );
-        if (!response.ok) {
-          throw new Error("API fetch error, !ok");
-        }
-        const data = await response.json();
-        setProducts(data.products);
-      } catch (error) {
-        throw new Error(error);
-      }
-    };
-
-    fetchData();
-  }, []);
+const ProductList = ({ products }) => {
   return (
     <Container>
       <Row>

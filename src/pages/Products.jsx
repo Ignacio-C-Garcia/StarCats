@@ -14,7 +14,6 @@ function Products() {
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [products, setProducts] = useState([]);
-
   useEffect(() => {
     axios
       .get("http://localhost:3000/categories")
@@ -25,24 +24,31 @@ function Products() {
         console.error("Error fetching categories:", error);
       });
   }, []);
-
+  let filteredProducts = selectedCategory
+    ? products.filter((item) => item.categoryId == selectedCategory)
+    : products;
   useEffect(() => {
-    const url = selectedCategory
-      ? `http://localhost:3000/products?category=${selectedCategory}`
-      : "http://localhost:3000/products";
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          import.meta.env.VITE_API_URL + "/products"
+        );
+        if (!response.ok) {
+          throw new Error("API fetch error, !ok");
+        }
+        const data = await response.json();
+        setProducts(data.products);
+      } catch (error) {
+        throw new Error(error);
+      }
+    };
 
-    axios
-      .get(url)
-      .then((response) => {
-        setProducts(response.data);
-      })
-      .catch((error) => {
-        console.error("Error fetching products:", error);
-      });
-  }, [selectedCategory]);
+    fetchData();
+  }, []);
 
   const handleCategorySelect = (categoryId) => {
     setSelectedCategory(categoryId);
+    console.log(categoryId);
   };
 
   return (
@@ -57,7 +63,7 @@ function Products() {
                 categories={categories}
                 onCategorySelect={handleCategorySelect}
               />
-              <ProductList products={products} />
+              <ProductList products={filteredProducts} />
             </div>
           </Col>
         </Row>
