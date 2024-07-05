@@ -14,6 +14,7 @@ import Products from "./pages/Products";
 import Dashboard from "./pages/admin/Dashboard";
 import AdminProducts from "./pages/admin/AdminProducts";
 import AdminOrders from "./pages/admin/AdminOrders";
+import NotFound from "./pages/NotFound";
 function App() {
   const router = createBrowserRouter([
     {
@@ -55,6 +56,10 @@ function App() {
     {
       path: "/admin/ordenes",
       element: <AdminOrders />,
+    },
+    {
+      path: "*",
+      element: <NotFound />,
     },
   ]);
   return <RouterProvider router={router} />;

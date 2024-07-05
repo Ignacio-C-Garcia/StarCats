@@ -46,40 +46,47 @@ function Home() {
   return (
     <>
       <NavBar />
-      <header>
-        <div>
-          <div>
-            <h1>STARCATS</h1>
-            <p className={styles.pHeader}>
-              Vive la experiencia <br />
-              del café con felinos
-            </p>
-          </div>
-          <img
-            src="/header.png"
-            alt="header image"
-            className={`img-fluid  ${styles.headerImage}`}
-          />
-          <div className={styles.btnHeader}>
-            <a
-              className={`${styles.btnLeft} d-flex justify-content-center`}
-              href="/products"
-              role="button"
-            >
-              <i className="bi bi-arrow-right"></i>
-            </a>
-            <a
-              className={`${styles.btnRight}  d-flex justify-content-center`}
-              href="/products"
-              role="button"
-            >
-              Ver el menú
-            </a>
+      <header className="container-fluid">
+        <div className={`container ${styles.containerHeader}`}>
+          <div className="row">
+            <div className="col-6 ">
+              <h1>STARCATS</h1>
+              <p className={styles.pHeader}>
+                Vive la experiencia <br />
+                del café con felinos
+              </p>
+              <div
+                className={`${styles.btnHeader} d-flex justify-content-center`}
+              >
+                <a
+                  className={`${styles.btnLeft} d-flex justify-content-center`}
+                  href="/products"
+                  role="button"
+                >
+                  <i className="bi bi-arrow-right"></i>
+                </a>
+                <a
+                  className={`${styles.btnRight} d-flex justify-content-center`}
+                  href="/products"
+                  role="button"
+                >
+                  Ver el menú
+                </a>
+              </div>
+            </div>
+            <div className="col-6">
+              <img
+                src="cup-coffee.png"
+                alt="cup-coffee"
+                className={`${styles.cupCoffee}`}
+              />
+            </div>
           </div>
         </div>
       </header>
+
       <section className={styles.containerCategory}>
-        <div className="container container-fluid ">
+        <div className="container container-fluid">
           <div className="row">
             <h2>Categorías</h2>
             <p className="fs-3 text-center">

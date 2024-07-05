@@ -10,12 +10,6 @@ import styles from "../styles/ProductModal.module.css";
 import { useDispatch } from "react-redux";
 import { addProduct } from "../redux/shoppingCartReducer";
 
-
-
-
-
-
-
 function ProductModal({ show, setShow, product }) {
   const dispatch = useDispatch();
   const handleClose = () => setShow(false);
@@ -24,6 +18,7 @@ function ProductModal({ show, setShow, product }) {
   const [quantity, setQuantity] = useState(1);
   const [volume, setVolume] = useState(250);
   const [totalPrice, setTotalPrice] = useState(product.price);
+  const [buttonText, setButtonText] = useState("Añadir al carrito");
 
   const handleVolumeChange = (vol) => {
     setVolume(vol);
@@ -42,7 +37,11 @@ function ProductModal({ show, setShow, product }) {
       totalPrice,
     });
     dispatch(addProduct({ ...product, qty: quantity, isToGo, volume }));
-    setShow(false);
+    setButtonText("Añadido");
+    setTimeout(() => {
+      setButtonText("Añadir al carrito");
+      setShow(false);
+    }, 2000);
   };
 
   const incrementQuantity = () => {
@@ -74,8 +73,8 @@ function ProductModal({ show, setShow, product }) {
         <div className="container-fluid">
           {product.categoryId === 1 ? (
             <div className="row">
-              <div className="col-lg-6 col-md-12 text-center">
-                <h3>
+              <div className="col-lg-6 col-md-12 text-center productImageContainer">
+                <h3 className="pt-4 fs-1">
                   {product.name}
                   <OverlayTrigger
                     trigger="click"
@@ -198,11 +197,11 @@ function ProductModal({ show, setShow, product }) {
                   </Form.Group>
                 </Form>
               </div>
-              <p>{product.description}</p>
+              <p className="mt-4 mb-4">{product.description}</p>
             </div>
           ) : (
             <div className="row">
-              <div className="col-lg-6 col-md-12 text-center">
+              <div className="col-lg-6 col-md-12 text-center productImageContainer">
                 <img
                   src={`${import.meta.env.VITE_IMG_PATH}${product.pic}`}
                   alt={product.alt}
@@ -281,7 +280,7 @@ function ProductModal({ show, setShow, product }) {
                   </Form.Group>
                 </Form>
               </div>
-              <p>{product.description}</p>
+              <p className="mt-4 mb-4">{product.description}</p>
             </div>
           )}
         </div>
@@ -290,7 +289,7 @@ function ProductModal({ show, setShow, product }) {
             Cerrar
           </Button>
           <Button className={styles.btnAddToCart} onClick={handleAddToCart}>
-            Añadir al carrito
+            {buttonText}
           </Button>
         </BootstrapModal.Footer>
       </BootstrapModal.Body>

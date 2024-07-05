@@ -2,11 +2,11 @@ import { Link } from "react-router-dom";
 
 function Footer() {
   return (
-    <footer className="bg-black text-white py-4">
-      <div className="container">
+    <footer className="bg-black text-white p-5">
+      <div className="container ">
         <div className="row">
           <div className="col-lg-3 col-md-6 col-sm-6 mb-4 ">
-            <span className="h4 d-flex">StarCats  &#174; </span>
+            <span className="h4 d-flex">StarCats &#174; </span>
             <a href="/">
               <img
                 src="/logostarcats-light.svg"
@@ -31,7 +31,7 @@ function Footer() {
               </li>
               <li>
                 <Link
-                  to="/Productos"
+                  to="/Products"
                   className="text-decoration-none text-white"
                 >
                   Productos

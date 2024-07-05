@@ -11,7 +11,7 @@ function CarouselCats({ cats }) {
     slidesToShow: 4,
     slidesToScroll: 1,
     arrows: true,
-    autoplay: false,
+    autoplay: true,
     autoplaySpeed: 3000,
     responsive: [
       {
@@ -53,17 +53,17 @@ function CarouselCats({ cats }) {
       <p className={`fs-3 ${styles.subtitle}`}>
         Te presentamos a nuestro staff de michis
       </p>
-      <div className="container container-fluid  p-3">
+      <div className="container container-fluid p-3">
         <Slider {...settings}>
           {cats.map((cat, index) => (
             <div key={index} className={`p-3`}>
-              <div className={` ${styles.card}`}>
+              <div className={styles.card}>
                 <img
                   src={import.meta.env.VITE_CAT_IMG_PATH + cat.pic}
-                  className={` ${styles.cardImage}`}
+                  className={styles.cardImage}
                   alt={cat.name}
                 />
-                <div className={` ${styles.cardContent}`}>
+                <div className={styles.cardContent}>
                   <h5 className={`card-title ${styles.cardTitle}`}>
                     {cat.name}
                   </h5>

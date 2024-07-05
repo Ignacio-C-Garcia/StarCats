@@ -12,7 +12,7 @@ function CarouselProducts({ products }) {
     slidesToShow: 4,
     slidesToScroll: 1,
     arrows: true,
-    autoplay: false,
+    autoplay: true,
     autoplaySpeed: 3000,
     responsive: [
       {
@@ -49,7 +49,7 @@ function CarouselProducts({ products }) {
   };
 
   return (
-    <div className={`p-4 ${styles.carousel}`}>
+    <div className={`p-3 ${styles.carousel}`}>
       <div className="container">
         <h2 className="text-center text-white pb-4"> Productos</h2>
         <Slider {...settings} className="m-3">

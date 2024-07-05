@@ -26,7 +26,7 @@
   border-radius: 10px;
   transition: transform 0.3s;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 1);
-  height: 550px;
+  height: 400px;
 }
 
 .card:hover {
@@ -34,7 +34,7 @@
 }
 
 .cardImage {
-  height: 250px;
+  height: 200px;
   object-fit:cover;
   border-radius: 10px 10px 0 0;
   width: 100%;
@@ -43,14 +43,13 @@
 .cardTitle {
   color: #cf933f;
   font-family: "Chewy", normal;
-  font-size: 60px;
-  margin-top: 1rem;
+  font-size: 3rem;
+  margin-top: 0.5rem;
 }
 
 .cardText {
   color: black;
   font-family: "Hammersmith One", sans-serif;
-  font-size: 25px;
+  font-size: 1.4rem;
   margin-top: 0.5rem;
-  text-wrap: wrap;
 }

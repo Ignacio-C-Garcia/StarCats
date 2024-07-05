@@ -42,7 +42,7 @@ function NavBar() {
             </li>
           </ul>
           <div></div>
-          <div className="d-flex p-3 text-center">
+          <div className="d-flex text-center">
             <div className="shoppingCartIcon">
               <Link to="/cart" className="nav-link">
                 Carrito
