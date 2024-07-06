@@ -2,17 +2,16 @@ import { Container, Row, Col, Card, Form, Button } from "react-bootstrap";
 
 import Footer from "../../components/Footer";
 import Navbar from "../../components/NavBar";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { useSelector } from "react-redux";
-import PaymentForm from "../../components/Shopping/PaymentForm";
 import ShoppingCartList from "../../components/Shopping/ShoppingCartList";
-import PaymentMethod from "../../components/Shopping/PaymentMethod";
+import Payment from "../../components/Shopping/Payment";
+import PayPalButton from "../../components/Shopping/PayPalButton";
 
 function Cart() {
   const { products } = useSelector((state) => state.shoppingCart);
   const [step, SetStep] = useState(0);
-  const [isDisabled, setIsDisabled] = useState(false);
-  const [paymentMethod, setPaymentMethod] = useState("");
+  const [isProcessing, setIsProcessing] = useState(false);
   const calculateSubTotal = () => {
     let total = 0;
 
@@ -29,24 +28,6 @@ function Cart() {
       case 0:
         nextStep();
         break;
-      case 1:
-        nextStep();
-        break;
-      case 2:
-        console.log("Hoy es martes");
-        break;
-      case 3:
-        console.log("Hoy es miércoles");
-        break;
-      case 4:
-        console.log("Hoy es jueves");
-        break;
-      case 5:
-        console.log("Hoy es viernes");
-        break;
-      case 6:
-        console.log("Hoy es sábado");
-        break;
       default:
         console.log("Día inválido");
         break;
@@ -58,8 +39,14 @@ function Cart() {
       <Container className="mt-4 mb-4">
         <Row>
           <Col md={8} className="d-flex flex-column gap-3">
+            <PayPalButton></PayPalButton>
             {step === 0 && <ShoppingCartList />}
-            {step === 1 && <PaymentMethod />}
+            {step === 1 && (
+              <Payment
+                isProcessing={isProcessing}
+                setIsProcessing={setIsProcessing}
+              />
+            )}
           </Col>
           <Col md={4}>
             <Card className="border rounded-4">
@@ -78,10 +65,10 @@ function Cart() {
                   <span>Total:</span>
                   <span>${calculateSubTotal()}</span>
                 </div>
-                {paymentMethod && (
+                {"paymentMethod" && (
                   <div className="d-flex justify-content-between mb-2">
                     <span>Metodo de pago:</span>
-                    <span>{paymentMethod}</span>
+                    <span>{"paymentMethod"}</span>
                   </div>
                 )}
               </Card.Body>
@@ -90,10 +77,14 @@ function Cart() {
                   className="btn rounded-pill border-0 w-100"
                   variant="dark"
                   type="submit"
-                  form="payForm"
+                  form="payment-form"
                   onClick={handleCartButton}
                 >
-                  Continue
+                  <span id="button-text">
+                    {step === 0 && "Continue"}
+                    {step === 1 && isProcessing && "Processing ... "}
+                    {step === 1 && !isProcessing && "Pay now"}
+                  </span>
                 </Button>
               </Card.Footer>
             </Card>

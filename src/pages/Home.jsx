@@ -54,7 +54,7 @@ function Home() {
         >
           <div className="row">
             <div className="col-6">
-              <h1>STARCATS</h1>
+              <h1 className={`${styles["HomeTitle"]}`}>STARCATS</h1>
               <p className={styles.pHeader}>
                 Vive la experiencia <br />
                 del café con felinos

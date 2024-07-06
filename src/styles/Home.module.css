@@ -32,7 +32,7 @@ header {
   text-wrap: nowrap;
 }
 
-h1 {
+.HomeTitle {
   font-family: "Chewy", regular;
   font-size: 8.5vw;
   color: #ffffee;
