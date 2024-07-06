@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 function Home() {
   const [products, setProducts] = useState([]);
   const [cats, setCats] = useState([]);
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -20,12 +21,13 @@ function Home() {
         const data = await response.json();
         setProducts(data.products);
       } catch (error) {
-        throw new Error(error);
+        console.error(error);
       }
     };
 
     fetchData();
   }, []);
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -36,7 +38,7 @@ function Home() {
         const data = await response.json();
         setCats(data.kittens);
       } catch (error) {
-        throw new Error(error);
+        console.error(error);
       }
     };
 
@@ -46,10 +48,12 @@ function Home() {
   return (
     <>
       <NavBar />
-      <header className="container-fluid">
-        <div className={`container ${styles.containerHeader}`}>
+      <header className={`container-fluid ${styles.parallax}`}>
+        <div
+          className={`container animate__animated animate__zoomIn ${styles.containerHeader}`}
+        >
           <div className="row">
-            <div className="col-6 ">
+            <div className="col-6">
               <h1>STARCATS</h1>
               <p className={styles.pHeader}>
                 Vive la experiencia <br />
@@ -78,7 +82,7 @@ function Home() {
               <img
                 src="cup-coffee.png"
                 alt="cup-coffee"
-                className={`${styles.cupCoffee}`}
+                className={styles.cupCoffee}
               />
             </div>
           </div>
@@ -93,7 +97,7 @@ function Home() {
               CADA PRODUCTO, UN COMPROMISO CON LA EXCELENCIA
             </p>
 
-            <div className=" col-sm-12 col-lg-4 col-md-4 d-flex justify-content-center">
+            <div className="col-sm-12 col-lg-4 col-md-4 d-flex justify-content-center">
               <div className={styles.card}>
                 <img
                   src="img/categories/cupcoffee.png"
@@ -106,7 +110,7 @@ function Home() {
               </div>
             </div>
 
-            <div className=" col-sm-12 col-lg-4 col-md-4 d-flex justify-content-center  ">
+            <div className="col-sm-12 col-lg-4 col-md-4 d-flex justify-content-center">
               <div className={styles.card}>
                 <img
                   src="img/categories/medialuna.png"
@@ -119,7 +123,7 @@ function Home() {
               </div>
             </div>
 
-            <div className=" col-sm-12 col-lg-4 col-md-4 d-flex  justify-content-center">
+            <div className="col-sm-12 col-lg-4 col-md-4 d-flex justify-content-center">
               <div className={styles.card}>
                 <img
                   src="img/categories/beans.png"
@@ -133,20 +137,20 @@ function Home() {
             </div>
           </div>
 
-          <div className="row mt-3 justify-content-center d-none d-lg-flex ">
-            <div className={`col-md-7 d-flex justify-content-center `}>
-              <div className={`col-md-7 d-flex justify-content-center `}>
-                <a className="fs-2 " href="#">
+          <div className="row mt-3 justify-content-center d-none d-lg-flex">
+            <div className={`col-md-7 d-flex justify-content-center`}>
+              <div className={`col-md-7 d-flex justify-content-center`}>
+                <a className="fs-2" href="#">
                   CAFÉ
                 </a>
               </div>
-              <div className={`col-md-7 d-flex justify-content-center `}>
-                <a className="fs-2 " href="#">
+              <div className={`col-md-7 d-flex justify-content-center`}>
+                <a className="fs-2" href="#">
                   PASTELERÍA
                 </a>
               </div>
-              <div className={`col-md-7 d-flex justify-content-center `}>
-                <a className="fs-2 " href="#">
+              <div className={`col-md-7 d-flex justify-content-center`}>
+                <a className="fs-2" href="#">
                   GRANOS
                 </a>
               </div>

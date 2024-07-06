@@ -13,46 +13,31 @@
   flex-direction: column;
   align-items: center;
   margin-bottom: 20px;
+  justify-content: center;
 }
 
 .spilledCoffee {
-  width: 80%;
-  max-width: 400px;
   height: auto;
-  margin-top: 20px;
 }
 
 .notFoundText {
-  font-size: 3rem;
-  margin-bottom: 20px;
+  font-size: 7rem;
+  margin-bottom: 30px;
 }
 
 .btnHome {
   padding: 10px 20px;
-  font-size: 1rem;
-  cursor: pointer;
-  background-color: #ddb757;
-  color: white;
+  font-size: 2rem;
+  background-color: #fbce4f;
+  color: black;
   border: none;
-  border-radius: 10px;
+  border-radius: 50px;
 }
 
-@media (min-width: 768px) {
-  .container {
-    flex-direction: row;
-  }
+.btnHome:hover {
+  color: black;
+}
 
-  .notFoundText {
-    margin-right: 20px;
-    margin-bottom: 0;
-  }
-
-  .btnHome {
-    margin-top: 0;
-  }
-
-  .spilledCoffee {
-    margin-left: 20px;
-    margin-top: 0;
-  }
+.btnHome:active {
+  transform: scale(0.95);
 }

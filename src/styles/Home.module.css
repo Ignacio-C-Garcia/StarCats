@@ -1,6 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Chewy&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap");
 
+/* Parallax effect */
+.parallax {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 /* header */
 header {
   background-image: url("header.png");
@@ -17,6 +25,7 @@ header {
   height: 100%;
   object-fit: cover;
 }
+
 .containerHeader {
   display: flex;
   justify-content: center;
@@ -126,4 +135,3 @@ a {
 a:hover {
   color: #fcf402;
 }
-
