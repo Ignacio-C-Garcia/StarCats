@@ -100,7 +100,7 @@ const PaymentMethod = () => {
               <Form.Label>Mes</Form.Label>
               <InputGroup>
                 <FormControl as="select" id="expiration-month" className="">
-                  <option value="" disabled selected>
+                  <option value="" disabled defaultValue>
                     MM
                   </option>
                   <option value="January">Enero</option>
@@ -122,7 +122,7 @@ const PaymentMethod = () => {
               <Form.Label>Anio</Form.Label>
               <InputGroup>
                 <FormControl as="select" id="expiration-year">
-                  <option value="" disabled selected>
+                  <option value="" disabled defaultValue>
                     YYYY
                   </option>
                   <option value="2025">2025</option>
