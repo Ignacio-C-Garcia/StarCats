@@ -68,13 +68,19 @@ function ProductModal({ show, setShow, product }) {
   );
 
   return (
-    <BootstrapModal show={show} onHide={handleClose}>
+    <BootstrapModal
+      show={show}
+      onHide={handleClose}
+      size="lg"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
       <BootstrapModal.Body className={styles.body}>
         <div className="container-fluid">
           {product.categoryId === 1 ? (
             <div className="row">
-              <div className="col-lg-6 col-md-12 text-center productImageContainer">
-                <h3 className="pt-4 fs-1">
+              <div className={`col-6  ${styles.productImageContainer}`}>
+                <h2 className="pt-4 mt-4 fs-2">
                   {product.name}
                   <OverlayTrigger
                     trigger="click"
@@ -85,7 +91,7 @@ function ProductModal({ show, setShow, product }) {
                       <i className="bi bi-info-circle"></i>
                     </Button>
                   </OverlayTrigger>
-                </h3>
+                </h2>
 
                 <img
                   src={`${import.meta.env.VITE_IMG_PATH}${product.pic}`}
@@ -94,11 +100,11 @@ function ProductModal({ show, setShow, product }) {
                 />
               </div>
 
-              <div className="col-lg-6 col-md-12 text-center">
-                <hr />
+              <div className="col-6 text-center row ">
+                <hr className="mt-5"/>
                 <Form>
                   <Form.Group className="mb-3">
-                    <div className="row text-center">
+                    <div className="row text-">
                       <div className="col-6">
                         <p>Aquí</p>
                         <i
@@ -121,7 +127,7 @@ function ProductModal({ show, setShow, product }) {
                   </Form.Group>
 
                   {product.categoryId === 1 && (
-                    <Form.Group className="mb-3 text-center">
+                    <Form.Group className="pb-5 text-center">
                       <hr />
                       <p>Tamaño</p>
                       <div className={`d-flex ${styles.volumeSelector}`}>
@@ -137,7 +143,7 @@ function ProductModal({ show, setShow, product }) {
                           <span>250ml</span>
                         </div>
                         <div
-                          className={`d-flex flex-column align-items-center ${styles.volumeOption}`}
+                          className={`d-flex flex-column align-items-center m-2 ${styles.volumeOption}`}
                         >
                           <i
                             className={`bi bi-cup-hot fs-4 ${
@@ -201,14 +207,14 @@ function ProductModal({ show, setShow, product }) {
             </div>
           ) : (
             <div className="row">
-              <div className="col-lg-6 col-md-12 text-center productImageContainer">
+              <div className={`col-6  ${styles.productImageContainer}`}>
                 <img
                   src={`${import.meta.env.VITE_IMG_PATH}${product.pic}`}
                   alt={product.alt}
                   className={` ${styles.productImage}`}
                 />
               </div>
-              <div className="col-lg-6 col-md-12">
+              <div className="col-6">
                 <h3>
                   {product.name}{" "}
                   <OverlayTrigger

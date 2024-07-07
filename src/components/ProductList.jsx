@@ -6,7 +6,7 @@ const ProductList = ({ products }) => {
     <Container>
       <Row>
         {products.map((product) => (
-          <Col key={product.id} xs={12} md={6} lg={4} mb={4} className="mb-4">
+          <Col key={product.id} xs={12} md={12} lg={4} mb={6} className="mb-4">
             <ProductCard product={product} />
           </Col>
         ))}
