@@ -3,7 +3,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "animate.css";
 
-
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 import Home from "./pages/Home";
@@ -36,7 +35,11 @@ function App() {
       element: <Cart />,
     },
     {
-      path: "/products",
+      path: "/products/:category",
+      element: <Products />,
+    },
+    {
+      path: "/products/",
       element: <Products />,
     },
     {

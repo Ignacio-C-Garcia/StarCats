@@ -4,7 +4,7 @@ import CarouselProducts from "../components/CarouselProducts";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar/";
 import { useEffect, useState } from "react";
-
+import { Link } from "react-router-dom";
 function Home() {
   const [products, setProducts] = useState([]);
   const [cats, setCats] = useState([]);
@@ -143,19 +143,19 @@ function Home() {
           <div className="row mt-3 justify-content-center d-none d-lg-flex">
             <div className={`col-md-7 d-flex justify-content-center`}>
               <div className={`col-md-7 d-flex justify-content-center`}>
-                <a className="fs-2" href="#">
-                  CAFÉ
-                </a>
+                <Link className="fs-2" to="/products/1">
+                  CAFE
+                </Link>
               </div>
               <div className={`col-md-7 d-flex justify-content-center`}>
-                <a className="fs-2" href="#">
+                <Link className="fs-2" to="/products/2">
                   PASTELERÍA
-                </a>
+                </Link>
               </div>
               <div className={`col-md-7 d-flex justify-content-center`}>
-                <a className="fs-2" href="#">
+                <Link className="fs-2" to="/products/3">
                   GRANOS
-                </a>
+                </Link>
               </div>
             </div>
           </div>

@@ -7,12 +7,13 @@ import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
 import ProductList from "../components/ProductList";
 import Sidebar from "../components/Sidebar";
-
+import { useParams } from "react-router-dom";
 import styles from "../styles/Products.module.css";
 
 function Products() {
+  const { category } = useParams();
   const [categories, setCategories] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState(category);
   const [products, setProducts] = useState([]);
   useEffect(() => {
     axios
