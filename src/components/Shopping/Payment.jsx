@@ -27,7 +27,7 @@ function Payment(props) {
 
   return (
     <>
-      <h6>React Stripe and the Payment Element</h6>
+      <h4 className="mb-4">Complete su metodo de pago</h4>
       {clientSecret && stripePromise && (
         <Elements
           stripe={stripePromise}

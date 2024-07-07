@@ -1,6 +1,7 @@
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 import { FUNDING } from "@paypal/react-paypal-js";
-const PayPalButton = () => {
+import { Alert } from "react-bootstrap";
+const PayPalButton = ({ nextStep }) => {
   return (
     <PayPalScriptProvider
       options={{
@@ -9,6 +10,14 @@ const PayPalButton = () => {
       }}
     >
       <PayPalButtons
+        style={{
+          shape: "pill",
+          label: "pay",
+          color: "black",
+          height: 38,
+          disableMaxWidth: true,
+          tagline: false,
+        }}
         createOrder={(data, actions) => {
           return actions.order.create({
             purchase_units: [
@@ -20,9 +29,15 @@ const PayPalButton = () => {
             ],
           });
         }}
+        onError={() => {
+          <Alert variant={"danger"}>
+            Ha ocurrido un error, intente nuevamente
+          </Alert>;
+        }}
         onApprove={(data, actions) => {
           return actions.order.capture().then(() => {
-            alert("Pago completado");
+            <Alert variant={"dark"}>Pago Existoso!</Alert>;
+            nextStep();
           });
         }}
         fundingSource={FUNDING.PAYPAL}

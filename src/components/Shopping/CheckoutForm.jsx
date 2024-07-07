@@ -1,8 +1,13 @@
 import { PaymentElement } from "@stripe/react-stripe-js";
 import { useState } from "react";
 import { useStripe, useElements } from "@stripe/react-stripe-js";
+import { Alert } from "react-bootstrap";
 
-export default function CheckoutForm({ isProcessing, setIsProcessing }) {
+export default function CheckoutForm({
+  isProcessing,
+  setIsProcessing,
+  nextStep,
+}) {
   const stripe = useStripe();
   const elements = useElements();
 
@@ -27,7 +32,7 @@ export default function CheckoutForm({ isProcessing, setIsProcessing }) {
     if (error) {
       setMessage("Pago rechazado");
     } else if (paymentIntent && paymentIntent.status === "succeeded") {
-      setMessage("Pago Exitoso!");
+      nextStep();
     } else {
       setMessage("Error interno");
     }
@@ -38,11 +43,13 @@ export default function CheckoutForm({ isProcessing, setIsProcessing }) {
   return (
     <form id="payment-form" onSubmit={handleSubmit}>
       <PaymentElement id="payment-element" />
-      {message && (
-        <div id="payment-message" className="p-4">
-          {message}
-        </div>
-      )}
+      <div className="pt-4">
+        {message && (
+          <Alert variant={"danger"}>
+            Ha ocurrido un error, intente nuevamente
+          </Alert>
+        )}
+      </div>
     </form>
   );
 }
