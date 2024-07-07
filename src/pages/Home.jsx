@@ -53,24 +53,21 @@ function Home() {
           className={`container animate__animated animate__zoomIn ${styles.containerHeader}`}
         >
           <div className="row">
-            <div className="col-6">
+            <div className="col-lg-6 col-sm-6 ">
               <h1>STARCATS</h1>
               <p className={styles.pHeader}>
-                Vive la experiencia <br />
-                del café con felinos
+                Vive la experiencia <br /> del café con felinos
               </p>
-              <div
-                className={`${styles.btnHeader} d-flex justify-content-center`}
-              >
+              <div className={`${styles.btnHeader} `}>
                 <a
-                  className={`${styles.btnLeft} d-flex justify-content-center`}
+                  className={`${styles.btnLeft} `}
                   href="/products"
                   role="button"
                 >
                   <i className="bi bi-arrow-right"></i>
                 </a>
                 <a
-                  className={`${styles.btnRight} d-flex justify-content-center`}
+                  className={`${styles.btnRight} d-flex justify-content-center `}
                   href="/products"
                   role="button"
                 >
@@ -78,7 +75,7 @@ function Home() {
                 </a>
               </div>
             </div>
-            <div className="col-6">
+            <div className="col-lg-6 col-sm-6 ">
               <img
                 src="cup-coffee.png"
                 alt="cup-coffee"
@@ -98,19 +95,19 @@ function Home() {
             </p>
 
             <div className="col-sm-12 col-lg-4 col-md-4 d-flex justify-content-center">
-              <div className={styles.card}>
+              <a href="#" className={styles.card}>
                 <img
                   src="img/categories/cupcoffee.png"
                   alt="Cup of coffee"
                   className="img-fluid"
                 />
-                <a className="d-lg-none fs-3 mt-4" href="">
+                <a className="d-lg-none fs-3 mt-4" href="#">
                   CAFÉ
                 </a>
-              </div>
+              </a>
             </div>
 
-            <div className="col-sm-12 col-lg-4 col-md-4 d-flex justify-content-center">
+            <a href="" className="col-sm-12 col-lg-4 col-md-4 d-flex justify-content-center">
               <div className={styles.card}>
                 <img
                   src="img/categories/medialuna.png"
@@ -121,9 +118,9 @@ function Home() {
                   PASTELERÍA
                 </a>
               </div>
-            </div>
+            </a>
 
-            <div className="col-sm-12 col-lg-4 col-md-4 d-flex justify-content-center">
+            <a href="" className="col-sm-12 col-lg-4 col-md-4 d-flex justify-content-center">
               <div className={styles.card}>
                 <img
                   src="img/categories/beans.png"
@@ -134,7 +131,7 @@ function Home() {
                   GRANOS
                 </a>
               </div>
-            </div>
+            </a>
           </div>
 
           <div className="row mt-3 justify-content-center d-none d-lg-flex">
@@ -158,9 +155,10 @@ function Home() {
           </div>
         </div>
       </section>
-
       <CarouselProducts products={products} />
       <CarouselCats cats={cats} />
+      <img src="/gifcats.gif" alt="Animated GIF" className={styles.gif} />
+
       <Footer />
     </>
   );

@@ -9,7 +9,7 @@ function NavBar() {
   const dispatch = useDispatch();
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-black text-white ">
-      <div className="container container-fluid align">
+      <div className=" animate__animated animate__fadeIn container container-fluid align">
         <Link to="/" className="navbar-brand">
           <span>Starcat</span>
         </Link>
