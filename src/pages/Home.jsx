@@ -95,20 +95,20 @@ function Home() {
             </p>
 
             <div className="col-sm-12 col-lg-4 col-md-4 d-flex justify-content-center">
-              <a href="#" className={styles.card}>
+              <Link to="/products/1" className={styles.card}>
                 <img
                   src="img/categories/cupcoffee.png"
                   alt="Cup of coffee"
                   className="img-fluid"
                 />
-                <a className="d-lg-none fs-3 mt-4" href="#">
-                  CAFÉ
-                </a>
-              </a>
+                <Link className="d-lg-none fs-3 mt-4" to="/products/1">
+                  CAFE
+                </Link>
+              </Link>
             </div>
 
-            <a
-              href=""
+            <Link
+              to="/products/2"
               className="col-sm-12 col-lg-4 col-md-4 d-flex justify-content-center"
             >
               <div className={styles.card}>
@@ -117,14 +117,14 @@ function Home() {
                   alt="Medialuna"
                   className=""
                 />
-                <a className="d-lg-none fs-3 mt-4" href="">
+                <Link className="d-lg-none fs-3 mt-4" to="/products/2">
                   PASTELERÍA
-                </a>
+                </Link>
               </div>
-            </a>
+            </Link>
 
-            <a
-              href=""
+            <Link
+              to="/products/3"
               className="col-sm-12 col-lg-4 col-md-4 d-flex justify-content-center"
             >
               <div className={styles.card}>
@@ -133,11 +133,11 @@ function Home() {
                   alt="Coffee beans"
                   className="img-fluid"
                 />
-                <a className="d-lg-none fs-3 mt-4" href="">
+                <Link className="d-lg-none fs-3 mt-4" to="/products/3">
                   GRANOS
-                </a>
+                </Link>
               </div>
-            </a>
+            </Link>
           </div>
 
           <div className="row mt-3 justify-content-center d-none d-lg-flex">
