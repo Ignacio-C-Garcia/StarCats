@@ -1,0 +1,11 @@
+.mapId {
+  width: 100%;
+  height: 300px;
+  margin-bottom: 100px;
+}
+
+.contact {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(gatonegro.jpg);
+}
