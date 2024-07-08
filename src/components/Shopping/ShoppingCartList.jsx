@@ -12,7 +12,7 @@ export default function ShoppingCartList() {
       <h2>Tu carrito</h2>
       {products.length > 0 ? (
         products.map((product) => {
-          const totalPrice = (product.qty * product.price).toFixed(2);
+          const totalPrice = (product.qty * product.totalPrice).toFixed(2);
 
           const incrementQuantity = () => {
             dispatch(addProduct({ ...product, qty: 1 }));
@@ -29,7 +29,9 @@ export default function ShoppingCartList() {
             >
               <div className="row">
                 <div className="col-6">
-                  <h4 className="mt-4">{product.name}</h4>
+                  <h4 className="mt-4">
+                    {product.name}- {product.volume}
+                  </h4>
                   <img
                     src={`/img/${product.pic}`}
                     alt={product.name}

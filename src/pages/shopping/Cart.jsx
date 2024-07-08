@@ -18,6 +18,7 @@ function Cart() {
   const [isProcessing, setIsProcessing] = useState(false);
 
   const nextStep = () => SetStep((prev) => prev + 1);
+
   const calculateSubTotal = () => {
     let total = 0;
     for (const product of products) {
@@ -82,7 +83,7 @@ function Cart() {
             </Card>
           </Col>
           <Col md={4}>
-            <Card className="border rounded-4 h-100">
+            <Card className="border rounded-4  h-100">
               <Card.Body className="p-4">
                 <h4 className="mb-4">Resumen del Pedido</h4>
                 <div className="d-flex justify-content-between mb-2">
@@ -91,7 +92,7 @@ function Cart() {
                 </div>
                 <div className="d-flex justify-content-between mb-2">
                   <span>Envío:</span>
-                  <span>$00.00</span>
+                  <span>$0.0</span>
                 </div>
                 <hr />
                 <div className="d-flex justify-content-between mb-2">

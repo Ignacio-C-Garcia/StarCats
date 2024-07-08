@@ -48,13 +48,13 @@ function Home() {
   return (
     <>
       <NavBar />
-      <header className={`container-fluid ${styles.parallax}`}>
+      <header className={` container-fluid ${styles.parallax}`}>
         <div
           className={`container animate__animated animate__zoomIn ${styles.containerHeader}`}
         >
           <div className="row">
             <div className="col-lg-6 col-sm-6 ">
-              <h1 className={`${styles["HomeTitle"]}`}>STARCATS</h1>
+              <h1 className={` ${styles.HomeTitle}`}>STARCATS</h1>
               <p className={styles.pHeader}>
                 Vive la experiencia <br /> del café con felinos
               </p>
@@ -101,9 +101,7 @@ function Home() {
                   alt="Cup of coffee"
                   className="img-fluid"
                 />
-                <Link className="d-lg-none fs-3 mt-4" to="/products/1">
-                  CAFE
-                </Link>
+                <span className="d-lg-none fs-3 mt-4">CAFE</span>
               </Link>
             </div>
 
@@ -117,9 +115,7 @@ function Home() {
                   alt="Medialuna"
                   className=""
                 />
-                <Link className="d-lg-none fs-3 mt-4" to="/products/2">
-                  PASTELERÍA
-                </Link>
+                <span className="d-lg-none fs-3 mt-4">PASTELERÍA</span>
               </div>
             </Link>
 
@@ -133,9 +129,7 @@ function Home() {
                   alt="Coffee beans"
                   className="img-fluid"
                 />
-                <Link className="d-lg-none fs-3 mt-4" to="/products/3">
-                  GRANOS
-                </Link>
+                <span className="d-lg-none fs-3 mt-4">GRANOS</span>
               </div>
             </Link>
           </div>

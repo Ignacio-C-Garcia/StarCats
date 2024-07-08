@@ -58,7 +58,7 @@ function Products() {
       <Container>
         <Row>
           <Col className="pt-5">
-            <h2 className="text-center">Menú</h2>
+            <h2 className={`text-center ${styles.menu}`}>Menú</h2>
             <div className={`d-flex flex-column gap-3`}>
               <Sidebar
                 categories={categories}
