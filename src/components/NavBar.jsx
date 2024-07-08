@@ -1,12 +1,9 @@
-import { useDispatch, useSelector } from "react-redux";
 import DropDown from "./Dropdown";
-import styles from "../styles/NavBar.module.css";
+import "../styles/NavBar.module.css";
 import { Link } from "react-router-dom";
-import { removeToken } from "../redux/authReducer";
+import UserIcon from "./UserIcon";
 
 function NavBar() {
-  const auth = useSelector((state) => state.auth);
-  const dispatch = useDispatch();
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-black text-white ">
       <div className="container ">
@@ -49,27 +46,14 @@ function NavBar() {
             </li>
           </ul>
           <div></div>
-          <div className="d-flex text-center">
+          <div className="d-flex justify-content-center align-items-center text-center">
+            <div className="shoppingCartIcon px-3">
+              <UserIcon></UserIcon>
+            </div>
             <div className="shoppingCartIcon">
               <Link to="/cart" className="nav-link">
                 Carrito
               </Link>
-            </div>
-            <span className="px-2">|</span>
-            <div className="shoppingCartIcon">
-              {!auth.token ? (
-                <Link to="/login" className="nav-link">
-                  Iniciar Sesión
-                </Link>
-              ) : (
-                <Link
-                  to="/"
-                  className="nav-link"
-                  onClick={() => dispatch(removeToken())}
-                >
-                  Cerrar Sesión
-                </Link>
-              )}
             </div>
           </div>
         </div>

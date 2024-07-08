@@ -13,6 +13,8 @@ import Register from "./pages/Register";
 import Products from "./pages/Products";
 import NotFound from "./pages/NotFound";
 import Orders from "./pages/Orders";
+import UserIcon from "./components/UserIcon";
+import LogOut from "./pages/LogOut";
 
 function App() {
   const router = createBrowserRouter([
@@ -51,6 +53,14 @@ function App() {
     {
       path: "/ordenes",
       element: <Orders></Orders>,
+    },
+    {
+      path: "/logout",
+      element: <LogOut />,
+    },
+    {
+      path: "/testing",
+      element: <UserIcon></UserIcon>,
     },
     {
       path: "*",

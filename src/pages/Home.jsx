@@ -48,10 +48,8 @@ function Home() {
   return (
     <>
       <NavBar />
-      <header className={` container-fluid ${styles.parallax}`}>
-        <div
-          className={`container animate__animated animate__zoomIn ${styles.containerHeader}`}
-        >
+      <header className={`container-fluid ${styles.parallax}`}>
+        <div className={`container ${styles.containerHeader}`}>
           <div className="row">
             <div className="col-lg-6 col-sm-6 ">
               <h1 className={` ${styles.HomeTitle}`}>STARCATS</h1>
