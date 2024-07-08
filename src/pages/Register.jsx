@@ -2,7 +2,7 @@ import styles from "../styles/Login.module.css";
 import { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Footer from "../components/Footer";
-
+import { Link } from "react-router-dom";
 const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
