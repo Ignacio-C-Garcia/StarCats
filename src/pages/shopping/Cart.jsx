@@ -11,22 +11,23 @@ import Congrats from "../../components/Congrats";
 import { useNavigate } from "react-router-dom";
 function Cart() {
   const navigate = useNavigate();
-  const { products } = useSelector((state) => state.shoppingCart);
+  const { products, token } = useSelector((state) => {
+    return { products: state.shoppingCart.products, token: state.auth.token };
+  });
   const [step, SetStep] = useState(0);
   const [isProcessing, setIsProcessing] = useState(false);
-  const nextStep = () => SetStep((prev) => prev + 1);
 
+  const nextStep = () => SetStep((prev) => prev + 1);
   const calculateSubTotal = () => {
     let total = 0;
-
     for (const product of products) {
-      console.log(product);
       total += product.qty * product.price;
     }
     return total.toFixed(2);
   };
 
   const handleCartButton = () => {
+    if (!token) navigate("/login");
     switch (step) {
       case 0:
         nextStep();
