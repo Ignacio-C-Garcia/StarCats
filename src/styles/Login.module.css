@@ -1,17 +1,31 @@
-.loginBox {
-  width: 90vw;
-  height: 100vh;
-}
-
-.formContainer {
-  position: absolute;
-  top: 45vh;
-  left: 30vw;
-  width: 26vw;
+.login {
+  background-color: #d6d4cb;
 }
 
 h2 {
   color: #000;
+}
+
+.loginContainer {
+  height: 100vh;
+}
+
+.inputForm:hover,
+.inputForm:active,
+.inputForm:focus {
+  box-shadow: none;
+  border-color: #000;
+}
+
+.formColumn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  max-width: 400px;
+  width: 100%;
 }
 
 .loginButton {
@@ -19,9 +33,9 @@ h2 {
 }
 
 .customAlert {
-  background-color: #ffeb3b; /* Color amarillo */
+  background-color: #ffdd77; /* Color amarillo */
   color: #000; /* Texto negro */
-  border: 1px solid #ffc107; /* Borde amarillo oscuro */
+  border: 1px solid #ffdd77; /* Borde amarillo oscuro */
   border-radius: 15px; /* Bordes redondeados */
   padding: 15px;
   font-weight: bold;

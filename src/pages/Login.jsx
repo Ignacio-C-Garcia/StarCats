@@ -1,15 +1,7 @@
 import styles from "../styles/Login.module.css";
 import { useState } from "react";
 import { Link, Navigate } from "react-router-dom";
-import {
-  Container,
-  Row,
-  Col,
-  Button,
-  Form,
-  Image,
-  Alert,
-} from "react-bootstrap";
+import { Container, Row, Col, Button, Form, Alert } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
 import { saveToken } from "../redux/authReducer";
 import Footer from "../components/Footer";
@@ -45,19 +37,18 @@ const Login = () => {
   };
 
   return auth.token === "" ? (
-    <>
-      <Container>
-        <Row className={styles.loginContainer}>
-          <Col className={styles.imageColumn}>
-            <Image
-              className={styles.loginBox}
-              src="logostarcats.svg"
-              alt="Logo del proyecto"
-            />
+    <div className={styles.login}>
+      <Container fluid className={styles.loginContainer}>
+        <Row className="h-100">
+          <Col
+            className="d-flex justify-content-center align-items-center"
+            lg={6}
+          >
+            <img src="logostarcats.svg" width={450} height={450}></img>
           </Col>
-          <Col md={9} className={styles.formColumn}>
-            <div className={`${styles.formContainer}`}>
-              <h2>Iniciar sesión</h2>
+          <Col md={6} className={styles.formColumn}>
+            <div className={`${styles.form}`}>
+              <h2 className="text-center pb-2">Iniciar sesión</h2>
               {showAlert && (
                 <Alert
                   variant="warning"
@@ -71,43 +62,43 @@ const Login = () => {
               )}
               <Form
                 onSubmit={handleSubmit}
-                className="d-flex flex-column gap-1"
+                className="d-flex flex-column gap-2"
               >
                 <Form.Control
                   type="email"
                   placeholder="Ingresá tu correo electrónico"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="rounded-pill"
+                  className={`${styles.inputForm} rounded-pill p-2 ps-3 pe-3`}
                 />
                 <Form.Control
                   type="password"
                   placeholder="Ingresá tu contraseña"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="rounded-pill"
+                  className={`${styles.inputForm} rounded-pill p-2 ps-3 pe-3`}
                 />
                 <Button
                   variant="dark"
                   type="submit"
-                  className={`${styles.loginButton} rounded-pill`}
+                  className={`${styles.loginButton} rounded-pill p-2`}
                 >
                   Ingresar
                 </Button>
               </Form>
               <div
-                className={`${styles.buttonGroup} d-flex flex-row d-grid gap-1 pt-1`}
+                className={`${styles.buttonGroup} d-flex flex-row d-grid gap-2 pt-3`}
               >
                 <Button
                   variant="dark"
-                  className={`col d-flex align-items-center justify-content-center ps-0 pe-0 rounded-pill`}
+                  className={`col d-flex align-items-center justify-content-center p-2 ps-0 pe-0 rounded-pill`}
                   href="/signup"
                 >
                   Regístrate
                 </Button>
                 <Button
                   variant="dark"
-                  className={`col d-flex align-items-center justify-content-center ps-0 pe-0 rounded-pill`}
+                  className={`col d-flex align-items-center justify-content-center p-2 ps-0 pe-0 rounded-pill`}
                 >
                   ¿Olvidaste tu contraseña?
                 </Button>
@@ -117,7 +108,7 @@ const Login = () => {
         </Row>
       </Container>
       <Footer />
-    </>
+    </div>
   ) : (
     <Navigate to="/ordenes"></Navigate>
   );
