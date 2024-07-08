@@ -1,27 +1,25 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import React, { useState } from "react";
 import styles from "../../styles/CartShopping.module.css";
 import { Button, Form } from "react-bootstrap";
+import { addProduct, removeProduct } from "../../redux/shoppingCartReducer";
 
 export default function ShoppingCartList() {
   const { products } = useSelector((state) => state.shoppingCart);
-
+  const dispatch = useDispatch();
   return (
     <>
       <h2>Tu carrito</h2>
       {products.length > 0 ? (
         products.map((product) => {
-          const [quantity, setQuantity] = useState(product.qty || 1);
-          const totalPrice = (quantity * product.price).toFixed(2);
+          const totalPrice = (product.qty * product.price).toFixed(2);
 
           const incrementQuantity = () => {
-            setQuantity(quantity + 1);
+            dispatch(addProduct({ ...product, qty: 1 }));
           };
 
           const decrementQuantity = () => {
-            if (quantity > 1) {
-              setQuantity(quantity - 1);
-            }
+            dispatch(removeProduct({ ...product, qty: 1 }));
           };
 
           return (
@@ -39,7 +37,7 @@ export default function ShoppingCartList() {
                   />
                 </div>
                 <div className="col-6 d-flex flex-column justify-content-center align-items-center">
-                      <p className="mt-2">${totalPrice}</p>
+                  <p className="mt-2">${totalPrice}</p>
                   <Form.Group className="mb-2 d-flex justify-content-center align-items-center">
                     <div className="d-flex border rounded-pill border-black m-3">
                       <Button
@@ -52,11 +50,7 @@ export default function ShoppingCartList() {
                       <div className="d-flex">
                         <Form.Control
                           type="text"
-                          value={quantity}
-                          onChange={(e) => {
-                            const value = parseInt(e.target.value, 10);
-                            setQuantity(value || 1);
-                          }}
+                          value={product.qty}
                           className={`${styles.noHover}`}
                         />
                         <Button

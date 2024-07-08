@@ -17,13 +17,15 @@ const authSlice = createSlice({
       }
     },
     removeProduct(state, action) {
-      const productToRemove = action.payload;
-      state = state.products.map((item) => {
+      const productToRemove = action.payload.id;
+      const newState = state.products.map((item) => {
         if (item.id === productToRemove) {
           return { ...item, qty: item.qty - 1 };
         }
+        return item;
       });
-      return state.filter((item) => item.qty > 0);
+      console.log(newState);
+      state.products = newState.filter((item) => item.qty > 0);
     },
   },
 });

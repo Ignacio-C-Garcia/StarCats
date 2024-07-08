@@ -34,13 +34,7 @@ const store = configureStore({
     }),
 });
 const persistor = persistStore(store);
-/**const store = configureStore({
-  reducer: {
-    auth: authReducer,
-    shoppingCart: ShoppingCartReducer,
-  },
-});
- */
+
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Provider store={store}>
