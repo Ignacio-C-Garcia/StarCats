@@ -1,58 +1,38 @@
-@import url("https://fonts.googleapis.com/css2?family=Chewy&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap");
-
-.about {
-  font-family: "Hammersmith One", Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-image: url(paper.png);
+.coffeeBackground {
+  background-image: url(https://i.pinimg.com/564x/27/c5/f4/27c5f454c05f08b5c9be66fbaac884ed.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.aboutTitle {
-  position: relative;
-  font-size: 48px;
-  color: #fcf402;
-  left: 0;
-  right: 0;
+.headerTitle {
+  color: white;
 }
 
-.team {
-  background-image: url(https://i.pinimg.com/564x/ba/53/e2/ba53e2e28dfb63d10e4e7b7ea6145da3.jpg);
+.icon {
+  color: #f7e92c;
 }
-
-section h2 {
-  font-size: 2rem;
-  color: #fcf402;
-}
-
-section p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-}
-
-section ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-section ul li {
-  margin-bottom: 10px;
-}
-
-.michiPhoto {
-  width: 300px;
-  height: 300px;
+/* Imágenes */
+.imgFluid {
   background-size: cover;
   border-radius: 50%;
   border: 10px solid rgb(83, 82, 81);
   transition: transform 0.3s ease-in-out;
-  object-fit: cover;
+  width: 150px;
 }
 
-.michiPhoto:hover {
+.skills {
+  transition: transform 0.3s ease-in-out;
+}
+
+.skills:hover {
   transform: scale(1.05);
 }
 
+.imgFluid:hover {
+  transform: scale(1.05);
+}
+
+/* Animaciones */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -67,6 +47,7 @@ section ul li {
   animation-duration: 1s;
 }
 
-button {
-  background-color: #fcf402;
+.bi-icon {
+  font-size: 3rem;
+  margin: 0 5px;
 }
