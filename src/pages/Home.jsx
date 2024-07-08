@@ -49,7 +49,7 @@ function Home() {
     <>
       <NavBar />
       <header className={`container-fluid ${styles.parallax}`}>
-        <div className={`container ${styles.containerHeader}`}>
+        <div className={`container animate__animated animate__zoomIn ${styles.containerHeader}`}>
           <div className="row">
             <div className="col-lg-6 col-sm-6 ">
               <h1 className={` ${styles.HomeTitle}`}>STARCATS</h1>
@@ -93,13 +93,13 @@ function Home() {
             </p>
 
             <div className="col-sm-12 col-lg-4 col-md-4 d-flex justify-content-center">
-              <Link to="/products/1" className={styles.card}>
+              <Link to="/products/1" className={`${styles.card}`}>
                 <img
                   src="img/categories/cupcoffee.png"
                   alt="Cup of coffee"
                   className="img-fluid"
                 />
-                <span className="d-lg-none fs-3 mt-4">CAFE</span>
+                <span className="d-lg-none fs-3 mt-4">CAFÉ</span>
               </Link>
             </div>
 
@@ -136,7 +136,7 @@ function Home() {
             <div className={`col-md-7 d-flex justify-content-center`}>
               <div className={`col-md-7 d-flex justify-content-center`}>
                 <Link className="fs-2" to="/products/1">
-                  CAFE
+                  CAFÉ
                 </Link>
               </div>
               <div className={`col-md-7 d-flex justify-content-center`}>

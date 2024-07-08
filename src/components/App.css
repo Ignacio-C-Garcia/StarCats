@@ -54,7 +54,7 @@
   color: var(--primary-text-color);
   line-height: 1.2rem;
 }
-
+/*  */
 .dropdown_menu ul li:hover a {
   color: rgb(212, 33, 9);
   cursor: pointer;

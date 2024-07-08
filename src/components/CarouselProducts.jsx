@@ -51,13 +51,15 @@ function CarouselProducts({ products }) {
   return (
     <div className={`p-3 ${styles.carousel}`}>
       <div className="container">
-        <h2 className="text-center text-white pb-4"> Productos</h2>
+        <h2 className="text-center text-white pb-4">Productos destacados</h2>
         <Slider {...settings} className="m-3">
-          {products.map((product, index) => (
-            <div key={index} className="p-3">
-              <ProductCard product={product} />
-            </div>
-          ))}
+          {products
+            .filter((product) => product.featured)
+            .map((product, index) => (
+              <div key={index} className="p-3">
+                <ProductCard product={product} />
+              </div>
+            ))}
         </Slider>
       </div>
     </div>

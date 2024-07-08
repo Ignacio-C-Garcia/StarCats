@@ -30,7 +30,7 @@ export default function ShoppingCartList() {
               <div className="row">
                 <div className="col-6">
                   <h4 className="mt-4">
-                    {product.name}- {product.volume}
+                    {product.name}- {product.volume} ml
                   </h4>
                   <img
                     src={`/img/${product.pic}`}
