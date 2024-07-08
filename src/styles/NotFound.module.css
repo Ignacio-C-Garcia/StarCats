@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Chewy&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap");
+
 .container {
   background-color: #d6d4cb;
   height: 100vh;
@@ -23,15 +26,19 @@
 .notFoundText {
   font-size: 7rem;
   margin-bottom: 30px;
+  font-family: "Chewy";
+  
 }
 
 .btnHome {
+  font-family: "Hammersmith One";
   padding: 10px 20px;
   font-size: 2rem;
   background-color: #fbce4f;
   color: black;
   border: none;
   border-radius: 50px;
+  text-decoration: none;
 }
 
 .btnHome:hover {

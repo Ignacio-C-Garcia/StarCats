@@ -175,7 +175,7 @@ function AboutUs() {
               <p className="text-center">
                 Estamos aquí para responder cualquier pregunta que puedas tener.
                 No dudes en contactarnos en{" "}
-                <a href="mailto:info@starcats.com">info@starcats.com</a> o a
+                <Link to="mailto:info@starcats.com">info@starcats.com</Link> o a
                 través de nuestras redes sociales.
               </p>
             </Container>

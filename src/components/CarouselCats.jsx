@@ -1,6 +1,9 @@
+import React from 'react';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 import styles from "../styles/CarouselCats.module.css";
 
 function CarouselCats({ cats }) {
@@ -58,10 +61,11 @@ function CarouselCats({ cats }) {
           {cats.map((cat, index) => (
             <div key={index} className={`p-3`}>
               <div className={styles.card}>
-                <img
+                <LazyLoadImage
                   src={import.meta.env.VITE_CAT_IMG_PATH + cat.pic}
-                  className={styles.cardImage}
                   alt={cat.name}
+                  className={styles.cardImage}
+                  effect="blur"
                 />
                 <div className={styles.cardContent}>
                   <h5 className={`card-title ${styles.cardTitle}`}>

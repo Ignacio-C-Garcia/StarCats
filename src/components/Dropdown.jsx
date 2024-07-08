@@ -1,16 +1,20 @@
 import { useEffect, useState } from "react";
 import "bootstrap";
 import styles from "../styles/NavBar.module.css";
+import { Link } from "react-router-dom";
 
 export default function DropDown({ info: { name } }) {
   const [selected, setSelected] = useState(null);
   const catFromState = ["Café en granos", "Bebidas", "Comidas"];
 
-  useEffect(() => setSelected(null), []);
+  useEffect(() => {
+    setSelected(null);
+  }, []);
 
   return (
     <div className="dropdown">
-      <a
+      <Link
+        to="#"
         className="nav-link dropdown-toggle"
         id="navbarDropdown"
         role="button"
@@ -18,7 +22,7 @@ export default function DropDown({ info: { name } }) {
         aria-expanded="false"
       >
         {name}
-      </a>
+      </Link>
       <div
         className={`dropdown-menu p-2 ${styles.dropdownMenu} text-center`}
         style={{ width: selected != null ? 600 : 300 }}
@@ -28,16 +32,18 @@ export default function DropDown({ info: { name } }) {
             <h6 className={styles.dropdownHeader}>Categorías</h6>
             <div className="list-group">
               {catFromState.map((category, index) => (
-                <a
+                <Link
                   key={index}
+                  to={`/products/${index + 1}`}
                   className={`border-0 rounded-3 list-group-item list-group-item-action ${
-                    selected === index ? styles.dropdownItemSelected : styles.dropdownItem
+                    selected === index
+                      ? styles.dropdownItemSelected
+                      : styles.dropdownItem
                   }`}
-                  href="#"
                   onMouseEnter={() => setSelected(index)}
                 >
                   {category}
-                </a>
+                </Link>
               ))}
             </div>
           </div>
@@ -46,45 +52,39 @@ export default function DropDown({ info: { name } }) {
               <h6 className={styles.dropdownHeader}>Productos</h6>
               {selected === 0 && (
                 <div id="ListaCafe" className="list-group list-group-flush">
-                  <a className={`list-group-item list-group-item-action border-0 rounded-3 ${styles.dropdownItem}`} href="#">
+                  <Link
+                    to="/products"
+                    className={`list-group-item list-group-item-action border-0 rounded-3 ${styles.dropdownItem}`}
+                  >
                     México ATM
-                  </a>
-                  <a className={`list-group-item list-group-item-action border-0 rounded-3 ${styles.dropdownItem}`} href="#">
-                    Brasil Crucera
-                  </a>
-                  <a className={`list-group-item list-group-item-action border-0 rounded-3 ${styles.dropdownItem}`} href="#">
-                    El Salvador VV
-                  </a>
+                  </Link>
                 </div>
               )}
               {selected === 1 && (
                 <div id="ListaPostres" className="list-group list-group-flush">
-                  <a className={`list-group-item list-group-item-action border-0 rounded-3 ${styles.dropdownItem}`} href="#">
+                  <Link
+                    to="/products"
+                    className={`list-group-item list-group-item-action border-0 rounded-3 ${styles.dropdownItem}`}
+                  >
                     Tarta de almendras
-                  </a>
-                  <a className={`list-group-item list-group-item-action border-0 rounded-3 ${styles.dropdownItem}`} href="#">
-                    Postre de coco
-                  </a>
-                  <a className={`list-group-item list-group-item-action border-0 rounded-3 ${styles.dropdownItem}`} href="#">
-                    Cheesecake de frutilla
-                  </a>
+                  </Link>
                 </div>
               )}
               {selected === 2 && (
-                <div id="ListaConfiteria" className="list-group list-group-flush">
-                  <a className={`list-group-item list-group-item-action border-0 rounded-3 ${styles.dropdownItem}`} href="#">
+                <div
+                  id="ListaConfiteria"
+                  className="list-group list-group-flush"
+                >
+                  <Link
+                    to="/products"
+                    className={`list-group-item list-group-item-action border-0 rounded-3 ${styles.dropdownItem}`}
+                  >
                     Croissant con jamón y queso
-                  </a>
-                  <a className={`list-group-item list-group-item-action border-0 rounded-3 ${styles.dropdownItem}`} href="#">
-                    Sándwiches olímpicos de copetín
-                  </a>
-                  <a className={`list-group-item list-group-item-action border-0 rounded-3 ${styles.dropdownItem}`} href="#">
-                    Sándwiches de atún
-                  </a>
+                  </Link>
                 </div>
               )}
               <span>
-                <a href="/products">Ver más -</a>
+                <Link to="/products">Ver más -</Link>
               </span>
             </div>
           )}
