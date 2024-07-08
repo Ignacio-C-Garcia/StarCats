@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Modal as BootstrapModal,
   Button,
@@ -9,6 +9,7 @@ import {
 import styles from "../styles/ProductModal.module.css";
 import { useDispatch } from "react-redux";
 import { addProduct } from "../redux/shoppingCartReducer";
+import { Link } from "react-router-dom";
 
 function ProductModal({ show, setShow, product }) {
   const dispatch = useDispatch();
@@ -18,7 +19,7 @@ function ProductModal({ show, setShow, product }) {
   const [quantity, setQuantity] = useState(1);
   const [volume, setVolume] = useState(250);
   const [totalPrice, setTotalPrice] = useState(product.price);
-  const [buttonText, setButtonText] = useState("Añadir al carrito");
+  const [showViewCart, setShowViewCart] = useState(false);
 
   const handleVolumeChange = (vol) => {
     setVolume(vol);
@@ -29,19 +30,11 @@ function ProductModal({ show, setShow, product }) {
   };
 
   const handleAddToCart = () => {
-    console.log({
-      product,
-      isToGo,
-      quantity,
-      volume,
-      totalPrice,
-    });
     dispatch(addProduct({ ...product, qty: quantity, isToGo, volume }));
-    setButtonText("Añadido");
+    setShowViewCart(true);
     setTimeout(() => {
-      setButtonText("Añadir al carrito");
       setShow(false);
-    }, 2000);
+    }, 100000);
   };
 
   const incrementQuantity = () => {
@@ -98,10 +91,11 @@ function ProductModal({ show, setShow, product }) {
                   alt={product.name}
                   className={` ${styles.productImage}`}
                 />
+                <p className="mt-4 mb-4">{product.description}</p>
               </div>
 
               <div className="col-6 text-center row ">
-                <hr className="mt-5"/>
+                <hr className="mt-5" />
                 <Form>
                   <Form.Group className="mb-3">
                     <div className="row text-">
@@ -203,16 +197,16 @@ function ProductModal({ show, setShow, product }) {
                   </Form.Group>
                 </Form>
               </div>
-              <p className="mt-4 mb-4">{product.description}</p>
             </div>
           ) : (
             <div className="row">
-              <div className={`col-6  ${styles.productImageContainer}`}>
+              <div className={`col-6 ${styles.productImageContainer}`}>
                 <img
                   src={`${import.meta.env.VITE_IMG_PATH}${product.pic}`}
                   alt={product.alt}
                   className={` ${styles.productImage}`}
                 />
+                <p className="mt-4 mb-4">{product.description}</p>
               </div>
               <div className="col-6">
                 <h3>
@@ -229,8 +223,8 @@ function ProductModal({ show, setShow, product }) {
                 </h3>
                 <hr />
                 <Form>
-                  <Form.Group className="mb-3">
-                    <div className="row text-center">
+                  <Form.Group className="mb-5 mt-5">
+                    <div className="row text-center ">
                       <div className="col-6">
                         <p>Aquí</p>
                         <i
@@ -252,7 +246,7 @@ function ProductModal({ show, setShow, product }) {
                     </div>
                   </Form.Group>
 
-                  <Form.Group className="mb-2 d-flex justify-content-between ">
+                  <Form.Group className="mb-2 d-flex justify-content-around ">
                     <div className="d-flex border rounded-pill border-black">
                       <Button
                         variant="rounded-end-circle"
@@ -286,7 +280,6 @@ function ProductModal({ show, setShow, product }) {
                   </Form.Group>
                 </Form>
               </div>
-              <p className="mt-4 mb-4">{product.description}</p>
             </div>
           )}
         </div>
@@ -294,9 +287,15 @@ function ProductModal({ show, setShow, product }) {
           <Button className={styles.btnClose} onClick={handleClose}>
             Cerrar
           </Button>
-          <Button className={styles.btnAddToCart} onClick={handleAddToCart}>
-            {buttonText}
-          </Button>
+          {showViewCart ? (
+            <Link to="/cart" className={styles.btnViewCart}>
+              Ver carrito
+            </Link>
+          ) : (
+            <Button className={styles.btnClose} onClick={handleAddToCart}>
+              Añadir al carrito
+            </Button>
+          )}
         </BootstrapModal.Footer>
       </BootstrapModal.Body>
     </BootstrapModal>

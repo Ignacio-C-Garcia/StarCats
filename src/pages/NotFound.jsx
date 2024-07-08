@@ -7,7 +7,7 @@ function NotFound() {
       <div className={`container-fluid   ${styles.container}`}>
         <div className="row">
           <div className={`col-lg-6 col-md-12  ${styles.content}`}>
-            <h3 className={` ${styles.notFoundText}`}>Error 404</h3>
+            <h3 className={` animate__animated animate__backInUp ${styles.notFoundText}`}>Error 404</h3>
 
             <Link to="/" className={styles.btnHome}>
               Volver al inicio
@@ -17,7 +17,7 @@ function NotFound() {
             <img
               src="spilledCoffee.png"
               alt="Not Found"
-              className={` animate__animated animate__bounce ${styles.spilledCoffee}`}
+              className={` animate__animated animate__backInUp ${styles.spilledCoffee}`}
             />
           </div>
         </div>

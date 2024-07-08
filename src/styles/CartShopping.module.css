@@ -7,7 +7,6 @@ body {
 
 p,
 span,
-h4,
 input,
 button {
   font-family: "Hammersmith One", sans-serif;
@@ -19,22 +18,28 @@ h2 {
   margin-bottom: 1rem;
 }
 
-/* h4 {
-  font-family: "Hammersmith One", sans-serif;
+.individualProduct h4 {
+  font-size: large;
 }
 
-input {
-  font-family: "Hammersmith One", sans-serif;
-} */
-
 .individualProduct {
-  max-height: 200px;
+  max-height: 300px;
+  width: 100%;
+  margin-bottom: 20px;
 }
 
 .productPic {
   height: 120px;
+  object-fit: cover;
 }
 
-.discountBtn:hover {
-  background-color: rgb(63, 63, 63);
+.noHover {
+  width: 5vw;
+  text-align: center;
+  border: none;
+}
+
+.noHover:focus {
+  border-color: inherit;
+  box-shadow: none;
 }
