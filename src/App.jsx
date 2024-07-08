@@ -12,6 +12,7 @@ import AboutUs from "./pages/AboutUs";
 import Register from "./pages/Register";
 import Products from "./pages/Products";
 import NotFound from "./pages/NotFound";
+import Orders from "./pages/Orders";
 
 function App() {
   const router = createBrowserRouter([
@@ -46,6 +47,10 @@ function App() {
     {
       path: "/contact",
       element: <Contact />,
+    },
+    {
+      path: "/ordenes",
+      element: <Orders></Orders>,
     },
     {
       path: "*",

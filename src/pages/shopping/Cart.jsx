@@ -31,6 +31,9 @@ function Cart() {
       case 0:
         nextStep();
         break;
+      case 2:
+        navigate("/ordenes");
+        break;
       default:
         console.log("step inválido");
         break;
