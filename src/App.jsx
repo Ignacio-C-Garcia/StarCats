@@ -1,19 +1,21 @@
 import "./styles/App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
+import "animate.css";
 
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-
 import Home from "./pages/Home";
 import Login from "./pages/Login";
-import Cart from "./pages/Cart";
+import Cart from "./pages/shopping/Cart";
 import Contact from "./pages/Contact";
 import AboutUs from "./pages/AboutUs";
 import Register from "./pages/Register";
 import Products from "./pages/Products";
-import Dashboard from "./pages/admin/Dashboard";
-import AdminProducts from "./pages/admin/AdminProducts";
-import AdminOrders from "./pages/admin/AdminOrders";
+import NotFound from "./pages/NotFound";
+import Orders from "./pages/Orders";
+import UserIcon from "./components/UserIcon";
+import LogOut from "./pages/LogOut";
+
 function App() {
   const router = createBrowserRouter([
     {
@@ -33,7 +35,11 @@ function App() {
       element: <Cart />,
     },
     {
-      path: "/products",
+      path: "/products/:category",
+      element: <Products />,
+    },
+    {
+      path: "/products/",
       element: <Products />,
     },
     {
@@ -45,16 +51,21 @@ function App() {
       element: <Contact />,
     },
     {
-      path: "/admin/dashboard",
-      element: <Dashboard />,
+      path: "/ordenes",
+      element: <Orders></Orders>,
     },
     {
-      path: "/admin/productos",
-      element: <AdminProducts />,
+      path: "/logout",
+      element: <LogOut />,
     },
     {
-      path: "/admin/ordenes",
-      element: <AdminOrders />,
+      path: "/testing",
+      element: <UserIcon></UserIcon>,
+    },
+    {
+      path: "*",
+
+      element: <NotFound />,
     },
   ]);
   return <RouterProvider router={router} />;

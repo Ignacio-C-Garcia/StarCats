@@ -1,8 +1,8 @@
 import styles from "../styles/Login.module.css";
-import React, { useState } from "react";
+import { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Footer from "../components/Footer";
-
+import { Link } from "react-router-dom";
 const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -22,9 +22,9 @@ const Register = () => {
             lg={{ span: 6, order: "first" }}
             className="m-0 p-3 d-flex justify-content-center"
           >
-            <a href="/" className="d-flex align-items-center">
+            <Link to="/" className="d-flex align-items-center">
               <img src="/logostarcats.svg" alt="starcat-logo" />
-            </a>
+            </Link>
           </Col>
           <Col className="m-0 p-3 d-flex flex-column justify-content-center">
             <h2 className="text-center mb-3 fs-1">Regístrate</h2>

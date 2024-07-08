@@ -1,19 +1,25 @@
 import styles from "../styles/Login.module.css";
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import { Container, Row, Col } from "react-bootstrap";
-import Footer from "../components/Footer";
+import { Link, Navigate } from "react-router-dom";
+import { Container, Row, Col, Button, Form, Alert } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
 import { saveToken } from "../redux/authReducer";
-import { Navigate } from "react-router-dom";
+import Footer from "../components/Footer";
+
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
+  const [showAlert, setShowAlert] = useState(false);
   const dispatch = useDispatch();
   const auth = useSelector((state) => state.auth);
+
   const handleSubmit = async (event) => {
     event.preventDefault();
+    if (!email || !password) {
+      setShowAlert(true);
+      return;
+    }
     console.log("Email:", email);
     console.log("Password:", password);
     const response = await fetch(`${import.meta.env.VITE_API_URL}/tokens`, {
@@ -31,79 +37,80 @@ const Login = () => {
   };
 
   return auth.token === "" ? (
-    <>
-      <Container className="vh-100 d-flex justify-content-center">
-        <Row>
+    <div className={styles.login}>
+      <Container fluid className={styles.loginContainer}>
+        <Row className="h-100">
           <Col
-            xs={{ span: 12, order: "last" }}
-            md={{ span: 12, order: "last" }}
-            lg={{ span: 6, order: "first" }}
-            className="m-0 p-3 d-flex justify-content-center"
+            className="d-flex justify-content-center align-items-center"
+            lg={6}
           >
-            <a href="/" className="d-flex align-items-center">
-              <img src="/logostarcats.svg" alt="starcat-logo" />
-            </a>
+            <img src="logostarcats.svg" width={450} height={450}></img>
           </Col>
-          <Col className="m-0 p-3 d-flex flex-column justify-content-center">
-            <h2 className="text-center mb-3 fs-1">Iniciar sesión</h2>
-            <div className={`rounded-4 p-4 w-100 ${styles.form}`}>
-              -- Editar el mensaje de advertencia al no llenar los campos --{" "}
-              <br />
-              -- Crear formulario (posiblemente sera la configuracion de
-              usuario) de cambio de contraseña --
-              <form
+          <Col md={6} className={styles.formColumn}>
+            <div className={`${styles.form}`}>
+              <h2 className="text-center pb-2">Iniciar sesión</h2>
+              {showAlert && (
+                <Alert
+                  variant="warning"
+                  className={styles.customAlert}
+                  onClose={() => setShowAlert(false)}
+                  dismissible
+                >
+                  Por favor, completa ambos campos.
+                  <button onClick={() => setShowAlert(false)}>×</button>
+                </Alert>
+              )}
+              <Form
                 onSubmit={handleSubmit}
-                className="d-flex align-items-center pb-2"
+                className="d-flex flex-column gap-2"
               >
-                <div className="w-100">
-                  <div>
-                    <input
-                      className="mb-2 p-2 border-0 rounded-pill w-100 text-center"
-                      placeholder="Correo electrónico"
-                      type="email"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      required
-                    />
-                  </div>
-                  <div>
-                    <input
-                      className="mb-2 p-2 border-0 rounded-pill w-100 text-center"
-                      placeholder="Contraseña"
-                      type="password"
-                      value={password}
-                      onChange={(e) => setPassword(e.target.value)}
-                      required
-                    />
-                  </div>
-                  <button
-                    type="submit"
-                    className="p-2 border-0 rounded-pill w-100"
-                  >
-                    Entrar
-                  </button>
-                </div>
-              </form>
-              <div className="d-flex gap-1">
-                <Link to="/signup" className="flex-fill">
-                  <button className="p-2 border-0 rounded-pill w-100">
-                    Registrarse
-                  </button>
-                </Link>
-                <Link to="" className="flex-fill">
-                  <button className="p-2 border-0 rounded-pill w-100">
-                    ¿Olvidaste la contraseña?
-                  </button>
-                </Link>
+                <Form.Control
+                  type="email"
+                  placeholder="Ingresá tu correo electrónico"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className={`${styles.inputForm} rounded-pill p-2 ps-3 pe-3`}
+                />
+                <Form.Control
+                  type="password"
+                  placeholder="Ingresá tu contraseña"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className={`${styles.inputForm} rounded-pill p-2 ps-3 pe-3`}
+                />
+                <Button
+                  variant="dark"
+                  type="submit"
+                  className={`${styles.loginButton} rounded-pill p-2`}
+                >
+                  Ingresar
+                </Button>
+              </Form>
+              <div
+                className={`${styles.buttonGroup} d-flex flex-row d-grid gap-2 pt-3`}
+              >
+                <Button
+                  variant="dark"
+                  className={`col d-flex align-items-center justify-content-center p-2 ps-0 pe-0 rounded-pill`}
+                  href="/signup"
+                >
+                  Regístrate
+                </Button>
+                <Button
+                  variant="dark"
+                  className={`col d-flex align-items-center justify-content-center p-2 ps-0 pe-0 rounded-pill`}
+                >
+                  ¿Olvidaste tu contraseña?
+                </Button>
               </div>
             </div>
           </Col>
         </Row>
       </Container>
       <Footer />
-    </>
+    </div>
   ) : (
-    <Navigate to="/admin/dashboard"></Navigate>
+    <Navigate to="/ordenes"></Navigate>
   );
 };
 

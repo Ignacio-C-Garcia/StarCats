@@ -7,27 +7,25 @@ const authSlice = createSlice({
     addProduct(state, action) {
       //{productId:1, qty:22}
       const productToAdd = action.payload;
-      const isAlreadyInCart = state.products.some((item) => {
+      const indexInCart = state.products.findIndex((item) => {
         return item.id === productToAdd.id;
       });
-      if (isAlreadyInCart) {
-        return state.products.map((item) => {
-          if (item.id === productToAdd.id) {
-            return { ...item, qty: item.qty + productToAdd.qty };
-          }
-          return item;
-        });
+      if (indexInCart >= 0) {
+        state.products[indexInCart].qty += productToAdd.qty;
+      } else {
+        state.products.push(productToAdd);
       }
-      state.products.push(productToAdd);
     },
     removeProduct(state, action) {
-      const productToRemove = action.payload;
-      state = state.products.map((item) => {
+      const productToRemove = action.payload.id;
+      const newState = state.products.map((item) => {
         if (item.id === productToRemove) {
           return { ...item, qty: item.qty - 1 };
         }
+        return item;
       });
-      return state.filter((item) => item.qty > 0);
+      console.log(newState);
+      state.products = newState.filter((item) => item.qty > 0);
     },
   },
 });

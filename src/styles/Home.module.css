@@ -1,52 +1,214 @@
 @import url("https://fonts.googleapis.com/css2?family=Chewy&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap");
 
+/* Parallax effect */
+.parallax {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 /* header */
 header {
-  position: relative;
+  background-image: url("header.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  padding: 110px;
 }
 
-.headerImage {
+.cupCoffee {
+  height: 32.5vw;
   object-fit: cover;
-  width: 100%;
+  transition: transform 0.3s ease;
 }
 
-h1 {
+.cupCoffee:active {
+  transform: translateY(-20%) rotate(-15deg);
+}
+
+.HomeTitle {
   font-family: "Chewy", regular;
   font-size: 8.5vw;
   color: #ffffee;
-  position: absolute;
-  left: 12%;
-  top: 14%;
+  animation: text-flicker-in-glow 2s linear both;
+}
+
+@keyframes text-flicker-in-glow {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  10.1% {
+    opacity: 1;
+    text-shadow: none;
+  }
+  10.2% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  20% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  20.1% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.25);
+  }
+  20.6% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  30% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  30.1% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.45),
+      0 0 60px rgba(255, 255, 255, 0.25);
+  }
+  30.5% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.45),
+      0 0 60px rgba(255, 255, 255, 0.25);
+  }
+  30.6% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  45% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  45.1% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.45),
+      0 0 60px rgba(255, 255, 255, 0.25);
+  }
+  50% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.45),
+      0 0 60px rgba(255, 255, 255, 0.25);
+  }
+  55% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.45),
+      0 0 60px rgba(255, 255, 255, 0.25);
+  }
+  55.1% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  57% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  57.1% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.55),
+      0 0 60px rgba(255, 255, 255, 0.35);
+  }
+  60% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.55),
+      0 0 60px rgba(255, 255, 255, 0.35);
+  }
+  60.1% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  65% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  65.1% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.55),
+      0 0 60px rgba(255, 255, 255, 0.35), 0 0 100px rgba(255, 255, 255, 0.1);
+  }
+  75% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.55),
+      0 0 60px rgba(255, 255, 255, 0.35), 0 0 100px rgba(255, 255, 255, 0.1);
+  }
+  75.1% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  77% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  77.1% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.55),
+      0 0 60px rgba(255, 255, 255, 0.4), 0 0 110px rgba(255, 255, 255, 0.2),
+      0 0 100px rgba(255, 255, 255, 0.1);
+  }
+  85% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.55),
+      0 0 60px rgba(255, 255, 255, 0.4), 0 0 110px rgba(255, 255, 255, 0.2),
+      0 0 100px rgba(255, 255, 255, 0.1);
+  }
+  85.1% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  86% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  86.1% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.6),
+      0 0 60px rgba(255, 255, 255, 0.45), 0 0 110px rgba(255, 255, 255, 0.25),
+      0 0 100px rgba(255, 255, 255, 0.1);
+  }
+  100% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.6),
+      0 0 60px rgba(255, 255, 255, 0.45), 0 0 110px rgba(255, 255, 255, 0.25),
+      0 0 100px rgba(255, 255, 255, 0.1);
+  }
 }
 
 .pHeader {
   font-family: "Hammersmith One";
-  font-size: 3.15vw;
+  font-size: 3.5vw;
   color: #fcf402;
-  position: absolute;
-  left: 12%;
-  top: 40%;
+  margin-top: 25px;
+  margin-bottom: 27px;
+  text-wrap: nowrap;
 }
 
 .btnHeader {
-  position: absolute;
-  left: 12%;
-  top: 67.5%;
   padding: 0;
   display: flex;
-  width: 18vw;
+  width: 20vw;
 }
 
 .btnLeft {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: black;
   color: #fcf402;
-  padding: 0.9vw;
   border-radius: 42.5px 0 0 42.5px;
   width: 18%;
   margin-right: 1.7px;
   border: none;
-  font-size: 1.25vw;
+  font-size: 1.5vw;
+  font-family: "Hammersmith One";
+  font-weight: bold;
+  text-decoration: none;
 }
 
 .btnRight {
@@ -56,7 +218,12 @@ h1 {
   color: #ffffee;
   border-radius: 0 42.5px 42.5px 0;
   border: none;
-  font-size: 1.25vw;
+  text-decoration: none;
+  font-size: 1.5vw;
+  font-family: "Hammersmith One";
+}
+.btnRight:hover {
+  color: #fcf402;
 }
 
 .btnLeft:active,
@@ -70,6 +237,13 @@ h1 {
 .containerCategory {
   background-image: url(paper.png);
   padding: 1.8%;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  background-attachment: fixed;
+  /* background-position: center; */
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 /* cards */
@@ -77,7 +251,8 @@ h1 {
   border: 5.4px dashed #000;
   border-radius: 10px;
   background-color: rgba(255, 255, 255, 0);
-  width: 90%;
+  width: 80%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -85,11 +260,6 @@ h1 {
   transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out;
   margin-top: 12.5px;
   padding: 0;
-}
-@media (min-width: 576px) {
-  .card {
-    width: 90%;
-  }
 }
 
 .card:hover {
@@ -104,7 +274,7 @@ h1 {
 }
 
 .containerCategory h2 {
-  font-family: "Hammersmith One";
+  font-family: "Chewy";
   text-align: center;
   color: #000;
 }
@@ -115,14 +285,14 @@ h1 {
   margin-top: 0;
 }
 
-a {
-  color: #000;
+.containerCategory a {
   font-family: "Hammersmith One";
-  font-weight: bold;
-  font-size: 1.53vh;
   text-decoration: none;
+  font-weight: bold;
 }
 
-a:hover {
-  color: #fcf402;
+.gif {
+  width: 100%;
+  height: 15vw;
+  object-fit: cover;
 }

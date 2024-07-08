@@ -1,6 +1,9 @@
+import React from 'react';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 import styles from "../styles/CarouselCats.module.css";
 
 function CarouselCats({ cats }) {
@@ -11,7 +14,7 @@ function CarouselCats({ cats }) {
     slidesToShow: 4,
     slidesToScroll: 1,
     arrows: true,
-    autoplay: false,
+    autoplay: true,
     autoplaySpeed: 3000,
     responsive: [
       {
@@ -53,17 +56,18 @@ function CarouselCats({ cats }) {
       <p className={`fs-3 ${styles.subtitle}`}>
         Te presentamos a nuestro staff de michis
       </p>
-      <div className="container container-fluid  p-3">
+      <div className="container container-fluid p-3">
         <Slider {...settings}>
           {cats.map((cat, index) => (
             <div key={index} className={`p-3`}>
-              <div className={` ${styles.card}`}>
-                <img
+              <div className={styles.card}>
+                <LazyLoadImage
                   src={import.meta.env.VITE_CAT_IMG_PATH + cat.pic}
-                  className={` ${styles.cardImage}`}
                   alt={cat.name}
+                  className={styles.cardImage}
+                  effect="blur"
                 />
-                <div className={` ${styles.cardContent}`}>
+                <div className={styles.cardContent}>
                   <h5 className={`card-title ${styles.cardTitle}`}>
                     {cat.name}
                   </h5>

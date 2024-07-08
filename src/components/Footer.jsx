@@ -2,46 +2,43 @@ import { Link } from "react-router-dom";
 
 function Footer() {
   return (
-    <footer className="bg-black text-white py-4">
+    <footer className="bg-black text-white p-5">
       <div className="container">
         <div className="row">
-          <div className="col-lg-3 col-md-6 col-sm-6 mb-4 ">
-            <span className="h4 d-flex">StarCats  &#174; </span>
-            <a href="/">
+          <div className="col-lg-3 col-md-6 col-sm-6 mb-4">
+            <span className="h4 d-flex">StarCats ® </span>
+            <Link to="/">
               <img
                 src="/logostarcats-light.svg"
                 alt="Cat Cafe Logo"
                 width={80}
                 height={80}
-                className=" ms-3 "
+                className="ms-3  animate__animated animate__flipInY"
               />
-            </a>
+            </Link>
           </div>
           <div className="col-lg-3 col-md-6 col-sm-6 mb-4">
             <ul className="list-unstyled mb-0">
-              <li className="">
+              <li>
                 <Link to="/" className="text-decoration-none text-white">
                   Inicio
                 </Link>
               </li>
-              <li className="">
+              <li>
                 <Link to="/about" className="text-decoration-none text-white">
                   Sobre nosotros
                 </Link>
               </li>
               <li>
                 <Link
-                  to="/Productos"
+                  to="/products"
                   className="text-decoration-none text-white"
                 >
                   Productos
                 </Link>
               </li>
               <li>
-                <Link
-                  to="/Productos"
-                  className="text-decoration-none text-white"
-                >
+                <Link to="/contact" className="text-decoration-none text-white">
                   Contacto
                 </Link>
               </li>
@@ -49,18 +46,15 @@ function Footer() {
           </div>
           <div className="col-lg-3 col-md-6 col-sm-6 mb-4">
             <div className="d-flex justify-content-center justify-content-md-start">
-              <a href="/" className="text-white me-3">
+              <Link to="/" className="text-white me-3" aria-label="Facebook">
                 <i className="bi bi-facebook fs-3"></i>
-                <span className="visually-hidden">Facebook</span>
-              </a>
-              <a href="/" className="text-white me-3">
+              </Link>
+              <Link to="/" className="text-white me-3" aria-label="Twitter">
                 <i className="bi bi-twitter fs-3"></i>
-                <span className="visually-hidden">Twitter</span>
-              </a>
-              <a href="/" className="text-white">
+              </Link>
+              <Link to="/" className="text-white" aria-label="Instagram">
                 <i className="bi bi-instagram fs-3"></i>
-                <span className="visually-hidden">Instagram</span>
-              </a>
+              </Link>
             </div>
           </div>
           <div className="col-lg-3 col-md-6 col-sm-6 mb-4">

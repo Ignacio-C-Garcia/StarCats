@@ -1,31 +1,66 @@
-body {
-  background-color: #d89d49;
-  /* background-color: #f5f5f5; */
-
-  font-size: large;
-}
-
-img {
-  max-width: 100%;
-  max-height: 100%;
-}
-
-.form {
-  background-color: #ab7a35;
-}
-
-input {
-  background-color: #fbebc2;
-}
-
-button {
-  background-color: #ffb64f;
+.login {
+  background-color: #d6d4cb;
 }
 
 h2 {
-  color: black;
+  color: #000;
 }
 
-a {
-  color: #333333;
+.loginContainer {
+  height: 100vh;
+}
+
+.inputForm:hover,
+.inputForm:active,
+.inputForm:focus {
+  box-shadow: none;
+  border-color: #000;
+}
+
+.formColumn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  max-width: 400px;
+  width: 100%;
+}
+
+.loginButton {
+  flex-grow: 1;
+}
+
+.customAlert {
+  background-color: #ffdd77; /* Color amarillo */
+  color: #000; /* Texto negro */
+  border: 1px solid #ffdd77; /* Borde amarillo oscuro */
+  border-radius: 15px; /* Bordes redondeados */
+  padding: 15px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.customAlert button {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: #000;
+  cursor: pointer;
+}
+
+.customTooltip {
+  background-color: #ffeb3b; /* Color amarillo */
+  color: #000; /* Texto negro */
+  border: 1px solid #ffc107; /* Borde amarillo oscuro */
+  border-radius: 10px; /* Bordes redondeados */
+  padding: 10px;
+  font-weight: bold;
+}
+
+.customTooltip .arrow::before {
+  border-top-color: #ffeb3b; /* Color de la flecha */
 }

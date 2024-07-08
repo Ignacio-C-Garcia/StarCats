@@ -9,12 +9,7 @@ import {
 import styles from "../styles/ProductModal.module.css";
 import { useDispatch } from "react-redux";
 import { addProduct } from "../redux/shoppingCartReducer";
-
-
-
-
-
-
+import { Link } from "react-router-dom";
 
 function ProductModal({ show, setShow, product }) {
   const dispatch = useDispatch();
@@ -24,6 +19,7 @@ function ProductModal({ show, setShow, product }) {
   const [quantity, setQuantity] = useState(1);
   const [volume, setVolume] = useState(250);
   const [totalPrice, setTotalPrice] = useState(product.price);
+  const [showViewCart, setShowViewCart] = useState(false);
 
   const handleVolumeChange = (vol) => {
     setVolume(vol);
@@ -34,15 +30,13 @@ function ProductModal({ show, setShow, product }) {
   };
 
   const handleAddToCart = () => {
-    console.log({
-      product,
-      isToGo,
-      quantity,
-      volume,
-      totalPrice,
-    });
-    dispatch(addProduct({ ...product, qty: quantity, isToGo, volume }));
-    setShow(false);
+    dispatch(
+      addProduct({ ...product, qty: quantity, isToGo, volume, totalPrice })
+    );
+    setShowViewCart(true);
+    setTimeout(() => {
+      setShow(false);
+    }, 100000);
   };
 
   const incrementQuantity = () => {
@@ -69,13 +63,19 @@ function ProductModal({ show, setShow, product }) {
   );
 
   return (
-    <BootstrapModal show={show} onHide={handleClose}>
+    <BootstrapModal
+      show={show}
+      onHide={handleClose}
+      size="lg"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
       <BootstrapModal.Body className={styles.body}>
         <div className="container-fluid">
           {product.categoryId === 1 ? (
             <div className="row">
-              <div className="col-lg-6 col-md-12 text-center">
-                <h3>
+              <div className={`col-6  ${styles.productImageContainer}`}>
+                <h2 className="pt-4 mt-4 fs-2">
                   {product.name}
                   <OverlayTrigger
                     trigger="click"
@@ -86,20 +86,21 @@ function ProductModal({ show, setShow, product }) {
                       <i className="bi bi-info-circle"></i>
                     </Button>
                   </OverlayTrigger>
-                </h3>
+                </h2>
 
                 <img
                   src={`${import.meta.env.VITE_IMG_PATH}${product.pic}`}
                   alt={product.name}
                   className={` ${styles.productImage}`}
                 />
+                <p className="mt-4 mb-4">{product.description}</p>
               </div>
 
-              <div className="col-lg-6 col-md-12 text-center">
-                <hr />
+              <div className="col-6 text-center row ">
+                <hr className="mt-5" />
                 <Form>
                   <Form.Group className="mb-3">
-                    <div className="row text-center">
+                    <div className="row text-">
                       <div className="col-6">
                         <p>Aquí</p>
                         <i
@@ -122,7 +123,7 @@ function ProductModal({ show, setShow, product }) {
                   </Form.Group>
 
                   {product.categoryId === 1 && (
-                    <Form.Group className="mb-3 text-center">
+                    <Form.Group className="pb-5 text-center">
                       <hr />
                       <p>Tamaño</p>
                       <div className={`d-flex ${styles.volumeSelector}`}>
@@ -136,9 +137,12 @@ function ProductModal({ show, setShow, product }) {
                             onClick={() => handleVolumeChange(250)}
                           ></i>
                           <span>250ml</span>
+                          <small>
+                            ${(product.price * 1 * quantity).toFixed(2)}
+                          </small>
                         </div>
                         <div
-                          className={`d-flex flex-column align-items-center ${styles.volumeOption}`}
+                          className={`d-flex flex-column align-items-center m-2 ${styles.volumeOption}`}
                         >
                           <i
                             className={`bi bi-cup-hot fs-4 ${
@@ -147,6 +151,9 @@ function ProductModal({ show, setShow, product }) {
                             onClick={() => handleVolumeChange(350)}
                           ></i>
                           <span>350ml</span>
+                          <small>
+                            ${(product.price * 1.4 * quantity).toFixed(2)}
+                          </small>
                         </div>
                         <div
                           className={`d-flex flex-column align-items-center ${styles.volumeOption}`}
@@ -158,6 +165,9 @@ function ProductModal({ show, setShow, product }) {
                             onClick={() => handleVolumeChange(450)}
                           ></i>
                           <span>450ml</span>
+                          <small>
+                            ${(product.price * 1.8 * quantity).toFixed(2)}
+                          </small>
                         </div>
                       </div>
                       <hr />
@@ -198,18 +208,18 @@ function ProductModal({ show, setShow, product }) {
                   </Form.Group>
                 </Form>
               </div>
-              <p>{product.description}</p>
             </div>
           ) : (
             <div className="row">
-              <div className="col-lg-6 col-md-12 text-center">
+              <div className={`col-6 ${styles.productImageContainer}`}>
                 <img
                   src={`${import.meta.env.VITE_IMG_PATH}${product.pic}`}
                   alt={product.alt}
                   className={` ${styles.productImage}`}
                 />
+                <p className="mt-4 mb-4">{product.description}</p>
               </div>
-              <div className="col-lg-6 col-md-12">
+              <div className="col-6">
                 <h3>
                   {product.name}{" "}
                   <OverlayTrigger
@@ -224,8 +234,8 @@ function ProductModal({ show, setShow, product }) {
                 </h3>
                 <hr />
                 <Form>
-                  <Form.Group className="mb-3">
-                    <div className="row text-center">
+                  <Form.Group className="mb-5 mt-5">
+                    <div className="row text-center ">
                       <div className="col-6">
                         <p>Aquí</p>
                         <i
@@ -247,7 +257,7 @@ function ProductModal({ show, setShow, product }) {
                     </div>
                   </Form.Group>
 
-                  <Form.Group className="mb-2 d-flex justify-content-between ">
+                  <Form.Group className="mb-2 d-flex justify-content-around ">
                     <div className="d-flex border rounded-pill border-black">
                       <Button
                         variant="rounded-end-circle"
@@ -281,7 +291,6 @@ function ProductModal({ show, setShow, product }) {
                   </Form.Group>
                 </Form>
               </div>
-              <p>{product.description}</p>
             </div>
           )}
         </div>
@@ -289,9 +298,15 @@ function ProductModal({ show, setShow, product }) {
           <Button className={styles.btnClose} onClick={handleClose}>
             Cerrar
           </Button>
-          <Button className={styles.btnAddToCart} onClick={handleAddToCart}>
-            Añadir al carrito
-          </Button>
+          {showViewCart ? (
+            <Link to="/cart" className={styles.btnViewCart}>
+              Ver carrito
+            </Link>
+          ) : (
+            <Button className={styles.btnClose} onClick={handleAddToCart}>
+              Añadir al carrito
+            </Button>
+          )}
         </BootstrapModal.Footer>
       </BootstrapModal.Body>
     </BootstrapModal>
