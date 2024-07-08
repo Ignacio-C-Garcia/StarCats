@@ -6,7 +6,7 @@ import UserIcon from "./UserIcon";
 function NavBar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-black text-white ">
-      <div className=" animate__animated animate__fadeIn container container-fluid align">
+      <div className="container ">
         <Link to="/" className="navbar-brand">
           <span>Starcat</span>
         </Link>
@@ -32,6 +32,13 @@ function NavBar() {
             <li className="nav-item">
               <DropDown info={{ name: "Shop" }} />
             </li>
+            <Link
+              to="/Products"
+              className="nav-link active"
+              aria-current="page"
+            >
+              Productos
+            </Link>
             <li className="nav-item">
               <Link to="/about" className="nav-link active" aria-current="page">
                 Sobre el Proyecto

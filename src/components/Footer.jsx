@@ -13,7 +13,7 @@ function Footer() {
                 alt="Cat Cafe Logo"
                 width={80}
                 height={80}
-                className="ms-3"
+                className="ms-3  animate__animated animate__flipInY"
               />
             </Link>
           </div>
