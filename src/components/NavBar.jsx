@@ -8,7 +8,7 @@ function NavBar() {
     <nav className="navbar navbar-expand-lg navbar-dark bg-black text-white ">
       <div className="container ">
         <Link to="/" className="navbar-brand">
-          <span>Starcat</span>
+          <span className="fs-2">Starcats</span>
         </Link>
         <button
           className="navbar-toggler"
@@ -29,9 +29,7 @@ function NavBar() {
             <li className="nav-item">
               <Link to="/products" className="nav-link"></Link>
             </li>
-            <li className="nav-item">
-              <DropDown info={{ name: "Shop" }} />
-            </li>
+
             <Link
               to="/Products"
               className="nav-link active"
@@ -45,17 +43,17 @@ function NavBar() {
               </Link>
             </li>
           </ul>
-          <div></div>
-          <div className="d-flex justify-content-center align-items-center text-center">
-            <div className="shoppingCartIcon px-3">
-              <UserIcon></UserIcon>
-            </div>
-            <div className="shoppingCartIcon">
-              <Link to="/cart" className="nav-link">
-                Carrito
-              </Link>
-            </div>
+          <div className="shoppingCartIcon px-2">
+            <UserIcon></UserIcon>
           </div>
+            <Link to="/cart" className="nav-link">
+              Carrito
+            </Link>
+
+          {/* <div className="d-flex justify-content-center align-items-center text-center">
+            <div className="shoppingCartIcon">
+            </div>
+          </div> */}
         </div>
       </div>
     </nav>

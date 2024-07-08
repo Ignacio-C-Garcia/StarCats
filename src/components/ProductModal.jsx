@@ -97,9 +97,8 @@ function ProductModal({ show, setShow, product }) {
               </div>
 
               <div className="col-6 text-center row ">
-                <hr className="mt-5" />
                 <Form>
-                  <Form.Group className="mb-3">
+                  <Form.Group className="mt-5 mb-3">
                     <div className="row text-">
                       <div className="col-6">
                         <p>Aquí</p>
@@ -137,9 +136,7 @@ function ProductModal({ show, setShow, product }) {
                             onClick={() => handleVolumeChange(250)}
                           ></i>
                           <span>250ml</span>
-                          <small>
-                            ${(product.price * 1 * quantity).toFixed(2)}
-                          </small>
+                          <small>${(product.price * 1).toFixed(2)}</small>
                         </div>
                         <div
                           className={`d-flex flex-column align-items-center m-2 ${styles.volumeOption}`}
@@ -151,9 +148,7 @@ function ProductModal({ show, setShow, product }) {
                             onClick={() => handleVolumeChange(350)}
                           ></i>
                           <span>350ml</span>
-                          <small>
-                            ${(product.price * 1.4 * quantity).toFixed(2)}
-                          </small>
+                          <small>${(product.price * 1.4).toFixed(2)}</small>
                         </div>
                         <div
                           className={`d-flex flex-column align-items-center ${styles.volumeOption}`}
@@ -165,9 +160,7 @@ function ProductModal({ show, setShow, product }) {
                             onClick={() => handleVolumeChange(450)}
                           ></i>
                           <span>450ml</span>
-                          <small>
-                            ${(product.price * 1.8 * quantity).toFixed(2)}
-                          </small>
+                          <small>${(product.price * 1.8).toFixed(2)}</small>
                         </div>
                       </div>
                       <hr />
