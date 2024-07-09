@@ -67,8 +67,8 @@ function Contact() {
               </div>
               <div className="row">
                 <div className="col text-end mt-2">
-                  <button type="submit" className="btn btn-success btn-lg px-3">
-                    Let’s Talk
+                  <button type="submit" className="btn btn-lg px-3">
+                    Enviar
                   </button>
                 </div>
               </div>
