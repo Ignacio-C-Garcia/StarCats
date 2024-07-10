@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Chewy&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap");
+
 a:hover {
   color: #fcf402;
 }
@@ -24,4 +27,23 @@ h2 {
 .a {
   color: #000;
   font-family: "Hammersmith One";
+}
+
+/* button */
+.btn-component {
+  background-color: #1a1a1a;
+  color: white;
+  border-radius: 50px;
+  padding: 7px;
+  font-size: 1rem;
+  transition: 0.3s;
+  border: none;
+  margin-top: auto;
+  font-family: "Hammersmith One", sans-serif;
+
+}
+
+.btn-component:hover {
+  transform: scale(1.05);
+  transition: 0.3s;
 }

@@ -94,7 +94,7 @@ function Home() {
                   alt="Cup of coffee"
                   className="img-fluid"
                 />
-                <span className="d-lg-none fs-3 mt-4">CAFÉ</span>
+                <span className=" fs-3 mt-4">CAFÉ</span>
               </Link>
             </div>
 
@@ -105,7 +105,7 @@ function Home() {
                   alt="Medialuna"
                   className=""
                 />
-                <span className="d-lg-none fs-3 mt-4">PASTELERÍA</span>
+                <span className=" fs-3 mt-4">PASTELERÍA</span>
               </Link>
             </div>
 
@@ -116,21 +116,7 @@ function Home() {
                   alt="Coffee beans"
                   className="img-fluid"
                 />
-                <span className="d-lg-none fs-3 mt-4">GRANOS</span>
-              </Link>
-            </div>
-          </div>
-
-          <div className="row mt-3 justify-content-center d-none d-lg-flex">
-            <div className="col-md-7 d-flex justify-content-center">
-              <Link to="/products/1" className="fs-2">
-                CAFÉ
-              </Link>
-              <Link to="/products/2" className="fs-2">
-                PASTELERÍA
-              </Link>
-              <Link to="/products/3" className="fs-2">
-                GRANOS
+                <span className=" fs-3 mt-4">GRANOS</span>
               </Link>
             </div>
           </div>

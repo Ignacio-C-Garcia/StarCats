@@ -42,6 +42,123 @@ header {
   font-size: 8.5vw;
   color: #ffffee;
   animation: text-flicker-in-glow 2s linear both;
+
+}
+
+.p-header {
+  font-family: "Hammersmith One";
+  font-size: 3.5vw;
+  color: #fcf402;
+  margin-top: 25px;
+  margin-bottom: 27px;
+  white-space: nowrap;
+}
+
+.btn-header {
+  padding: 0;
+  display: flex;
+  width: 19vw;
+}
+
+.btn-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  color: #fcf402;
+  border-radius: 42.5px 0 0 42.5px;
+  width: 18%;
+  margin-right: 1.7px;
+  border: none;
+  font-size: 1.5vw;
+  font-family: "Hammersmith One";
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.btn-right {
+  flex-grow: 1;
+  padding: 0.85vw;
+  background-color: black;
+  color: #ffffee;
+  border-radius: 0 42.5px 42.5px 0;
+  border: none;
+  text-decoration: none;
+  font-size: 1.4vw;
+  font-family: "Hammersmith One";
+  text-align: center;
+}
+.btn-right:hover {
+  color: #fcf402;
+}
+
+.btn-left:active,
+.btn-right:active {
+  transform: scale(0.95);
+  transition: 0.2s;
+}
+
+/* Section Categories and carousel products */
+
+.container-category {
+  background-image: url(paper.png);
+  padding: 1.8%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 100px;
+}
+
+/* cards */
+.card {
+  border: 5.4px dashed #000;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0);
+  width: 85%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out;
+  margin-top: 12.5px;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  border-color: #fcf402;
+}
+
+.card img {
+  width: 65.5%;
+  height: 67.5%;
+  object-fit: contain;
+}
+
+.container-category h2 {
+  font-family: "Chewy";
+  text-align: center;
+  color: #000;
+}
+
+.container-category p {
+  font-family: "Hammersmith One";
+  font-size: 2.43vw;
+  margin-top: 0;
+}
+
+.container-category a {
+  font-family: "Hammersmith One";
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.gif {
+  width: 100%;
+  object-fit: cover;
+  height: 21vw;
 }
 
 @keyframes text-flicker-in-glow {
@@ -185,118 +302,4 @@ header {
       0 0 60px rgba(255, 255, 255, 0.45), 0 0 110px rgba(255, 255, 255, 0.25),
       0 0 100px rgba(255, 255, 255, 0.1);
   }
-}
-
-.p-header {
-  font-family: "Hammersmith One";
-  font-size: 3.5vw;
-  color: #fcf402;
-  margin-top: 25px;
-  margin-bottom: 27px;
-  white-space: nowrap;
-}
-
-.btn-header {
-  padding: 0;
-  display: flex;
-  width: 20vw;
-}
-
-.btn-left {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: black;
-  color: #fcf402;
-  border-radius: 42.5px 0 0 42.5px;
-  width: 18%;
-  margin-right: 1.7px;
-  border: none;
-  font-size: 1.5vw;
-  font-family: "Hammersmith One";
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.btn-right {
-  flex-grow: 1;
-  padding: 0.85vw;
-  background-color: black;
-  color: #ffffee;
-  border-radius: 0 42.5px 42.5px 0;
-  border: none;
-  text-decoration: none;
-  font-size: 1.5vw;
-  font-family: "Hammersmith One";
-}
-.btn-right:hover {
-  color: #fcf402;
-}
-
-.btn-left:active,
-.btn-right:active {
-  transform: scale(0.95);
-  transition: 0.2s;
-}
-
-/* Section Categories and carousel products */
-
-.container-category {
-  background-image: url(paper.png);
-  padding: 1.8%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-/* cards */
-.card {
-  border: 5.4px dashed #000;
-  border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0);
-  width: 80%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out;
-  margin-top: 12.5px;
-  padding: 0;
-}
-
-.card:hover {
-  transform: scale(1.05);
-  border-color: #fcf402;
-}
-
-.card img {
-  width: 67.5%;
-  height: 67.5%;
-  object-fit: contain;
-}
-
-.container-category h2 {
-  font-family: "Chewy";
-  text-align: center;
-  color: #000;
-}
-
-.container-category p {
-  font-family: "Hammersmith One";
-  font-size: 2.43vw;
-  margin-top: 0;
-}
-
-.container-category a {
-  font-family: "Hammersmith One";
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.gif {
-  width: 100%;
-  object-fit: cover;
 }

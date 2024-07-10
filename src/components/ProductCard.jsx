@@ -1,6 +1,8 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import Modal from "./ProductModal";
 import styles from "../styles/ProductCard.module.css";
+import Button from "../components/ButtonComponent";
+
 
 function ProductCard({ product }) {
   const [show, setShow] = useState(false);
@@ -8,7 +10,7 @@ function ProductCard({ product }) {
   const handleShow = () => setShow(true);
 
   return (
-    <div className={` ${styles["card-css"]}`}>
+    <div className={styles["card-css"]}>
       <div className={styles["img-container"]} onClick={handleShow}>
         <img
           src={`${import.meta.env.VITE_IMG_PATH}${product.pic}`}
@@ -24,9 +26,8 @@ function ProductCard({ product }) {
           <small className="m-2 fs-4">
             <strong>${product.price}</strong>
           </small>
-          <button type="button" onClick={handleShow} className={styles.btn}>
-            Agregar al carrito
-          </button>
+
+          <Button onClick={handleShow}>Agregar al carrito</Button>
         </div>
         <Modal show={show} setShow={setShow} product={product} />
       </div>

@@ -1,9 +1,12 @@
-import styles from "../styles/Login.module.css";
-import { useState } from "react";
-import { Link, Navigate } from "react-router-dom";
-import { Container, Row, Col, Button, Form, Alert } from "react-bootstrap";
+// Login.jsx
+
+import React, { useState } from "react";
+import { Container, Row, Col, Form, Alert } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
 import { saveToken } from "../redux/authReducer";
+import { Link, Navigate } from "react-router-dom";
+import styles from "../styles/Login.module.css";
+import ButtonComponent from "../components/ButtonComponent";
 import Footer from "../components/Footer";
 
 const Login = () => {
@@ -89,31 +92,28 @@ const Login = () => {
                   onChange={(e) => setPassword(e.target.value)}
                   className={`${styles.inputForm} rounded-pill p-2 ps-3 pe-3`}
                 />
-                <Button
-                  variant="dark"
+                <ButtonComponent
                   type="submit"
-                  className={`${styles.loginButton} rounded-pill p-2`}
+                  className={`${styles.loginButton} rounded-pill`}
                 >
                   Ingresar
-                </Button>
+                </ButtonComponent>
               </Form>
               <div
-                className={`${styles.buttonGroup} d-flex flex-row d-grid gap-2 pt-3`}
+                className={`${styles.buttonGroup} d-flex justify-content-between gap-2 pt-3`}
               >
-                <Button
-                  variant="dark"
-                  className={`col d-flex align-items-center justify-content-center p-2 ps-0 pe-0 rounded-pill`}
+                <ButtonComponent
                   as={Link}
                   to="/signup"
+                  className={`${styles.loginButton} rounded-pill`}
                 >
                   Regístrate
-                </Button>
-                <Button
-                  variant="dark"
-                  className={`col d-flex align-items-center justify-content-center p-2 ps-0 pe-0 rounded-pill`}
+                </ButtonComponent>
+                <ButtonComponent
+                  className={`${styles.loginButton} rounded-pill`}
                 >
                   ¿Olvidaste tu contraseña?
-                </Button>
+                </ButtonComponent>
               </div>
             </div>
           </Col>

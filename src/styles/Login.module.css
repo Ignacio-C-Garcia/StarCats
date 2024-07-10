@@ -19,10 +19,6 @@
   align-items: center;
 }
 
-.form {
-  max-width: 400px;
-  width: 100%;
-}
 
 .loginButton {
   flex-grow: 1;
@@ -60,3 +56,4 @@
 .customTooltip .arrow::before {
   border-top-color: #ffeb3b;
 }
+
