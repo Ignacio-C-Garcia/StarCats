@@ -34,11 +34,31 @@ function Cart() {
       case 2:
         navigate("/ordenes");
         break;
-      default:
-        console.log("step inválido");
-        break;
     }
   };
+
+  const saveOrder = async () => {
+    const listToSend = products.map((product) => {
+      const { id, name, qty, volume, isToGo } = product;
+      return { id, name, qty, volume, isToGo };
+    });
+    const response = await fetch(import.meta.env.VITE_API_URL + "/orders", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: token,
+      },
+      body: JSON.stringify({
+        products: listToSend,
+        address: "MiawStreet 4972C, Michigan",
+      }),
+    });
+    if (!response.ok) {
+      const data = await response.json();
+      return console.log(JSON.stringify(data));
+    }
+  };
+  if (step === 2) saveOrder();
   return (
     <>
       <Navbar />
