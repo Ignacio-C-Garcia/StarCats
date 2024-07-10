@@ -6,6 +6,7 @@ import { addProduct, removeProduct } from "../../redux/shoppingCartReducer";
 export default function ShoppingCartList() {
   const { products } = useSelector((state) => state.shoppingCart);
   const dispatch = useDispatch();
+
   return (
     <>
       <h2>Tu carrito</h2>
@@ -23,18 +24,18 @@ export default function ShoppingCartList() {
 
           return (
             <div
-              className={`container border rounded-4 card  ${styles.individualProduct}`}
+              className={`container border rounded-4 card ${styles["individual-product"]}`}
               key={product.id}
             >
               <div className="row">
                 <div className="col-6">
                   <h4 className="mt-4">
-                    {product.name}- {product.volume} ml
+                    {product.name} - {product.volume} ml
                   </h4>
                   <img
                     src={`/img/${product.pic}`}
                     alt={product.name}
-                    className={`${styles.productPic}`}
+                    className={styles["product-pic"]}
                   />
                 </div>
                 <div className="col-6 d-flex flex-column justify-content-center align-items-center">
@@ -52,8 +53,8 @@ export default function ShoppingCartList() {
                         <Form.Control
                           type="text"
                           value={product.qty}
-                          readOnly={true}
-                          className={`${styles.noHover}`}
+                          className={styles["no-hover"]}
+                          readOnly
                         />
                         <Button
                           variant="rounded-end-circle"

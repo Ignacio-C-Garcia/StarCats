@@ -49,9 +49,9 @@ function CarouselProducts({ products }) {
   };
 
   return (
-    <div className={`p-3 ${styles.carousel}`}>
+    <div className={`p-3 bg-black ${styles.carousel}`}>
       <div className="container">
-        <h2 className="text-center text-white pb-4">Productos destacados</h2>
+        <h2 className="text-center text-white pb-4 pt-5">Productos destacados</h2>
         <Slider {...settings} className="m-3">
           {products
             .filter((product) => product.featured)

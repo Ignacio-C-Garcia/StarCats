@@ -10,6 +10,7 @@ import styles from "../styles/ProductModal.module.css";
 import { useDispatch } from "react-redux";
 import { addProduct } from "../redux/shoppingCartReducer";
 import { Link } from "react-router-dom";
+import ButtonComponent  from "./ButtonComponent";
 
 function ProductModal({ show, setShow, product }) {
   const dispatch = useDispatch();
@@ -74,7 +75,7 @@ function ProductModal({ show, setShow, product }) {
         <div className="container-fluid">
           {product.categoryId === 1 ? (
             <div className="row">
-              <div className={`col-6  ${styles.productImageContainer}`}>
+              <div className={`col-6 ${styles.productImageContainer}`}>
                 <h2 className="pt-4 mt-4 fs-2">
                   {product.name}
                   <OverlayTrigger
@@ -93,7 +94,6 @@ function ProductModal({ show, setShow, product }) {
                   alt={product.name}
                   className={` ${styles.productImage}`}
                 />
-                <p className="mt-4 mb-4">{product.description}</p>
               </div>
 
               <div className="col-6 text-center row ">
@@ -201,6 +201,7 @@ function ProductModal({ show, setShow, product }) {
                   </Form.Group>
                 </Form>
               </div>
+              <p className="mt-4 mb-4">{product.description}</p>
             </div>
           ) : (
             <div className="row">
@@ -213,7 +214,7 @@ function ProductModal({ show, setShow, product }) {
                 <p className="mt-4 mb-4">{product.description}</p>
               </div>
               <div className="col-6">
-                <h3>
+                <h2>
                   {product.name}{" "}
                   <OverlayTrigger
                     trigger="click"
@@ -224,7 +225,7 @@ function ProductModal({ show, setShow, product }) {
                       <i className="bi bi-info-circle"></i>
                     </Button>
                   </OverlayTrigger>
-                </h3>
+                </h2>
                 <hr />
                 <Form>
                   <Form.Group className="mb-5 mt-5">
@@ -288,17 +289,17 @@ function ProductModal({ show, setShow, product }) {
           )}
         </div>
         <BootstrapModal.Footer className="d-flex justify-content-between">
-          <Button className={styles.btnClose} onClick={handleClose}>
+          <ButtonComponent className={styles.btnClose} onClick={handleClose}>
             Cerrar
-          </Button>
+          </ButtonComponent>
           {showViewCart ? (
-            <Link to="/cart" className={styles.btnViewCart}>
+            <Link to="/cart" className={styles["btn-view-cart"]}>
               Ver carrito
             </Link>
           ) : (
-            <Button className={styles.btnClose} onClick={handleAddToCart}>
+            <ButtonComponent className={styles.btnClose} onClick={handleAddToCart}>
               Añadir al carrito
-            </Button>
+            </ButtonComponent>
           )}
         </BootstrapModal.Footer>
       </BootstrapModal.Body>

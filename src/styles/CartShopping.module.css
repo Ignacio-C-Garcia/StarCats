@@ -5,41 +5,28 @@ body {
   background-color: white;
 }
 
-p,
-span,
-input,
-button {
-  font-family: "Hammersmith One", sans-serif;
-}
-
-h2 {
-  font-family: "Chewy", cursive;
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-.individualProduct h4 {
+.individual-product h4 {
   font-size: large;
 }
 
-.individualProduct {
+.individual-product {
   max-height: 300px;
   width: 100%;
   margin-bottom: 20px;
 }
 
-.productPic {
+.product-pic {
   height: 120px;
   object-fit: cover;
 }
 
-.noHover {
+.no-hover {
   width: 5vw;
   text-align: center;
   border: none;
 }
 
-.noHover:focus {
+.no-hover:focus {
   border-color: inherit;
   box-shadow: none;
 }
