@@ -1,16 +1,28 @@
 .coffeeBackground {
-  background-image: url(https://i.pinimg.com/564x/27/c5/f4/27c5f454c05f08b5c9be66fbaac884ed.jpg);
+  background-image: url(cat-cafe-banner.jpeg);
+  background-attachment: fixed;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  height: 500px;
 }
 
+.techBackground {
+  background-color: #d6d4cb;
+  height: 400px;
+}
+
+.bannerP {
+  width: 40vw;
+}
 .headerTitle {
   color: white;
 }
 
-.icon {
-  color: #f7e92c;
+.techIcons {
+  font-size: 72px;
 }
+
 /* Imágenes */
 .imgFluid {
   background-size: cover;
