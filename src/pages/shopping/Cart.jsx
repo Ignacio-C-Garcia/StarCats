@@ -20,7 +20,7 @@ function Cart() {
   const calculateSubTotal = () => {
     let total = 0;
     for (const product of products) {
-      total += product.qty * product.price;
+      total += product.qty * product.price[product.volume];
     }
     return total.toFixed(2);
   };

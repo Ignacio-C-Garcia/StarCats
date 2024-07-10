@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+/* eslint-disable react/prop-types */
+import { useState } from "react";
 import {
   Modal as BootstrapModal,
   Button,
@@ -10,52 +11,29 @@ import styles from "../styles/ProductModal.module.css";
 import { useDispatch } from "react-redux";
 import { addProduct } from "../redux/shoppingCartReducer";
 import { Link } from "react-router-dom";
-import ButtonComponent  from "./ButtonComponent";
+import ButtonComponent from "./ButtonComponent";
 
 function ProductModal({ show, setShow, product }) {
   const dispatch = useDispatch();
-  const handleClose = () => setShow(false);
-
   const [isToGo, setIsToGo] = useState("aqui");
   const [quantity, setQuantity] = useState(1);
-  const [volume, setVolume] = useState(250);
-  const [totalPrice, setTotalPrice] = useState(product.price);
+  const [volume, setVolume] = useState("base");
   const [showViewCart, setShowViewCart] = useState(false);
+  let total = product.price[volume] * quantity;
+  const handleClose = () => setShow(false);
 
-  const handleVolumeChange = (vol) => {
-    setVolume(vol);
-  };
-
-  const handleIsToGoChange = (option) => {
-    setIsToGo(option);
+  const incrementQuantity = () => setQuantity(quantity + 1);
+  const decrementQuantity = () => {
+    if (quantity > 1) setQuantity(quantity - 1);
   };
 
   const handleAddToCart = () => {
-    dispatch(
-      addProduct({ ...product, qty: quantity, isToGo, volume, totalPrice })
-    );
+    dispatch(addProduct({ ...product, qty: quantity, isToGo, volume }));
     setShowViewCart(true);
     setTimeout(() => {
       setShow(false);
-    }, 100000);
+    }, 80000);
   };
-
-  const incrementQuantity = () => {
-    setQuantity(quantity + 1);
-  };
-
-  const decrementQuantity = () => {
-    if (quantity > 1) {
-      setQuantity(quantity - 1);
-    }
-  };
-
-  useEffect(() => {
-    const basePrice = product.price;
-    const volumeMultiplier = volume / 250;
-    const newPrice = basePrice * volumeMultiplier * quantity;
-    setTotalPrice(newPrice.toFixed(2));
-  }, [volume, quantity]);
 
   const caloriesContent = (
     <Popover id="popover-calories">
@@ -106,7 +84,7 @@ function ProductModal({ show, setShow, product }) {
                           className={`bi bi-cup-straw fs-2 ${
                             isToGo === "aqui" ? styles.selectedIcon : ""
                           } ${styles.hoverIcon}`}
-                          onClick={() => handleIsToGoChange("aqui")}
+                          onClick={() => setIsToGo("aqui")}
                         ></i>
                       </div>
                       <div className="col-6">
@@ -115,7 +93,7 @@ function ProductModal({ show, setShow, product }) {
                           className={`bi bi-bag fs-2 ${
                             isToGo === "llevar" ? styles.selectedIcon : ""
                           } ${styles.hoverIcon}`}
-                          onClick={() => handleIsToGoChange("llevar")}
+                          onClick={() => setIsToGo("llevar")}
                         ></i>
                       </div>
                     </div>
@@ -131,12 +109,12 @@ function ProductModal({ show, setShow, product }) {
                         >
                           <i
                             className={`bi bi-cup-hot fs-6 ${
-                              volume === 250 ? styles.selectedIcon : ""
+                              volume === "base" ? styles.selectedIcon : ""
                             } ${styles.hoverIcon}`}
-                            onClick={() => handleVolumeChange(250)}
+                            onClick={() => setVolume("base")}
                           ></i>
                           <span>250ml</span>
-                          <small>${(product.price * 1).toFixed(2)}</small>
+                          <small>${product.price["base"]}</small>
                         </div>
                         <div
                           className={`d-flex flex-column align-items-center m-2 ${styles.volumeOption}`}
@@ -145,10 +123,10 @@ function ProductModal({ show, setShow, product }) {
                             className={`bi bi-cup-hot fs-4 ${
                               volume === 350 ? styles.selectedIcon : ""
                             } ${styles.hoverIcon}`}
-                            onClick={() => handleVolumeChange(350)}
+                            onClick={() => setVolume(350)}
                           ></i>
                           <span>350ml</span>
-                          <small>${(product.price * 1.4).toFixed(2)}</small>
+                          <small>${product.price[350]}</small>
                         </div>
                         <div
                           className={`d-flex flex-column align-items-center ${styles.volumeOption}`}
@@ -157,10 +135,10 @@ function ProductModal({ show, setShow, product }) {
                             className={`bi bi-cup-hot fs-2 ${
                               volume === 450 ? styles.selectedIcon : ""
                             } ${styles.hoverIcon}`}
-                            onClick={() => handleVolumeChange(450)}
+                            onClick={() => setVolume(450)}
                           ></i>
                           <span>450ml</span>
-                          <small>${(product.price * 1.8).toFixed(2)}</small>
+                          <small>${product.price[450]}</small>
                         </div>
                       </div>
                       <hr />
@@ -196,7 +174,7 @@ function ProductModal({ show, setShow, product }) {
                       </div>
                     </div>
                     <p>
-                      <strong>${totalPrice}</strong>
+                      <strong>${total.toFixed(2)}</strong>
                     </p>
                   </Form.Group>
                 </Form>
@@ -215,7 +193,7 @@ function ProductModal({ show, setShow, product }) {
               </div>
               <div className="col-6">
                 <h2>
-                  {product.name}{" "}
+                  {product.name}
                   <OverlayTrigger
                     trigger="click"
                     placement="bottom"
@@ -236,7 +214,7 @@ function ProductModal({ show, setShow, product }) {
                           className={`bi bi-cup-straw fs-2 ${
                             isToGo === "aqui" ? styles.selectedIcon : ""
                           } ${styles.hoverIcon}`}
-                          onClick={() => handleIsToGoChange("aqui")}
+                          onClick={() => setIsToGo("aqui")}
                         ></i>
                       </div>
                       <div className="col-6">
@@ -245,7 +223,7 @@ function ProductModal({ show, setShow, product }) {
                           className={`bi bi-bag fs-2 ${
                             isToGo === "llevar" ? styles.selectedIcon : ""
                           } ${styles.hoverIcon}`}
-                          onClick={() => handleIsToGoChange("llevar")}
+                          onClick={() => setIsToGo("llevar")}
                         ></i>
                       </div>
                     </div>
@@ -280,7 +258,7 @@ function ProductModal({ show, setShow, product }) {
                       </div>
                     </div>
                     <p>
-                      <strong>${totalPrice}</strong>
+                      <strong>${total.toFixed(2)}</strong>
                     </p>
                   </Form.Group>
                 </Form>
@@ -297,7 +275,10 @@ function ProductModal({ show, setShow, product }) {
               Ver carrito
             </Link>
           ) : (
-            <ButtonComponent className={styles.btnClose} onClick={handleAddToCart}>
+            <ButtonComponent
+              className={styles.btnClose}
+              onClick={handleAddToCart}
+            >
               Añadir al carrito
             </ButtonComponent>
           )}

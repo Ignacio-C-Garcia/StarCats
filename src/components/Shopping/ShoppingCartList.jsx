@@ -12,7 +12,9 @@ export default function ShoppingCartList() {
       <h2>Tu carrito</h2>
       {products.length > 0 ? (
         products.map((product) => {
-          const totalPrice = (product.qty * product.totalPrice).toFixed(2);
+          const { price, volume, qty, name, categoryId, pic } = product;
+         
+          const totalPrice = (qty * price[volume]).toFixed(2);
 
           const incrementQuantity = () => {
             dispatch(addProduct({ ...product, qty: 1 }));
@@ -30,10 +32,12 @@ export default function ShoppingCartList() {
               <div className="row">
                 <div className="col-6">
                   <h4 className="mt-4">
-                    {product.name} - {product.volume} ml
+                    {name}{" "}
+                    {categoryId === 1 &&
+                      `- (${volume == "base" ? 250 : volume}) ml`}
                   </h4>
                   <img
-                    src={`/img/${product.pic}`}
+                    src={`/img/${pic}`}
                     alt={product.name}
                     className={styles["product-pic"]}
                   />
@@ -52,7 +56,7 @@ export default function ShoppingCartList() {
                       <div className="d-flex">
                         <Form.Control
                           type="text"
-                          value={product.qty}
+                          value={qty}
                           className={styles["no-hover"]}
                           readOnly
                         />

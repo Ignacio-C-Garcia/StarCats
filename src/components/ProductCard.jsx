@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+/* eslint-disable react/prop-types */
+import { useState } from "react";
 import Modal from "./ProductModal";
 import styles from "../styles/ProductCard.module.css";
 import Button from "../components/ButtonComponent";
-
 
 function ProductCard({ product }) {
   const [show, setShow] = useState(false);
@@ -24,7 +24,7 @@ function ProductCard({ product }) {
             <strong>{product.name}</strong>
           </h5>
           <small className="m-2 fs-4">
-            <strong>${product.price}</strong>
+            <strong>${product.price["base"]}</strong>
           </small>
 
           <Button onClick={handleShow}>Agregar al carrito</Button>
