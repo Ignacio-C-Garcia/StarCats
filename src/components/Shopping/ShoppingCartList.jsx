@@ -1,5 +1,4 @@
 import { useDispatch, useSelector } from "react-redux";
-import React, { useState } from "react";
 import styles from "../../styles/CartShopping.module.css";
 import { Button, Form } from "react-bootstrap";
 import { addProduct, removeProduct } from "../../redux/shoppingCartReducer";
@@ -53,6 +52,7 @@ export default function ShoppingCartList() {
                         <Form.Control
                           type="text"
                           value={product.qty}
+                          readOnly={true}
                           className={`${styles.noHover}`}
                         />
                         <Button

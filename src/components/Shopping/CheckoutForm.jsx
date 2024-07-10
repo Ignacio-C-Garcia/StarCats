@@ -4,6 +4,7 @@ import { useStripe, useElements } from "@stripe/react-stripe-js";
 import { Alert } from "react-bootstrap";
 import { useSelector } from "react-redux";
 
+// eslint-disable-next-line react/prop-types
 export default function CheckoutForm({ setIsProcessing, nextStep }) {
   const { shoppingCart, auth } = useSelector((state) => state);
   const stripe = useStripe();
