@@ -49,7 +49,8 @@ export default function Orders() {
     products
       .reduce(
         (accumulator, currentValue) =>
-          accumulator + currentValue.qty * currentValue.price,
+          accumulator +
+          currentValue.qty * currentValue.price[currentValue.volume],
         0
       )
       .toFixed(2);
@@ -74,14 +75,25 @@ export default function Orders() {
                     </Card.Header>
                     <Card.Body>
                       <Card.Text>
-                        <strong>Direccion:</strong> {order.address}
+                        <strong>Productos:</strong>
+                        {order.products.map((product) => {
+                          return (
+                            <div
+                              key={product.id}
+                              className="d-flex justify-content-between"
+                            >
+                              <span>{product.name}</span>
+                              <span>{product.qty}</span>
+                            </div>
+                          );
+                        })}
                       </Card.Text>
                       <Card.Text>
                         <strong>Total:</strong>${calculateTotal(order.products)}
                       </Card.Text>
                     </Card.Body>
                     <Card.Footer>
-                      <span>Ver más</span>
+                      <span>Ver detalles</span>
                     </Card.Footer>
                   </Card>
                 </Col>
