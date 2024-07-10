@@ -1,7 +1,7 @@
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/NavBar";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import ShoppingCartList from "../../components/Shopping/ShoppingCartList";
 import Payment from "../../components/Shopping/Payment";
@@ -58,7 +58,9 @@ function Cart() {
       return console.log(JSON.stringify(data));
     }
   };
-  if (step === 2) saveOrder();
+  useEffect(() => {
+    if (step === 2) saveOrder();
+  }, [step]);
   return (
     <>
       <Navbar />
