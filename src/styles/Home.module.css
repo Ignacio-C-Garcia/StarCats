@@ -1,19 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Chewy&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap");
 
+a {
+  color: #000;
+  font-family: "Hammersmith One";
+}
+
 /* Parallax effect */
 .parallax {
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-}
-
-
-
-a {
-  color: #000;
-  font-family: "Hammersmith One";
 }
 
 /* header */
@@ -27,7 +25,7 @@ header {
   padding: 110px;
 }
 
-.cupCoffee {
+.cup-coffee {
   height: 32.5vw;
   object-fit: cover;
   transition: transform 0.3s ease;
@@ -35,11 +33,11 @@ header {
   max-height: 100%;
 }
 
-.cupCoffee:active {
+.cup-coffee:active {
   transform: translateY(-20%) rotate(-15deg);
 }
 
-.HomeTitle {
+.home-title {
   font-family: "Chewy", regular;
   font-size: 8.5vw;
   color: #ffffee;
@@ -189,22 +187,22 @@ header {
   }
 }
 
-.pHeader {
+.p-header {
   font-family: "Hammersmith One";
   font-size: 3.5vw;
   color: #fcf402;
   margin-top: 25px;
   margin-bottom: 27px;
-  text-wrap: nowrap;
+  white-space: nowrap;
 }
 
-.btnHeader {
+.btn-header {
   padding: 0;
   display: flex;
   width: 20vw;
 }
 
-.btnLeft {
+.btn-left {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -220,7 +218,7 @@ header {
   text-decoration: none;
 }
 
-.btnRight {
+.btn-right {
   flex-grow: 1;
   padding: 0.85vw;
   background-color: black;
@@ -231,19 +229,19 @@ header {
   font-size: 1.5vw;
   font-family: "Hammersmith One";
 }
-.btnRight:hover {
+.btn-right:hover {
   color: #fcf402;
 }
 
-.btnLeft:active,
-.btnRight:active {
+.btn-left:active,
+.btn-right:active {
   transform: scale(0.95);
   transition: 0.2s;
 }
 
 /* Section Categories and carousel products */
 
-.containerCategory {
+.container-category {
   background-image: url(paper.png);
   padding: 1.8%;
   background-size: cover;
@@ -280,19 +278,19 @@ header {
   object-fit: contain;
 }
 
-.containerCategory h2 {
+.container-category h2 {
   font-family: "Chewy";
   text-align: center;
   color: #000;
 }
 
-.containerCategory p {
+.container-category p {
   font-family: "Hammersmith One";
   font-size: 2.43vw;
   margin-top: 0;
 }
 
-.containerCategory a {
+.container-category a {
   font-family: "Hammersmith One";
   text-decoration: none;
   font-weight: bold;
@@ -300,7 +298,5 @@ header {
 
 .gif {
   width: 100%;
-  height: 15vw;
   object-fit: cover;
 }
-

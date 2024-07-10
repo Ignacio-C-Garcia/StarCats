@@ -2,10 +2,6 @@
   background-color: #d6d4cb;
 }
 
-h2 {
-  color: #000;
-}
-
 .loginContainer {
   height: 100vh;
 }
@@ -33,10 +29,10 @@ h2 {
 }
 
 .customAlert {
-  background-color: #ffdd77; /* Color amarillo */
-  color: #000; /* Texto negro */
-  border: 1px solid #ffdd77; /* Borde amarillo oscuro */
-  border-radius: 15px; /* Bordes redondeados */
+  background-color: #ffdd77;
+  color: #000;
+  border: 1px solid #ffdd77;
+  border-radius: 15px;
   padding: 15px;
   font-weight: bold;
   display: flex;
@@ -53,14 +49,14 @@ h2 {
 }
 
 .customTooltip {
-  background-color: #ffeb3b; /* Color amarillo */
-  color: #000; /* Texto negro */
-  border: 1px solid #ffc107; /* Borde amarillo oscuro */
-  border-radius: 10px; /* Bordes redondeados */
+  background-color: #ffeb3b;
+  color: #000;
+  border: 1px solid #ffc107;
+  border-radius: 10px;
   padding: 10px;
   font-weight: bold;
 }
 
 .customTooltip .arrow::before {
-  border-top-color: #ffeb3b; /* Color de la flecha */
+  border-top-color: #ffeb3b;
 }

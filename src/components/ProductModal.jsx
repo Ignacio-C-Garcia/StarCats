@@ -93,7 +93,6 @@ function ProductModal({ show, setShow, product }) {
                   alt={product.name}
                   className={` ${styles.productImage}`}
                 />
-                <p className="mt-4 mb-4">{product.description}</p>
               </div>
 
               <div className="col-6 text-center row ">
@@ -201,6 +200,7 @@ function ProductModal({ show, setShow, product }) {
                   </Form.Group>
                 </Form>
               </div>
+              <p className="mt-4 mb-4">{product.description}</p>
             </div>
           ) : (
             <div className="row">
@@ -213,7 +213,7 @@ function ProductModal({ show, setShow, product }) {
                 <p className="mt-4 mb-4">{product.description}</p>
               </div>
               <div className="col-6">
-                <h3>
+                <h2>
                   {product.name}{" "}
                   <OverlayTrigger
                     trigger="click"
@@ -224,7 +224,7 @@ function ProductModal({ show, setShow, product }) {
                       <i className="bi bi-info-circle"></i>
                     </Button>
                   </OverlayTrigger>
-                </h3>
+                </h2>
                 <hr />
                 <Form>
                   <Form.Group className="mb-5 mt-5">

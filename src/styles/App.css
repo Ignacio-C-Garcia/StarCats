@@ -3,5 +3,25 @@ a:hover {
 }
 
 body {
-  font-family: "hammersmith" regular;
+  font-family: "hammersmith One" regular;
+}
+
+p,
+a,
+h3,
+span,
+input,
+button {
+  font-family: "Hammersmith One", sans-serif;
+}
+
+h2 {
+  font-family: "Chewy", cursive;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.a {
+  color: #000;
+  font-family: "Hammersmith One";
 }

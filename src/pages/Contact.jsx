@@ -2,7 +2,6 @@ import styles from "../styles/Contact.module.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
-// import styles from "../styles/AboutUs.module.css";
 
 function Contact() {
   return (
@@ -18,7 +17,7 @@ function Contact() {
         </div>
       </div>
 
-      <div className={styles.mapId}>
+      <div className={styles['map-id']}>
         <img src="mapa.png" alt="" />
       </div>
 
@@ -57,7 +56,7 @@ function Contact() {
                 />
               </div>
               <div className="mb-3">
-                <label for="inputmessage">Mensaje</label>
+                <label htmlFor="inputmessage">Mensaje</label>
                 <textarea
                   className="form-control mt-1 rounded-4"
                   id="message"

@@ -8,7 +8,7 @@ function ProductCard({ product }) {
   const handleShow = () => setShow(true);
 
   return (
-    <div className={`  ${styles.cardCss}`}>
+    <div className={` ${styles["card-css"]}`}>
       <div className={styles["img-container"]} onClick={handleShow}>
         <img
           src={`${import.meta.env.VITE_IMG_PATH}${product.pic}`}
@@ -17,7 +17,7 @@ function ProductCard({ product }) {
         />
       </div>
       <div>
-        <div className={styles.cardContent}>
+        <div className={styles["card-content"]}>
           <h5 className={styles.title} onClick={handleShow}>
             <strong>{product.name}</strong>
           </h5>

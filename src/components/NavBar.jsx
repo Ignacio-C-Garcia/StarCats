@@ -46,9 +46,9 @@ function NavBar() {
           <div className="shoppingCartIcon px-2">
             <UserIcon></UserIcon>
           </div>
-            <Link to="/cart" className="nav-link">
-              Carrito
-            </Link>
+          <Link to="/cart" className="nav-link">
+            Carrito
+          </Link>
 
           {/* <div className="d-flex justify-content-center align-items-center text-center">
             <div className="shoppingCartIcon">

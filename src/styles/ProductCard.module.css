@@ -1,6 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap");
+/* ProductCard.module.css */
 
-.cardCss {
+.card-css {
   background-color: #ffffee;
   border-radius: 42px;
   font-family: "Hammersmith One";
@@ -14,24 +14,6 @@
   margin-bottom: 15px;
 }
 
-.cardContent {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-  overflow: hidden;
-  border: none;
-  flex-grow: 1;
-}
-
-.title {
-  font-size: 1.9rem;
-  text-align: center;
-  flex-grow: 1;
-}
-small {
-  flex-grow: 1;
-}
 .img-container {
   transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out;
   width: 100%;
@@ -53,6 +35,22 @@ small {
   max-height: 200px;
 }
 
+.card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  overflow: hidden;
+  border: none;
+  flex-grow: 1;
+}
+
+.title {
+  font-size: 1.9rem;
+  text-align: center;
+  flex-grow: 1;
+}
+
 .btn {
   background-color: #1a1a1a;
   color: white;
@@ -68,10 +66,4 @@ small {
 .btn:hover {
   transform: scale(1.05);
   transition: 0.3s;
-}
-
-/* carousel  */
-
-.carousel {
-  background-color: black;
 }

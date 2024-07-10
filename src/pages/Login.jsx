@@ -20,19 +20,25 @@ const Login = () => {
       setShowAlert(true);
       return;
     }
-    console.log("Email:", email);
-    console.log("Password:", password);
-    const response = await fetch(`${import.meta.env.VITE_API_URL}/tokens`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ email, password }),
-    });
-    if (!response.ok) setError(true);
-    else {
-      const data = await response.json();
-      dispatch(saveToken({ token: `Bearer ${data.token}` }));
+
+    try {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/tokens`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+      });
+
+      if (!response.ok) {
+        setError(true);
+      } else {
+        const data = await response.json();
+        dispatch(saveToken({ token: `Bearer ${data.token}` }));
+      }
+    } catch (error) {
+      console.error("Error submitting login:", error);
+      setError(true);
     }
   };
 
@@ -44,7 +50,12 @@ const Login = () => {
             className="d-flex justify-content-center align-items-center"
             lg={6}
           >
-            <img src="logostarcats.svg" width={450} height={450}></img>
+            <img
+              src="logostarcats.svg"
+              width={450}
+              height={450}
+              alt="StarCats Logo"
+            />
           </Col>
           <Col md={6} className={styles.formColumn}>
             <div className={`${styles.form}`}>
@@ -92,7 +103,8 @@ const Login = () => {
                 <Button
                   variant="dark"
                   className={`col d-flex align-items-center justify-content-center p-2 ps-0 pe-0 rounded-pill`}
-                  href="/signup"
+                  as={Link}
+                  to="/signup"
                 >
                   Regístrate
                 </Button>
@@ -110,7 +122,7 @@ const Login = () => {
       <Footer />
     </div>
   ) : (
-    <Navigate to="/ordenes"></Navigate>
+    <Navigate to="/ordenes" />
   );
 };
 

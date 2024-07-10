@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Chewy&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap");
 
-.carouselContainer {
+.carousel-container {
   background-color: #ffffee;
   padding: 20px;
   border-radius: 10px;
@@ -31,7 +31,7 @@
   justify-content: space-between;
 }
 
-.cardContent {
+.card-content {
   margin-bottom: 2rem;
 }
 
@@ -39,21 +39,21 @@
   transform: scale(1.05);
 }
 
-.cardImage {
+.card-image {
   height: 200px;
   object-fit: cover;
   border-radius: 10px 10px 0 0;
   width: 100%;
 }
 
-.cardTitle {
+.card-title {
   color: #cf933f;
   font-family: "Chewy", cursive;
   font-size: 2rem;
   /* margin-top: -0.5rem; */
 }
 
-.cardText {
+.card-text {
   color: black;
   font-family: "Hammersmith One", sans-serif;
   font-size: 1.2rem;
