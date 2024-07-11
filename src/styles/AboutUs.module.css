@@ -37,16 +37,25 @@
   width: 150px;
 }
 
-.skills {
-  transition: transform 0.3s ease-in-out;
-}
-
-.skills:hover {
-  transform: scale(1.05);
-}
-
 .img-fluid:hover {
   transform: scale(1.05);
+}
+
+.members-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.members {
+  width: 200px;
+  height: 270px;
+  text-align: center;
+}
+
+.member-accounts:hover {
+  color: rgb(66, 66, 66);
 }
 
 /* Animaciones */
