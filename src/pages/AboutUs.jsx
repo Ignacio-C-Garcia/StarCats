@@ -2,6 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import styles from "../styles/AboutUs.module.css";
+import { Container, Col, Row } from "react-bootstrap";
 
 function AboutUs() {
   return (
@@ -25,33 +26,133 @@ function AboutUs() {
       </div>
 
       <div className={`${styles.techBackground} container-fluid pb-3 pt-5`}>
-        <div className="row text-center">
-          <div className="col-lg-6 m-auto">
-            <p className="pb-3">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-              eiusmod Lorem ipsum dolor sit amet.
-            </p>
+        <Container>
+          <div className="row text-center">
+            <div className="col-lg-6 m-auto">
+              <p className="pb-3">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                eiusmod Lorem ipsum dolor sit amet.
+              </p>
+              <Row>
+                <Col className="my-4">
+                  <h4>Front-end</h4>
+                  <div>
+                    <div className="row d-flex gap-3 justify-content-center">
+                      <img
+                        className={styles["tech-icons"]}
+                        src="/icons/html.svg"
+                        alt="HTML"
+                      />
+                      <img
+                        className={styles["tech-icons"]}
+                        src="/icons/css.svg"
+                        alt="CSS"
+                      />
+                      <img
+                        className={styles["tech-icons"]}
+                        src="/icons/bs.svg"
+                        alt="Bootstrap"
+                      />
+                      <img
+                        className={styles["tech-icons"]}
+                        src="/icons/js.svg"
+                        alt="JavaScript"
+                      />
+                      <img
+                        className={styles["tech-icons"]}
+                        src="/icons/react.svg"
+                        alt="React"
+                      />
+                      <img
+                        className={styles["tech-icons"]}
+                        src="/icons/paypal-api.svg"
+                        alt="PayPal API"
+                      />
+                      <img
+                        className={styles["tech-icons"]}
+                        src="/icons/vite.svg"
+                        alt="Vite"
+                      />
+                      <img
+                        className={styles["tech-icons"]}
+                        src="/icons/redux.svg"
+                        alt="Redux"
+                      />
+                      <img
+                        className={styles["tech-icons"]}
+                        src="/icons/react-stripe.svg"
+                        alt="React Stripe"
+                      />
+                      <img
+                        className={styles["tech-icons"]}
+                        src="/icons/react-tabulator.png"
+                        alt="React Tabulator"
+                      />
+                    </div>
+                  </div>
+                </Col>
+                <Col className="my-4">
+                  <h4>Back-end</h4>
+                  <div className="row d-flex gap-3 justify-content-center">
+                    <img
+                      className={styles["tech-icons"]}
+                      src="/icons/express-js.svg"
+                      alt="Express"
+                    />
+                    <img
+                      className={styles["tech-icons"]}
+                      src="/icons/faker-js.svg"
+                      alt="Faker.js"
+                    />
+                    <img
+                      className={styles["tech-icons"]}
+                      src="/icons/node.svg"
+                      alt="Node.js"
+                    />
+                    <img
+                      className={styles["tech-icons"]}
+                      src="/icons/postman.svg"
+                      alt="Postman"
+                    />
+
+                    <img
+                      className={styles["tech-icons"]}
+                      src="/icons/sequelize.svg"
+                      alt="Sequelize"
+                    />
+                  </div>
+                </Col>
+              </Row>
+              <Row>
+                <Col className="my-4">
+                  <h4>Control de versiones</h4>
+                  <div className="row d-flex gap-3 justify-content-center">
+                    <img
+                      className={styles["tech-icons"]}
+                      src="/icons/git.svg"
+                      alt="Git"
+                    />
+                    <img
+                      className={styles["tech-icons"]}
+                      src="/icons/github.svg"
+                      alt="Github"
+                    />
+                  </div>
+                </Col>
+                <Col className="my-4">
+                  <h4>Base de datos</h4>
+                  <div className="row d-flex gap-3 justify-content-center">
+                    <img
+                      className={styles["tech-icons"]}
+                      src="/icons/mysql.svg"
+                      alt="MySQL"
+                    />
+                  </div>
+                </Col>
+              </Row>
+            </div>
           </div>
-        </div>
-        <div className="row">
-          <span
-            className={`${styles.techIcons} d-flex gap-5 justify-content-center my-5`}
-          >
-            {/* <img src="/icons/html.svg" alt="" /> */}
-            {/* <img src="/icons/css.svg" alt="" /> */}
-            <img src="/icons/bs.svg" alt="" />
-            {/* <img src="/icons/js.svg" alt="" /> */}
-            {/* <img src="/icons/git.svg" alt="" /> */}
-            {/* <img src="/icons/github.svg" alt="" /> */}
-            {/* <img src="/icons/node.svg" alt="" /> */}
-            {/* <img src="/icons/postman.svg" alt="" /> */}
-            <img src="/icons/mysql.svg" alt="" />
-            {/* <img src="/icons/sequelize.svg" alt="" /> */}
-            {/* <img src="/icons/react.svg" alt="" /> */}
-            {/* <img src="/icons/vite.svg" alt="" /> */}
-            {/* <img src="/icons/redux.svg" alt="" />0 */}
-          </span>
-        </div>
+        </Container>
       </div>
 
       <div id="team" className="bg-light py-5">

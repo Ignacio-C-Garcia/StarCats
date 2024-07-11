@@ -9,7 +9,11 @@
 
 .techBackground {
   background-color: #d6d4cb;
-  height: 400px;
+  height: max-content;
+}
+
+.tech-section {
+  max-width: 100%;
 }
 
 .bannerP {
@@ -19,8 +23,9 @@
   color: white;
 }
 
-.techIcons {
-  font-size: 72px;
+.tech-icons {
+  width: 84px;
+  height: 84px;
 }
 
 /* Imágenes */
