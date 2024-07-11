@@ -15,7 +15,7 @@ function NotFound() {
           </div>
           <div className="col-lg-6 col-md-12">
             <img
-              src="spilledCoffee.png"
+              src="/spilledCoffee.png"
               alt="Not Found"
               className={` animate__animated animate__backInUp ${styles.spilledCoffee}`}
             />

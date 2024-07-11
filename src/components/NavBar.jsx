@@ -1,14 +1,13 @@
-import DropDown from "./Dropdown";
 import "../styles/NavBar.module.css";
 import { Link } from "react-router-dom";
 import UserIcon from "./UserIcon";
-
+import { BagHeart } from "react-bootstrap-icons";
 function NavBar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-black text-white ">
       <div className="container ">
         <Link to="/" className="navbar-brand">
-          <span className="fs-2">Starcats</span>
+          <span className="fs-2">STARCATS</span>
         </Link>
         <button
           className="navbar-toggler"
@@ -43,17 +42,12 @@ function NavBar() {
               </Link>
             </li>
           </ul>
-          <div className="shoppingCartIcon px-2">
+          <div className="d-flex align-items-center">
             <UserIcon></UserIcon>
-          </div>
-            <Link to="/cart" className="nav-link">
-              Carrito
+            <Link to="/cart" className="nav-link ps-4">
+              <BagHeart size={30} />
             </Link>
-
-          {/* <div className="d-flex justify-content-center align-items-center text-center">
-            <div className="shoppingCartIcon">
-            </div>
-          </div> */}
+          </div>
         </div>
       </div>
     </nav>

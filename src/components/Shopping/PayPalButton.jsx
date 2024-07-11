@@ -1,6 +1,7 @@
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 import { FUNDING } from "@paypal/react-paypal-js";
 import { Alert } from "react-bootstrap";
+// eslint-disable-next-line react/prop-types
 const PayPalButton = ({ nextStep }) => {
   return (
     <PayPalScriptProvider

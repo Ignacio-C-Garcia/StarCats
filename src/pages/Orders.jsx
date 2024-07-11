@@ -35,11 +35,11 @@ export default function Orders() {
 
   const getStatusVariant = (status) => {
     switch (status) {
-      case "Delivered":
+      case "entregado":
         return "success";
-      case "Shipped":
+      case "enviado":
         return "info";
-      case "Cancelled":
+      case "cancelado":
         return "danger";
       default:
         return "secondary";
@@ -49,11 +49,12 @@ export default function Orders() {
     products
       .reduce(
         (accumulator, currentValue) =>
-          accumulator + currentValue.qty * currentValue.price,
+          accumulator +
+          currentValue.qty * currentValue.price[currentValue.volume],
         0
       )
       .toFixed(2);
-  console.log("esto es total:", calculateTotal([1, 2, 3, 4]));
+
   return (
     <>
       <NavBar />
@@ -61,29 +62,43 @@ export default function Orders() {
         <Container>
           <h4 className="mb-4">Tus pedidos</h4>
           <Row>
-            {orders.map((order) => (
-              <Col key={order.id} md={6} lg={4} className="mb-4">
-                <Card>
-                  <Card.Header className="d-flex justify-content-between align-items-center">
-                    <span>Pedido #{order.id}</span>
-                    <Badge bg={getStatusVariant(order.status)}>
-                      {order.status}
-                    </Badge>
-                  </Card.Header>
-                  <Card.Body>
-                    <Card.Text>
-                      <strong>Direccion:</strong> {order.address}
-                    </Card.Text>
-                    <Card.Text>
-                      <strong>Total:</strong>${calculateTotal(order.products)}
-                    </Card.Text>
-                  </Card.Body>
-                  <Card.Footer>
-                    <span>Ver Mas</span>
-                  </Card.Footer>
-                </Card>
-              </Col>
-            ))}
+            {orders.map((order) => {
+              console.log(order);
+              return (
+                <Col key={order.id} md={6} lg={4} className="mb-4">
+                  <Card>
+                    <Card.Header className="d-flex justify-content-between align-items-center">
+                      <span>Pedido #{order.id}</span>
+                      <Badge bg={getStatusVariant(order.status)}>
+                        {order.status}
+                      </Badge>
+                    </Card.Header>
+                    <Card.Body>
+                      <Card.Text>
+                        <strong>Productos:</strong>
+                        {order.products.map((product) => {
+                          return (
+                            <div
+                              key={product.id}
+                              className="d-flex justify-content-between"
+                            >
+                              <span>{product.name}</span>
+                              <span>{product.qty}</span>
+                            </div>
+                          );
+                        })}
+                      </Card.Text>
+                      <Card.Text>
+                        <strong>Total:</strong>${calculateTotal(order.products)}
+                      </Card.Text>
+                    </Card.Body>
+                    <Card.Footer>
+                      <span>Ver detalles</span>
+                    </Card.Footer>
+                  </Card>
+                </Col>
+              );
+            })}
           </Row>
         </Container>
       </section>

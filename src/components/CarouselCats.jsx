@@ -1,4 +1,5 @@
-import React from 'react';
+/* eslint-disable react/prop-types */
+
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -51,7 +52,7 @@ function CarouselCats({ cats }) {
   };
 
   return (
-    <div className={`text-center p-4 ${styles.carouselContainer}`}>
+    <div className={`text-center p-4 ${styles["carousel-container"]}`}>
       <h2 className={styles.title}>Nuestro Staff</h2>
       <p className={`fs-3 ${styles.subtitle}`}>
         Te presentamos a nuestro staff de michis
@@ -64,19 +65,19 @@ function CarouselCats({ cats }) {
                 <LazyLoadImage
                   src={import.meta.env.VITE_CAT_IMG_PATH + cat.pic}
                   alt={cat.name}
-                  className={styles.cardImage}
+                  className={styles["card-image"]}
                   effect="blur"
                 />
-                <div className={styles.cardContent}>
-                  <h5 className={`card-title ${styles.cardTitle}`}>
+                <div className={styles["card-content"]}>
+                  <h5 className={`card-title ${styles["card-title"]}`}>
                     {cat.name}
                   </h5>
-                  <p className={styles.cardText}>
-                    Edad: {cat.age}
+                  <p className={styles["card-text"]}>
+                    {cat.age} {cat.age === 1 ? "Año" : "Años"}
                     <br />
-                    {cat.personality}
+                    Es {cat.personality}
                     <br />
-                    Cumpleaños: {cat.birthdate}
+                    Cumple el {cat.birthdate}
                   </p>
                 </div>
               </div>

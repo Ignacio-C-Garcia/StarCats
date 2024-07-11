@@ -2,17 +2,15 @@ import user from "./img/user.png";
 import edit from "./img/edit.png";
 import logout from "./img/log-out.png";
 import "./App.css";
-
+import { PersonCircle } from "react-bootstrap-icons";
 import { useState, useEffect, useRef } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { removeToken } from "../redux/authReducer";
+//import { removeToken } from "../redux/authReducer";
 
 function UserIcon() {
-  const { token, products } = useSelector((state) => {
-    return { token: state.auth.token, products: state.shoppingCart.products };
-  });
-  const dispatch = useDispatch();
+  const token = useSelector((state) => state.auth.token);
+  // const dispatch = useDispatch();
 
   const [open, setOpen] = useState(false);
   let menuRef = useRef();
@@ -40,7 +38,9 @@ function UserIcon() {
             setOpen(!open);
           }}
         >
-          <img src={user}></img>
+          <Link>
+            <PersonCircle size={30} className="text-white" />
+          </Link>
         </div>
 
         <div

@@ -1,4 +1,4 @@
-.coffeeBackground {
+.coffee-background {
   background-image: url(cat-cafe-banner.jpeg);
   background-attachment: fixed;
   background-position: center;
@@ -7,7 +7,7 @@
   height: 500px;
 }
 
-.techBackground {
+.tech-background {
   background-color: #d6d4cb;
   height: max-content;
 }
@@ -16,10 +16,11 @@
   max-width: 100%;
 }
 
-.bannerP {
+.banner-p {
   width: 40vw;
 }
-.headerTitle {
+
+.header-title {
   color: white;
 }
 
@@ -28,8 +29,7 @@
   height: 84px;
 }
 
-/* Imágenes */
-.imgFluid {
+.img-fluid {
   background-size: cover;
   border-radius: 50%;
   border: 10px solid rgb(83, 82, 81);
@@ -45,12 +45,12 @@
   transform: scale(1.05);
 }
 
-.imgFluid:hover {
+.img-fluid:hover {
   transform: scale(1.05);
 }
 
 /* Animaciones */
-@keyframes fadeIn {
+@keyframes fade-in {
   from {
     opacity: 0;
   }
@@ -59,8 +59,8 @@
   }
 }
 
-.fadeIn {
-  animation-name: fadeIn;
+.fade-in {
+  animation-name: fade-in;
   animation-duration: 1s;
 }
 

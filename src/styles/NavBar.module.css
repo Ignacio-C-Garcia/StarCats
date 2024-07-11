@@ -1,12 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Chewy&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap");
 
-
-.nav{
-  animation:scale-up-center .4s cubic-bezier(.39,.575,.565,1.000) both
+.nav {
+  animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
 
- @keyframes scale-up-center{0%{transform:scale(.5)}100%{transform:scale(1)}}
+@keyframes scale-up-center {
+  0% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 
 .dropdownMenu {
   font-family: "Hammersmith One";
@@ -28,10 +34,4 @@
 .dropdownItemSelected {
   background-color: #333;
   color: #fff;
-}
-
-a {
-  font-family: "Hammersmith One";
-
-  font-weight: normal;
 }

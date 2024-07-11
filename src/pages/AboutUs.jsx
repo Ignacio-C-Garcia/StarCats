@@ -9,12 +9,14 @@ function AboutUs() {
     <>
       <NavBar />
 
-      <div className={`container-fluid ${styles.coffeeBackground}`}>
+      <div className={`container-fluid ${styles["coffee-background"]}`}>
         <div className="container">
           <div className="row align-items-center py-5">
             <div className="col-md-8 text-white">
-              <h2 className={`${styles.headerTitle}`}>Sobre este Proyecto</h2>
-              <p className={styles.bannerP}>
+              <h2 className={`${styles["header-title"]}`}>
+                Sobre este Proyecto
+              </h2>
+              <p className={styles["banner-p"]}>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
                 enim ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -171,7 +173,7 @@ function AboutUs() {
                   <div className="text-center">
                     <img
                       src="https://i.pinimg.com/564x/54/08/39/5408399b4f0e4137961ef81ee61289c9.jpg"
-                      className={styles.imgFluid}
+                      className={styles["img-fluid"]}
                       alt=""
                     />
                     <p>Ignacio Castellan</p>
@@ -186,7 +188,7 @@ function AboutUs() {
                   <div className="text-center">
                     <img
                       src="https://i.pinimg.com/originals/80/38/ef/8038ef4599953301e18d739caf1b4d18.jpg"
-                      className={styles.imgFluid}
+                      className={styles["img-fluid"]}
                       alt=""
                     />
                     <p>Jean Franco Pisciottano</p>
@@ -201,7 +203,7 @@ function AboutUs() {
                   <div className="text-center">
                     <img
                       src="https://i.pinimg.com/originals/e4/8b/2f/e48b2f53314783acf8b12fbf8ce3fa8e.jpg"
-                      className={styles.imgFluid}
+                      className={styles["img-fluid"]}
                       alt=""
                     />
                     <p>Abril Pereira Diaz</p>
@@ -216,7 +218,7 @@ function AboutUs() {
                   <div className="text-center">
                     <img
                       src="https://i.pinimg.com/originals/ff/a1/56/ffa1564f87643dcb905707ecc3aed565.jpg"
-                      className={styles.imgFluid}
+                      className={styles["img-fluid"]}
                       alt=""
                     />
                     <p>Agustin Acosta</p>
@@ -236,4 +238,5 @@ function AboutUs() {
     </>
   );
 }
+
 export default AboutUs;

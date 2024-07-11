@@ -1,8 +1,7 @@
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
-
 import Footer from "../../components/Footer";
 import Navbar from "../../components/NavBar";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import ShoppingCartList from "../../components/Shopping/ShoppingCartList";
 import Payment from "../../components/Shopping/Payment";
@@ -11,9 +10,8 @@ import Congrats from "../../components/Congrats";
 import { useNavigate } from "react-router-dom";
 function Cart() {
   const navigate = useNavigate();
-  const { products, token } = useSelector((state) => {
-    return { products: state.shoppingCart.products, token: state.auth.token };
-  });
+  const products = useSelector((state) => state.shoppingCart.products);
+  const token = useSelector((state) => state.auth.token);
   const [step, SetStep] = useState(0);
   const [isProcessing, setIsProcessing] = useState(false);
 
@@ -22,7 +20,7 @@ function Cart() {
   const calculateSubTotal = () => {
     let total = 0;
     for (const product of products) {
-      total += product.qty * product.price;
+      total += product.qty * product.price[product.volume];
     }
     return total.toFixed(2);
   };
@@ -31,16 +29,38 @@ function Cart() {
     if (!token) navigate("/login");
     switch (step) {
       case 0:
-        nextStep();
+        if (products.length > 0) nextStep();
         break;
       case 2:
         navigate("/ordenes");
         break;
-      default:
-        console.log("step inválido");
-        break;
     }
   };
+
+  const saveOrder = async () => {
+    const listToSend = products.map((product) => {
+      const { id, name, qty, volume, isToGo } = product;
+      return { id, name, qty, volume, isToGo };
+    });
+    const response = await fetch(import.meta.env.VITE_API_URL + "/orders", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: token,
+      },
+      body: JSON.stringify({
+        products: listToSend,
+        address: "MiawStreet 4972C, Michigan",
+      }),
+    });
+    if (!response.ok) {
+      const data = await response.json();
+      return console.log(JSON.stringify(data));
+    }
+  };
+  useEffect(() => {
+    if (step === 2) saveOrder();
+  }, [step]);
   return (
     <>
       <Navbar />
@@ -90,7 +110,7 @@ function Cart() {
                   <span>Sub Total:</span>
                   <span>${calculateSubTotal()}</span>
                 </div>
-               
+
                 <hr />
                 <div className="d-flex justify-content-between mb-2">
                   <span>Total:</span>
@@ -126,9 +146,9 @@ function Cart() {
                   onClick={handleCartButton}
                 >
                   <span id="button-text">
-                    {step === 0 && "Continue"}
-                    {step === 1 && isProcessing && "Processing ... "}
-                    {step === 1 && !isProcessing && "Pay now"}
+                    {step === 0 && "Continuar"}
+                    {step === 1 && isProcessing && "Procesando ... "}
+                    {step === 1 && !isProcessing && "Pagar"}
                     {step === 2 && "Ver orden de compra"}
                   </span>
                 </Button>

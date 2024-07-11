@@ -24,7 +24,6 @@ const authSlice = createSlice({
         }
         return item;
       });
-      console.log(newState);
       state.products = newState.filter((item) => item.qty > 0);
     },
   },
