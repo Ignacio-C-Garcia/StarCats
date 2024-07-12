@@ -1,5 +1,3 @@
-/* eslint-disable react/prop-types */
-
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -75,9 +73,9 @@ function CarouselCats({ cats }) {
                   <p className={styles["card-text"]}>
                     {cat.age} {cat.age === 1 ? "Año" : "Años"}
                     <br />
-                    Es {cat.personality}
+                    {cat.personality}
                     <br />
-                    Cumple el {cat.birthdate}
+                    Cumpleaños: {cat.birthdate}
                   </p>
                 </div>
               </div>

@@ -30,6 +30,7 @@
 .noHover:focus {
   border-color: inherit;
   box-shadow: none;
+  background-color: #ffffee;
 }
 
 .volumeSelector {

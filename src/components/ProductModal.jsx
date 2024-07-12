@@ -1,5 +1,5 @@
-/* eslint-disable react/prop-types */
 import { useState } from "react";
+import styles from "../styles/ProductModal.module.css";
 import {
   Modal as BootstrapModal,
   Button,
@@ -7,11 +7,12 @@ import {
   OverlayTrigger,
   Popover,
 } from "react-bootstrap";
-import styles from "../styles/ProductModal.module.css";
+
 import { useDispatch } from "react-redux";
 import { addProduct } from "../redux/shoppingCartReducer";
 import { Link } from "react-router-dom";
 import ButtonComponent from "./ButtonComponent";
+import { Toaster, toast } from "sonner";
 
 function ProductModal({ show, setShow, product }) {
   const dispatch = useDispatch();
@@ -20,6 +21,7 @@ function ProductModal({ show, setShow, product }) {
   const [volume, setVolume] = useState("base");
   const [showViewCart, setShowViewCart] = useState(false);
   let total = product.price[volume] * quantity;
+
   const handleClose = () => setShow(false);
 
   const incrementQuantity = () => setQuantity(quantity + 1);
@@ -30,11 +32,13 @@ function ProductModal({ show, setShow, product }) {
   const handleAddToCart = () => {
     dispatch(addProduct({ ...product, qty: quantity, isToGo, volume }));
     setShowViewCart(true);
+
+    toast(`${product.name} añadido al carrito`);
+
     setTimeout(() => {
       setShow(false);
     }, 80000);
   };
-
   const caloriesContent = (
     <Popover id="popover-calories">
       <Popover.Body>{product.calories} kcal</Popover.Body>
@@ -49,6 +53,7 @@ function ProductModal({ show, setShow, product }) {
       aria-labelledby="contained-modal-title-vcenter"
       centered
     >
+      <Toaster position="top-right" />
       <BootstrapModal.Body className={styles.body}>
         <div className="container-fluid">
           {product.categoryId === 1 ? (

@@ -8,6 +8,7 @@ import Payment from "../../components/Shopping/Payment";
 import PayPalButton from "../../components/Shopping/PayPalButton";
 import Congrats from "../../components/Congrats";
 import { useNavigate } from "react-router-dom";
+
 function Cart() {
   const navigate = useNavigate();
   const products = useSelector((state) => state.shoppingCart.products);
@@ -58,107 +59,113 @@ function Cart() {
       return console.log(JSON.stringify(data));
     }
   };
+
   useEffect(() => {
     if (step === 2) saveOrder();
   }, [step]);
+
   return (
-    <>
+    <div className="app-container">
       <Navbar />
-      <Container className="mt-4 mb-4">
-        <Row>
-          <Col md={8}>
-            <Card className="border rounded-4 h-100">
-              <Card.Body className="p-4">
-                {step === 0 && <ShoppingCartList />}
-                {step === 1 && (
-                  <Payment
-                    isProcessing={isProcessing}
-                    setIsProcessing={setIsProcessing}
-                    nextStep={nextStep}
-                  />
-                )}
-                {step === 2 && <Congrats />}
-              </Card.Body>
-              <Card.Footer
-                className={`px-4 py-0 ${step == 0 ? "d-none" : ""} `}
-              >
-                {step === 1 && (
-                  <div className="pt-4 pb-3">
-                    <PayPalButton nextStep={nextStep}></PayPalButton>
-                  </div>
-                )}
-
-                {step === 2 && (
-                  <div>
-                    <Button
-                      className="btn rounded-pill my-4 border-0 w-100"
-                      variant="dark"
-                      onClick={() => navigate("/")}
-                    >
-                      <span id="button-text">Volver a la Página Principal</span>
-                    </Button>
-                  </div>
-                )}
-              </Card.Footer>
-            </Card>
-          </Col>
-          <Col md={4}>
-            <Card className="border rounded-4 ">
-              <Card.Body className="p-4">
-                <h4 className="mb-4">Resumen del Pedido</h4>
-                <div className="d-flex justify-content-between mb-2">
-                  <span>Sub Total:</span>
-                  <span>${calculateSubTotal()}</span>
-                </div>
-
-                <hr />
-                <div className="d-flex justify-content-between mb-2">
-                  <span>Total:</span>
-                  <span>${calculateSubTotal()}</span>
-                </div>
-                {step === 1 && (
-                  <div className="border p-2 rounded text-secondary">
-                    <div className="d-flex justify-content-between mb-2">
-                      <span>Visa:</span>
-                      <span>4000008580000003</span>
-                    </div>
-                    <div className="d-flex justify-content-between mb-2">
-                      <span>PayPal:</span>
-                      <span>4032035520131152</span>
-                    </div>
-                    <div className="d-flex justify-content-between mb-2">
-                      <span>Caducidad:</span>
-                      <span>03/28</span>
-                    </div>
-                    <div className="d-flex justify-content-between">
-                      <span>CCV:</span>
-                      <span>173</span>
-                    </div>
-                  </div>
-                )}
-              </Card.Body>
-              <Card.Footer className="p-4">
-                <Button
-                  className="btn rounded-pill border-0 w-100"
-                  variant="dark"
-                  type="submit"
-                  form="payment-form"
-                  onClick={handleCartButton}
+      <div className="content">
+        <Container className="mt-4 mb-4">
+          <Row>
+            <Col md={8}>
+              <Card className="border rounded-4 h-100">
+                <Card.Body className="p-4">
+                  {step === 0 && <ShoppingCartList />}
+                  {step === 1 && (
+                    <Payment
+                      isProcessing={isProcessing}
+                      setIsProcessing={setIsProcessing}
+                      nextStep={nextStep}
+                    />
+                  )}
+                  {step === 2 && <Congrats />}
+                </Card.Body>
+                <Card.Footer
+                  className={`px-4 py-0 ${step === 0 ? "d-none" : ""} `}
                 >
-                  <span id="button-text">
-                    {step === 0 && "Continuar"}
-                    {step === 1 && isProcessing && "Procesando ... "}
-                    {step === 1 && !isProcessing && "Pagar"}
-                    {step === 2 && "Ver orden de compra"}
-                  </span>
-                </Button>
-              </Card.Footer>
-            </Card>
-          </Col>
-        </Row>
-      </Container>
-      <Footer />
-    </>
+                  {step === 1 && (
+                    <div className="pt-4 pb-3">
+                      <PayPalButton nextStep={nextStep}></PayPalButton>
+                    </div>
+                  )}
+
+                  {step === 2 && (
+                    <div>
+                      <Button
+                        className="btn rounded-pill my-4 border-0 w-100"
+                        variant="dark"
+                        onClick={() => navigate("/")}
+                      >
+                        <span id="button-text">
+                          Volver a la Página Principal
+                        </span>
+                      </Button>
+                    </div>
+                  )}
+                </Card.Footer>
+              </Card>
+            </Col>
+            <Col md={4}>
+              <Card className="border rounded-4 ">
+                <Card.Body className="p-4">
+                  <h4 className="mb-4">Resumen del Pedido</h4>
+                  <div className="d-flex justify-content-between mb-2">
+                    <span>Sub Total:</span>
+                    <span>${calculateSubTotal()}</span>
+                  </div>
+
+                  <hr />
+                  <div className="d-flex justify-content-between mb-2">
+                    <span>Total:</span>
+                    <span>${calculateSubTotal()}</span>
+                  </div>
+                  {step === 1 && (
+                    <div className="border p-2 rounded text-secondary">
+                      <div className="d-flex justify-content-between mb-2">
+                        <span>Visa:</span>
+                        <span>4000008580000003</span>
+                      </div>
+                      <div className="d-flex justify-content-between mb-2">
+                        <span>PayPal:</span>
+                        <span>4032035520131152</span>
+                      </div>
+                      <div className="d-flex justify-content-between mb-2">
+                        <span>Caducidad:</span>
+                        <span>03/28</span>
+                      </div>
+                      <div className="d-flex justify-content-between">
+                        <span>CCV:</span>
+                        <span>173</span>
+                      </div>
+                    </div>
+                  )}
+                </Card.Body>
+                <Card.Footer className="p-4">
+                  <Button
+                    className="btn rounded-pill border-0 w-100"
+                    variant="dark"
+                    type="submit"
+                    form="payment-form"
+                    onClick={handleCartButton}
+                  >
+                    <span id="button-text">
+                      {step === 0 && "Continuar"}
+                      {step === 1 && isProcessing && "Procesando ... "}
+                      {step === 1 && !isProcessing && "Pagar"}
+                      {step === 2 && "Ver orden de compra"}
+                    </span>
+                  </Button>
+                </Card.Footer>
+              </Card>
+            </Col>
+          </Row>
+        </Container>
+      </div>
+      <Footer className="footer" />
+    </div>
   );
 }
 
