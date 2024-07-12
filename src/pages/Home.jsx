@@ -5,10 +5,12 @@ import CarouselCats from "../components/CarouselCats";
 import CarouselProducts from "../components/CarouselProducts";
 import Footer from "../components/Footer";
 import styles from "../styles/Home.module.css";
+import Spinner from "react-bootstrap/Spinner";
 
 function Home() {
   const [products, setProducts] = useState([]);
   const [cats, setCats] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -23,6 +25,8 @@ function Home() {
         setProducts(data.products);
       } catch (error) {
         console.error("Error fetching products:", error);
+      } finally {
+        setLoading(false);
       }
     };
 
@@ -40,12 +44,21 @@ function Home() {
         setCats(data.kittens);
       } catch (error) {
         console.error("Error fetching kittens:", error);
+      } finally {
+        setLoading(false);
       }
     };
 
     fetchCats();
   }, []);
 
+  if (loading) {
+    return (
+      <div className="d-flex  justify-content-center mt-5 ">
+        <Spinner animation="border" role="status"></Spinner>
+      </div>
+    );
+  }
   return (
     <>
       <NavBar />

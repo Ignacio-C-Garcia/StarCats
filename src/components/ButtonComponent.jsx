@@ -2,7 +2,7 @@
 
 const Button = ({ onClick, children }) => {
   return (
-    <button type="button" className="btn-component" onClick={onClick}>
+    <button type="submit" className="btn-component" onClick={onClick}>
       {children}
     </button>
   );
