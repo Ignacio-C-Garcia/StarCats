@@ -1,7 +1,7 @@
 // Login.jsx
 
 import React, { useState } from "react";
-import { Container, Row, Col, Form, Alert } from "react-bootstrap";
+import { Container, Row, Col, Form, Alert, Button } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
 import { saveToken } from "../redux/authReducer";
 import { Link, Navigate } from "react-router-dom";
@@ -101,17 +101,16 @@ const Login = () => {
                   Ingresar
                 </ButtonComponent>
               </Form>
-              <div className="d-flex gap-2 pt-2 flex-column">
-                <ButtonComponent
-                  as={Link}
+              <div className="d-flex gap-2 pt-2 flex-column text-center">
+                <Link
                   to="/signup"
-                  className="flex-fill rounded-pill"
+                  className={`btn-component flex-fill rounded-pill`}
                 >
                   Regístrate
-                </ButtonComponent>
-                <ButtonComponent className="flex-fill rounded-pill">
+                </Link>
+                <Link className={`btn-component flex-fill rounded-pill`}>
                   ¿Olvidaste tu contraseña?
-                </ButtonComponent>
+                </Link>
               </div>
             </div>
           </Col>

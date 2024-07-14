@@ -21,9 +21,9 @@ const Register = () => {
     <div className={styles.login}>
       <NavBar />
       <Container className={styles.loginContainer}>
-        <Row className="h-100">
+        <Row>
           <Col
-            className="d-flex justify-content-center align-items-center"
+            className="d-flex justify-content-center align-items-center py-5"
             lg={6}
           >
             <img
@@ -33,7 +33,7 @@ const Register = () => {
               alt="StarCats Logo"
             />
           </Col>
-          <Col className={styles.formColumn}>
+          <Col className={`${styles.formColumn} py-5`}>
             <div className="w-75">
               <h2 className="text-center pb-2">Registrate</h2>
               {/* {showAlert && (
