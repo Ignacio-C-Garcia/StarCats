@@ -2,10 +2,6 @@
   background-color: #d6d4cb;
 }
 
-.loginContainer {
-  height: 100vh;
-}
-
 .inputForm:hover,
 .inputForm:active,
 .inputForm:focus {
@@ -17,11 +13,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-
-.loginButton {
-  flex-grow: 1;
 }
 
 .customAlert {
@@ -56,4 +47,3 @@
 .customTooltip .arrow::before {
   border-top-color: #ffeb3b;
 }
-

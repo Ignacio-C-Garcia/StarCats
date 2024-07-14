@@ -39,21 +39,6 @@ function AboutUs() {
         <Container>
           <div className="row text-center">
             <p className="pb-3">
-              A lo largo del proyecto, hemos utilizado una amplia gama de
-              tecnologías que abarcaron tanto en el desarrollo del backend como
-              del frontend. Además hemos adquirido experiencia práctica con el
-              uso de tecnologías para nuestra base de datos.
-              <br />
-              <br />
-              Como plataforma de colaboración y control de versiones, usamos
-              Github
-              <br />
-              <br />
-              Utilizamos Trello y Meets, plataformas cruciales para facilitar
-              una comunicación fluida y para la planificación y organización de
-              todo el proyecto.
-              <br />
-              <br />
               Estas son algunas de las herramientas que hemos elegido
               cuidadosamente para aumentar nuestra productividad:
             </p>

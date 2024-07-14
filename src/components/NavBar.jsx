@@ -2,12 +2,14 @@ import "../styles/NavBar.module.css";
 import { Link } from "react-router-dom";
 import UserIcon from "./UserIcon";
 import { BagHeart } from "react-bootstrap-icons";
+4;
+
 function NavBar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-black text-white ">
       <div className="container ">
         <Link to="/" className="navbar-brand">
-          <span className="fs-2">STARCATS</span>
+          <h2 className="fs-1">STARCATS</h2>
         </Link>
         <button
           className="navbar-toggler"

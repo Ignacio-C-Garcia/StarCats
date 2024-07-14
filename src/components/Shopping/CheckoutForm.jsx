@@ -3,7 +3,6 @@ import { useState } from "react";
 import { useStripe, useElements } from "@stripe/react-stripe-js";
 import { Alert } from "react-bootstrap";
 
-// eslint-disable-next-line react/prop-types
 export default function CheckoutForm({ setIsProcessing, nextStep }) {
   const stripe = useStripe();
   const elements = useElements();

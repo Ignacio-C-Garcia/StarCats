@@ -30,6 +30,7 @@ h2 {
 }
 
 /* button */
+
 .btn-component {
   background-color: #1a1a1a;
   color: white;
@@ -40,10 +41,22 @@ h2 {
   border: none;
   margin-top: auto;
   font-family: "Hammersmith One", sans-serif;
-
+  text-decoration: none;
 }
 
 .btn-component:hover {
   transform: scale(1.05);
   transition: 0.3s;
+  color: white;
 }
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: space-between;
+}
+
+/* .content {
+  flex: 1;
+} */

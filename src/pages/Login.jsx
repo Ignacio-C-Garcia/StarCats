@@ -1,12 +1,13 @@
 // Login.jsx
 
 import React, { useState } from "react";
-import { Container, Row, Col, Form, Alert } from "react-bootstrap";
+import { Container, Row, Col, Form, Alert, Button } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
 import { saveToken } from "../redux/authReducer";
 import { Link, Navigate } from "react-router-dom";
 import styles from "../styles/Login.module.css";
 import ButtonComponent from "../components/ButtonComponent";
+import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 
 const Login = () => {
@@ -47,21 +48,22 @@ const Login = () => {
 
   return auth.token === "" ? (
     <div className={styles.login}>
-      <Container fluid className={styles.loginContainer}>
-        <Row className="h-100">
+      <NavBar />
+      <Container className={`${styles.loginContainer}`}>
+        <Row>
           <Col
-            className="d-flex justify-content-center align-items-center"
+            className="d-flex justify-content-center align-items-center py-5"
             lg={6}
           >
             <img
               src="logostarcats.svg"
-              width={450}
-              height={450}
+              width={400}
+              height={400}
               alt="StarCats Logo"
             />
           </Col>
-          <Col md={6} className={styles.formColumn}>
-            <div className={`${styles.form}`}>
+          <Col className={`${styles.formColumn} py-5`}>
+            <div className="w-75">
               <h2 className="text-center pb-2">Iniciar sesión</h2>
               {showAlert && (
                 <Alert
@@ -99,21 +101,16 @@ const Login = () => {
                   Ingresar
                 </ButtonComponent>
               </Form>
-              <div
-                className={`${styles.buttonGroup} d-flex justify-content-between gap-2 pt-3`}
-              >
-                <ButtonComponent
-                  as={Link}
+              <div className="d-flex gap-2 pt-2 flex-column text-center">
+                <Link
                   to="/signup"
-                  className={`${styles.loginButton} rounded-pill`}
+                  className={`btn-component flex-fill rounded-pill`}
                 >
                   Regístrate
-                </ButtonComponent>
-                <ButtonComponent
-                  className={`${styles.loginButton} rounded-pill`}
-                >
+                </Link>
+                <Link className={`btn-component flex-fill rounded-pill`}>
                   ¿Olvidaste tu contraseña?
-                </ButtonComponent>
+                </Link>
               </div>
             </div>
           </Col>
