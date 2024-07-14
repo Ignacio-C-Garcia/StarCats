@@ -97,6 +97,41 @@ header {
   transition: 0.2s;
 }
 
+@media (max-width: 576px) {
+  header {
+    padding: 30px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .home-title {
+    font-size: 12vw;
+  }
+
+  .p-header {
+    font-size: 5vw;
+  }
+
+  .btn-header {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .btn-right {
+    border-radius: 42.5px;
+    width: 50%;
+    font-size: 2vw;
+  }
+  .cup-coffee {
+    display: none;
+  }
+
+  .btn-left {
+    display: none;
+  }
+}
+
 /* Section Categories and carousel products */
 
 .container-category {
@@ -158,6 +193,22 @@ header {
   width: 100%;
   object-fit: cover;
   height: 21vw;
+}
+
+@media (max-width: 576px) {
+  .card {
+    height: 300px;
+    width: 80%; 
+    margin-top: 10px;
+  }
+
+  .card img {
+    width: 90%;
+  }
+
+  .container-category h2 {
+    font-size: 8vw;
+  }
 }
 
 @keyframes text-flicker-in-glow {
