@@ -67,7 +67,7 @@ function Home() {
           className={`container animate__animated animate__zoomIn ${styles.containerHeader}`}
         >
           <div className="row">
-            <div className="col-6">
+            <div className="col-12 col-md-6">
               <h1 className={styles["home-title"]}>STARCATS</h1>
               <p className={styles["p-header"]}>
                 Vive la experiencia <br /> del café con felinos
@@ -81,7 +81,7 @@ function Home() {
                 </Link>
               </div>
             </div>
-            <div className="col-6">
+            <div className="col-12 col-md-6">
               <img
                 src="/cup-coffee.png"
                 alt="cup-coffee"
@@ -107,7 +107,7 @@ function Home() {
                   alt="Cup of coffee"
                   className="img-fluid"
                 />
-                <span className=" fs-3 mt-4">CAFÉ</span>
+                <span className="fs-3 mt-4">CAFÉ</span>
               </Link>
             </div>
 
@@ -118,7 +118,7 @@ function Home() {
                   alt="Medialuna"
                   className=""
                 />
-                <span className=" fs-3 mt-4">PASTELERÍA</span>
+                <span className="fs-3 mt-4">PASTELERÍA</span>
               </Link>
             </div>
 
@@ -129,7 +129,7 @@ function Home() {
                   alt="Coffee beans"
                   className="img-fluid"
                 />
-                <span className=" fs-3 mt-4">GRANOS</span>
+                <span className="fs-3 mt-4">GRANOS</span>
               </Link>
             </div>
           </div>
