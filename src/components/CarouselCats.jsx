@@ -40,7 +40,7 @@ function CarouselCats({ cats }) {
         },
       },
       {
-        breakpoint: 576,
+        breakpoint: 0,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,

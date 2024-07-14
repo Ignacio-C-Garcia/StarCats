@@ -39,9 +39,9 @@ function CarouselProducts({ products }) {
         },
       },
       {
-        breakpoint: 576,
+        breakpoint: 0,
         settings: {
-          slidesToShow: 12,
+          slidesToShow: 1,
           slidesToScroll: 1,
         },
       },
