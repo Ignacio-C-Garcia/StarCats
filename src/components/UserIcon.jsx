@@ -6,11 +6,9 @@ import { PersonCircle } from "react-bootstrap-icons";
 import { useState, useEffect, useRef } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-//import { removeToken } from "../redux/authReducer";
 
 function UserIcon() {
   const token = useSelector((state) => state.auth.token);
-  // const dispatch = useDispatch();
 
   const [open, setOpen] = useState(false);
   let menuRef = useRef();
@@ -44,29 +42,21 @@ function UserIcon() {
         </div>
 
         <div
-          className={`dropdown_menu border z-3 ${open ? "active" : "inactive"}`}
+          className={`dropdown_menu border z-3 text-decoration-none ${open ? "active" : "inactive"}`}
         >
           <h3>
-            {token == "" ? "Café y Michis!" : "Nombre de usuario"}
+            {token === "" ? "Café y Michis!" : "Nombre de usuario"}
             <br />
           </h3>
           {token !== "" ? (
             <ul className="p-0 mb-0">
               <DropdownItem img={user} text={"Mi Perfil"} to={"/user"} />
               <DropdownItem img={edit} text={"Ordenes"} to={"/ordenes"} />
-              <DropdownItem
-                img={logout}
-                text={"Cerrar Sesión"}
-                to={"/logout"}
-              />
+              <DropdownItem img={logout} text={"Cerrar Sesión"} to={"/logout"} />
             </ul>
           ) : (
             <ul className="p-0 mb-0">
-              <DropdownItem
-                img={logout}
-                text={"Iniciar Sesión"}
-                to={"/login"}
-              />
+              <DropdownItem img={logout} text={"Iniciar Sesión"} to={"/login"} />
               <DropdownItem img={logout} text={"Registrarse"} to={"/signup"} />
             </ul>
           )}
@@ -79,9 +69,9 @@ function UserIcon() {
 // eslint-disable-next-line react/prop-types
 function DropdownItem({ img, text, to }) {
   return (
-    <li className="text-center dropdownItem  border-top d-flex align-items-center p-2">
-      <img src={img}></img>
-      <Link to={to} className="ps-3">
+    <li className="text-center dropdownItem border-top d-flex align-items-center p-2">
+      <img src={img} alt={text} />
+      <Link to={to} className="ps-3 text-decoration-none">
         {text}
       </Link>
     </li>
