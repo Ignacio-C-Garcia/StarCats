@@ -21,6 +21,7 @@
 
 .noHover {
   border-color: inherit;
+  min-width: 35px;
   width: 4vw;
   text-align: center;
   background-color: #ffffee;
@@ -37,7 +38,6 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin: 20px;
 }
 
 .volumeOption {

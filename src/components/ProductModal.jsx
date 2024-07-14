@@ -58,8 +58,10 @@ function ProductModal({ show, setShow, product }) {
         <div className="container-fluid">
           {product.categoryId == 1 ? (
             <div className="row">
-              <div className={`col-12 col-md-6 ${styles.productImageContainer}`}>
-                <h2 className="pt-4 mt-4 fs-2">
+              <div
+                className={`col-12 col-md-6 ${styles.productImageContainer}`}
+              >
+                <h2 className=" fs-2">
                   {product.name}
                   <OverlayTrigger
                     trigger="click"
@@ -79,12 +81,14 @@ function ProductModal({ show, setShow, product }) {
                 />
               </div>
 
-              <div className="col-12 col-md-6 text-center row ">
+              <div className="col-12 col-md-6 text-center d-flex flex-column justify-content-center ">
                 <Form>
                   <Form.Group className="mt-5 mb-3">
-                    <div className="row text-">
+                    <div className="row">
                       <div className="col-6">
-                        <p>Aquí</p>
+                        <div>
+                          <span>Aquí</span>
+                        </div>
                         <i
                           className={`bi bi-cup-straw fs-2 ${
                             isToGo === "aqui" ? styles.selectedIcon : ""
@@ -93,7 +97,9 @@ function ProductModal({ show, setShow, product }) {
                         ></i>
                       </div>
                       <div className="col-6">
-                        <p>Llevar</p>
+                        <div>
+                          <span>Llevar</span>
+                        </div>
                         <i
                           className={`bi bi-bag fs-2 ${
                             isToGo === "llevar" ? styles.selectedIcon : ""
@@ -107,7 +113,7 @@ function ProductModal({ show, setShow, product }) {
                   {product.categoryId == 1 && (
                     <Form.Group className="pb-5 text-center">
                       <hr />
-                      <p>Tamaño</p>
+                      <span>Tamaño</span>
                       <div className={`d-flex ${styles.volumeSelector}`}>
                         <div
                           className={`d-flex flex-column align-items-center ${styles.volumeOption}`}
@@ -150,7 +156,7 @@ function ProductModal({ show, setShow, product }) {
                     </Form.Group>
                   )}
 
-                  <Form.Group className="mb-2 d-flex justify-content-between ">
+                  <Form.Group className="mb-2 d-flex justify-content-around align-items-center">
                     <div className="d-flex border rounded-pill border-black">
                       <Button
                         variant="rounded-end-circle"
@@ -178,9 +184,9 @@ function ProductModal({ show, setShow, product }) {
                         </Button>
                       </div>
                     </div>
-                    <p>
+                    <span>
                       <strong>${total.toFixed(2)}</strong>
-                    </p>
+                    </span>
                   </Form.Group>
                 </Form>
               </div>
@@ -188,15 +194,9 @@ function ProductModal({ show, setShow, product }) {
             </div>
           ) : (
             <div className="row">
-              <div className={`col-12 col-md-6 ${styles.productImageContainer}`}>
-                <img
-                  src={`${import.meta.env.VITE_IMG_PATH}${product.pic}`}
-                  alt={product.alt}
-                  className={` ${styles.productImage}`}
-                />
-                <p className="mt-4 mb-4">{product.description}</p>
-              </div>
-              <div className="col-12 col-md-6">
+              <div
+                className={`col-12 col-md-6 ${styles.productImageContainer}`}
+              >
                 <h2>
                   {product.name}
                   <OverlayTrigger
@@ -209,12 +209,20 @@ function ProductModal({ show, setShow, product }) {
                     </Button>
                   </OverlayTrigger>
                 </h2>
+                <img
+                  src={`${import.meta.env.VITE_IMG_PATH}${product.pic}`}
+                  alt={product.alt}
+                  className={` ${styles.productImage}`}
+                />
+                <p className="mt-4 mb-4">{product.description}</p>
+              </div>
+              <div className="col-12 col-md-6">
                 <hr />
                 <Form>
                   <Form.Group className="mb-5 mt-5">
                     <div className="row text-center ">
                       <div className="col-6">
-                        <p>Aquí</p>
+                        <span>Aquí</span>
                         <i
                           className={`bi bi-cup-straw fs-2 ${
                             isToGo === "aqui" ? styles.selectedIcon : ""
@@ -223,7 +231,7 @@ function ProductModal({ show, setShow, product }) {
                         ></i>
                       </div>
                       <div className="col-6">
-                        <p>Llevar</p>
+                        <span>Llevar</span>
                         <i
                           className={`bi bi-bag fs-2 ${
                             isToGo === "llevar" ? styles.selectedIcon : ""
@@ -247,6 +255,7 @@ function ProductModal({ show, setShow, product }) {
                         <Form.Control
                           type="text"
                           value={quantity}
+                          readOnly
                           onChange={(e) => {
                             const value = parseInt(e.target.value, 10);
                             setQuantity(value || 1);
@@ -262,9 +271,9 @@ function ProductModal({ show, setShow, product }) {
                         </Button>
                       </div>
                     </div>
-                    <p>
+                    <span>
                       <strong>${total.toFixed(2)}</strong>
-                    </p>
+                    </span>
                   </Form.Group>
                 </Form>
               </div>
