@@ -58,7 +58,7 @@ function ProductModal({ show, setShow, product }) {
         <div className="container-fluid">
           {product.categoryId == 1 ? (
             <div className="row">
-              <div className={`col-6 ${styles.productImageContainer}`}>
+              <div className={`col-12 col-md-6 ${styles.productImageContainer}`}>
                 <h2 className="pt-4 mt-4 fs-2">
                   {product.name}
                   <OverlayTrigger
@@ -79,7 +79,7 @@ function ProductModal({ show, setShow, product }) {
                 />
               </div>
 
-              <div className="col-6 text-center row ">
+              <div className="col-12 col-md-6 text-center row ">
                 <Form>
                   <Form.Group className="mt-5 mb-3">
                     <div className="row text-">
@@ -188,7 +188,7 @@ function ProductModal({ show, setShow, product }) {
             </div>
           ) : (
             <div className="row">
-              <div className={`col-6 ${styles.productImageContainer}`}>
+              <div className={`col-12 col-md-6 ${styles.productImageContainer}`}>
                 <img
                   src={`${import.meta.env.VITE_IMG_PATH}${product.pic}`}
                   alt={product.alt}
@@ -196,7 +196,7 @@ function ProductModal({ show, setShow, product }) {
                 />
                 <p className="mt-4 mb-4">{product.description}</p>
               </div>
-              <div className="col-6">
+              <div className="col-12 col-md-6">
                 <h2>
                   {product.name}
                   <OverlayTrigger
