@@ -70,7 +70,7 @@ function Cart() {
       <div className="content">
         <Container className="mt-4 mb-4">
           <Row>
-            <Col xs={12} md={8}>
+            <Col xs={12} sm={12} md={8} className="mb-2 mb-md-0">
               <Card className="border rounded-4 h-100">
                 <Card.Body className="p-4">
                   {step === 0 && <ShoppingCartList />}
@@ -108,7 +108,7 @@ function Cart() {
                 </Card.Footer>
               </Card>
             </Col>
-            <Col xs={12} md={4}>
+            <Col xs={12} sm={12} md={4}>
               <Card className="border rounded-4 ">
                 <Card.Body className="p-4">
                   <h4 className="mb-4">Resumen del Pedido</h4>
