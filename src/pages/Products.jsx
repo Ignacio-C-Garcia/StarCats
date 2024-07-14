@@ -17,7 +17,7 @@ function Products() {
   const [products, setProducts] = useState([]);
   useEffect(() => {
     axios
-      .get("http://localhost:3000/categories")
+      .get(import.meta.env.VITE_API_URL + "/categories")
       .then((response) => {
         setCategories(response.data.categories);
       })

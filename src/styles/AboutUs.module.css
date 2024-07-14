@@ -1,5 +1,5 @@
 .coffee-background {
-  background-image: url(cat-cafe-banner.jpeg);
+  background-image: url("/cat-cafe-banner.jpeg");
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
