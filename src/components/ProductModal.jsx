@@ -56,7 +56,7 @@ function ProductModal({ show, setShow, product }) {
       <Toaster position="top-right" />
       <BootstrapModal.Body className={styles.body}>
         <div className="container-fluid">
-          {product.categoryId === 1 ? (
+          {product.categoryId == 1 ? (
             <div className="row">
               <div className={`col-6 ${styles.productImageContainer}`}>
                 <h2 className="pt-4 mt-4 fs-2">
@@ -104,7 +104,7 @@ function ProductModal({ show, setShow, product }) {
                     </div>
                   </Form.Group>
 
-                  {product.categoryId === 1 && (
+                  {product.categoryId == 1 && (
                     <Form.Group className="pb-5 text-center">
                       <hr />
                       <p>Tamaño</p>
