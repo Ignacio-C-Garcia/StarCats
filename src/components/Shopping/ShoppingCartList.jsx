@@ -13,7 +13,7 @@ export default function ShoppingCartList() {
       {products.length > 0 ? (
         products.map((product) => {
           const { price, volume, qty, name, categoryId, pic } = product;
-         
+
           const totalPrice = (qty * price[volume]).toFixed(2);
 
           const incrementQuantity = () => {
@@ -30,11 +30,10 @@ export default function ShoppingCartList() {
               key={product.id}
             >
               <div className="row">
-                <div className="col-6">
+                <div className="col-7">
                   <h4 className="mt-4">
                     {name}{" "}
-                    {categoryId === 1 &&
-                      `- (${volume == "base" ? 250 : volume}) ml`}
+                    {categoryId == 1 && `${volume == "base" ? 250 : volume}ml`}
                   </h4>
                   <img
                     src={`/img/${pic}`}
@@ -42,7 +41,7 @@ export default function ShoppingCartList() {
                     className={styles["product-pic"]}
                   />
                 </div>
-                <div className="col-6 d-flex flex-column justify-content-center align-items-center">
+                <div className="col-5 d-flex flex-column justify-content-center align-items-center">
                   <p className="mt-2">${totalPrice}</p>
                   <Form.Group className="mb-2 d-flex justify-content-center align-items-center">
                     <div className="d-flex border rounded-pill border-black m-3">
@@ -57,7 +56,7 @@ export default function ShoppingCartList() {
                         <Form.Control
                           type="text"
                           value={qty}
-                          className={styles["no-hover"]}
+                          className={styles["noHover"]}
                           readOnly
                         />
                         <Button
