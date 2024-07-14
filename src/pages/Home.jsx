@@ -67,7 +67,7 @@ function Home() {
           className={`container animate__animated animate__zoomIn ${styles.containerHeader}`}
         >
           <div className="row">
-            <div className="col-lg-6 col-sm-6">
+            <div className="col-6">
               <h1 className={styles["home-title"]}>STARCATS</h1>
               <p className={styles["p-header"]}>
                 Vive la experiencia <br /> del café con felinos
@@ -81,7 +81,7 @@ function Home() {
                 </Link>
               </div>
             </div>
-            <div className="col-lg-6 col-sm-6">
+            <div className="col-6">
               <img
                 src="/cup-coffee.png"
                 alt="cup-coffee"
