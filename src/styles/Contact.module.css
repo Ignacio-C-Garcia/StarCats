@@ -7,5 +7,5 @@
 .contact {
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url(gatonegro.jpg);
+  background-image: url("/gatonegro.jpg");
 }
