@@ -52,17 +52,19 @@ const Login = () => {
       <Container className={`${styles.loginContainer}`}>
         <Row>
           <Col
-            className="d-flex justify-content-center align-items-center py-5"
-            lg={6}
+            className="py-1 py-md-5 flex-column flex-md-row mx-auto"
+            xs={6}
+            md={4}
           >
-            <img
-              src="logostarcats.svg"
-              width={400}
-              height={400}
-              alt="StarCats Logo"
-            />
+            <Container className="d-flex justify-content-center align-items-center ">
+              <img
+                src="logostarcats.svg"
+                className={`img-fluid ${styles.loginPic}`}
+                alt="StarCats Logo"
+              />
+            </Container>
           </Col>
-          <Col className={`${styles.formColumn} py-5`}>
+          <Col className={`${styles.formColumn} pb-5`} xs={12} md={6}>
             <div className="w-75">
               <h2 className="text-center pb-2">Iniciar sesión</h2>
               {showAlert && (
