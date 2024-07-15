@@ -69,7 +69,7 @@ export default function ShoppingCartList() {
                         <Form.Control
                           type="text"
                           value={qty}
-                          className={styles["noHover"]}
+                          className={styles["no-hover"]}
                           readOnly
                         />
                         <Button

@@ -44,7 +44,7 @@ function Products() {
       } catch (error) {
         throw new Error(error);
       } finally {
-        setLoading(true);
+        setLoading(false);
       }
     };
 

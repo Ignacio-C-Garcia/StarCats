@@ -20,18 +20,13 @@ body {
   object-fit: cover;
 }
 
-.noHover {
+.no-hover {
   min-width: 35px;
   width: 4vw;
   text-align: center;
-  background-color: #ffffee;
   border: none;
 }
-@media (max-width: 576px) {
-  .no-hover {
-    width: 10vw;
-  }
-}
+
 
 .no-hover:focus {
   border-color: inherit;
