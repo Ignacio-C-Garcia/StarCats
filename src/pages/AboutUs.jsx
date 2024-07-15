@@ -2,9 +2,13 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import styles from "../styles/AboutUs.module.css";
-import { Container, Col, Row } from "react-bootstrap";
+import { Container, Col, Row, OverlayTrigger, Tooltip } from "react-bootstrap";
 
 function AboutUs() {
+  const renderTooltip = (tooltipText) => (
+    <Tooltip id="button-tooltip">{tooltipText}</Tooltip>
+  );
+
   return (
     <>
       <NavBar />
@@ -25,7 +29,7 @@ function AboutUs() {
                 <br />
                 <br />
                 Dedicamos gran parte de este semestre a desarrollar este
-                e-commerce con el objetivo de poner en practica lo aprendido.
+                e-commerce con el objetivo de poner en práctica lo aprendido.
                 Cada aspecto del diseño y la funcionalidad de nuestra aplicación
                 ha sido cuidadosamente elaborado para ofrecer a los usuarios una
                 plataforma atractiva y eficiente.
@@ -47,88 +51,162 @@ function AboutUs() {
                 <h4>Front-end</h4>
                 <div>
                   <div className="row d-flex gap-3 justify-content-center">
-                    <img
-                      className={styles["tech-icons"]}
-                      src="/icons/html.svg"
-                      alt="HTML"
-                    />
-                    <img
-                      className={styles["tech-icons"]}
-                      src="/icons/css.svg"
-                      alt="CSS"
-                    />
-                    <img
-                      className={styles["tech-icons"]}
-                      src="/icons/bs.svg"
-                      alt="Bootstrap"
-                    />
-                    <img
-                      className={styles["tech-icons"]}
-                      src="/icons/js.svg"
-                      alt="JavaScript"
-                    />
-                    <img
-                      className={styles["tech-icons"]}
-                      src="/icons/react.svg"
-                      alt="React"
-                    />
-                    <img
-                      className={styles["tech-icons"]}
-                      src="/icons/paypal-api.svg"
-                      alt="PayPal API"
-                    />
-                    <img
-                      className={styles["tech-icons"]}
-                      src="/icons/vite.svg"
-                      alt="Vite"
-                    />
-                    <img
-                      className={styles["tech-icons"]}
-                      src="/icons/redux.svg"
-                      alt="Redux"
-                    />
-                    <img
-                      className={styles["tech-icons"]}
-                      src="/icons/react-stripe.svg"
-                      alt="React Stripe"
-                    />
-                    <img
-                      className={styles["tech-icons"]}
-                      src="/icons/react-tabulator.png"
-                      alt="React Tabulator"
-                    />
+                    <OverlayTrigger
+                      placement="bottom"
+                      overlay={renderTooltip("HTML")}
+                    >
+                      <img
+                        className={styles["tech-icons"]}
+                        src="/icons/html.svg"
+                        alt="HTML"
+                      />
+                    </OverlayTrigger>
+                    <OverlayTrigger
+                      placement="bottom"
+                      overlay={renderTooltip("CSS")}
+                    >
+                      <img
+                        className={styles["tech-icons"]}
+                        src="/icons/css.svg"
+                        alt="CSS"
+                      />
+                    </OverlayTrigger>
+                    <OverlayTrigger
+                      placement="bottom"
+                      overlay={renderTooltip("Bootstrap")}
+                    >
+                      <img
+                        className={styles["tech-icons"]}
+                        src="/icons/bs.svg"
+                        alt="Bootstrap"
+                      />
+                    </OverlayTrigger>
+                    <OverlayTrigger
+                      placement="bottom"
+                      overlay={renderTooltip("JavaScript")}
+                    >
+                      <img
+                        className={styles["tech-icons"]}
+                        src="/icons/js.svg"
+                        alt="JavaScript"
+                      />
+                    </OverlayTrigger>
+                    <OverlayTrigger
+                      placement="bottom"
+                      overlay={renderTooltip("React")}
+                    >
+                      <img
+                        className={styles["tech-icons"]}
+                        src="/icons/react.svg"
+                        alt="React"
+                      />
+                    </OverlayTrigger>
+                    <OverlayTrigger
+                      placement="bottom"
+                      overlay={renderTooltip("PayPal API")}
+                    >
+                      <img
+                        className={styles["tech-icons"]}
+                        src="/icons/paypal-api.svg"
+                        alt="PayPal API"
+                      />
+                    </OverlayTrigger>
+                    <OverlayTrigger
+                      placement="bottom"
+                      overlay={renderTooltip("Vite")}
+                    >
+                      <img
+                        className={styles["tech-icons"]}
+                        src="/icons/vite.svg"
+                        alt="Vite"
+                      />
+                    </OverlayTrigger>
+                    <OverlayTrigger
+                      placement="bottom"
+                      overlay={renderTooltip("Redux")}
+                    >
+                      <img
+                        className={styles["tech-icons"]}
+                        src="/icons/redux.svg"
+                        alt="Redux"
+                      />
+                    </OverlayTrigger>
+                    <OverlayTrigger
+                      placement="bottom"
+                      overlay={renderTooltip("React Stripe")}
+                    >
+                      <img
+                        className={styles["tech-icons"]}
+                        src="/icons/react-stripe.svg"
+                        alt="React Stripe"
+                      />
+                    </OverlayTrigger>
+                    <OverlayTrigger
+                      placement="bottom"
+                      overlay={renderTooltip("React Tabulator")}
+                    >
+                      <img
+                        className={styles["tech-icons"]}
+                        src="/icons/react-tabulator.png"
+                        alt="React Tabulator"
+                      />
+                    </OverlayTrigger>
                   </div>
                 </div>
               </Col>
               <Col className="my-4">
                 <h4>Back-end</h4>
                 <div className="row d-flex gap-3 justify-content-center">
-                  <img
-                    className={styles["tech-icons"]}
-                    src="/icons/express-js.svg"
-                    alt="Express"
-                  />
-                  <img
-                    className={styles["tech-icons"]}
-                    src="/icons/faker-js.svg"
-                    alt="Faker.js"
-                  />
-                  <img
-                    className={styles["tech-icons"]}
-                    src="/icons/node.svg"
-                    alt="Node.js"
-                  />
-                  <img
-                    className={styles["tech-icons"]}
-                    src="/icons/postman.svg"
-                    alt="Postman"
-                  />
-
-                  <img
-                    className={styles["tech-icons"]}
-                    src="/icons/sequelize.svg"
-                    alt="Sequelize"
-                  />
+                  <OverlayTrigger
+                    placement="bottom"
+                    overlay={renderTooltip("Express")}
+                  >
+                    <img
+                      className={styles["tech-icons"]}
+                      src="/icons/express-js.svg"
+                      alt="Express"
+                    />
+                  </OverlayTrigger>
+                  <OverlayTrigger
+                    placement="bottom"
+                    overlay={renderTooltip("Faker.js")}
+                  >
+                    <img
+                      className={styles["tech-icons"]}
+                      src="/icons/faker-js.svg"
+                      alt="Faker.js"
+                    />
+                  </OverlayTrigger>
+                  <OverlayTrigger
+                    placement="bottom"
+                    overlay={renderTooltip("Node.js")}
+                  >
+                    <img
+                      className={styles["tech-icons"]}
+                      src="/icons/node.svg"
+                      alt="Node.js"
+                    />
+                  </OverlayTrigger>
+                  <OverlayTrigger
+                    placement="bottom"
+                    overlay={renderTooltip("Postman")}
+                  >
+                    <img
+                      className={styles["tech-icons"]}
+                      src="/icons/postman.svg"
+                      alt="Postman"
+                    />
+                  </OverlayTrigger>
+                  <OverlayTrigger
+                    placement="bottom"
+                    overlay={renderTooltip("Sequelize")}
+                  >
+                    <img
+                      className={styles["tech-icons"]}
+                      src="/icons/sequelize.svg"
+                      alt="Sequelize"
+                    />
+                  </OverlayTrigger>
                 </div>
               </Col>
             </Row>
@@ -136,26 +214,41 @@ function AboutUs() {
               <Col className="my-4">
                 <h4>Control de versiones</h4>
                 <div className="row d-flex gap-3 justify-content-center">
-                  <img
-                    className={styles["tech-icons"]}
-                    src="/icons/git.svg"
-                    alt="Git"
-                  />
-                  <img
-                    className={styles["tech-icons"]}
-                    src="/icons/github.svg"
-                    alt="Github"
-                  />
+                  <OverlayTrigger
+                    placement="bottom"
+                    overlay={renderTooltip("Git")}
+                  >
+                    <img
+                      className={styles["tech-icons"]}
+                      src="/icons/git.svg"
+                      alt="Git"
+                    />
+                  </OverlayTrigger>
+                  <OverlayTrigger
+                    placement="bottom"
+                    overlay={renderTooltip("GitHub")}
+                  >
+                    <img
+                      className={styles["tech-icons"]}
+                      src="/icons/github.svg"
+                      alt="GitHub"
+                    />
+                  </OverlayTrigger>
                 </div>
               </Col>
               <Col className="my-4">
                 <h4>Base de datos</h4>
                 <div className="row d-flex gap-3 justify-content-center">
-                  <img
-                    className={styles["tech-icons"]}
-                    src="/icons/mysql.svg"
-                    alt="MySQL"
-                  />
+                  <OverlayTrigger
+                    placement="bottom"
+                    overlay={renderTooltip("MySQL")}
+                  >
+                    <img
+                      className={styles["tech-icons"]}
+                      src="/icons/mysql.svg"
+                      alt="MySQL"
+                    />
+                  </OverlayTrigger>
                 </div>
               </Col>
             </Row>

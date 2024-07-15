@@ -1,11 +1,14 @@
-import user from "./img/user.png";
-import edit from "./img/edit.png";
-import logout from "./img/log-out.png";
 import "./App.css";
-import { PersonCircle } from "react-bootstrap-icons";
+import {
+  PersonCircle,
+  PersonFill,
+  BoxArrowRight,
+  Pencil,
+} from "react-bootstrap-icons";
 import { useState, useEffect, useRef } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { Dropdown } from "react-bootstrap";
 
 function UserIcon() {
   const token = useSelector((state) => state.auth.token);
@@ -27,54 +30,62 @@ function UserIcon() {
     };
   });
 
+  const handleToggle = (isOpen) => {
+    setOpen(isOpen);
+  };
+
   return (
     <div className="App z-3">
-      <div className="menu_container position-relative z-3" ref={menuRef}>
-        <div
+      <Dropdown show={open} onToggle={handleToggle}>
+        <Dropdown.Toggle
+          as={Link}
+          to="#"
+          id="dropdown-basic"
           className="menu_trigger"
-          onClick={() => {
-            setOpen(!open);
-          }}
+          onClick={() => setOpen(!open)}
         >
-          <Link>
-            <PersonCircle size={30} className="text-white" />
-          </Link>
-        </div>
+          <PersonCircle size={30} className="text-white" />
+        </Dropdown.Toggle>
 
-        <div
-          className={`dropdown_menu border z-3 text-decoration-none ${open ? "active" : "inactive"}`}
+        <Dropdown.Menu
+          className={`dropdown_menu border z-3 text-decoration-none ${
+            open ? "active" : "inactive"
+          }`}
+          ref={menuRef}
         >
-          <h3>
-            {token === "" ? "Café y Michis!" : "Nombre de usuario"}
-            <br />
-          </h3>
+          <Dropdown.Header>
+            {token === "" ? "" : "Nombre de usuario"}
+          </Dropdown.Header>
           {token !== "" ? (
-            <ul className="p-0 mb-0">
-              <DropdownItem img={user} text={"Mi Perfil"} to={"/user"} />
-              <DropdownItem img={edit} text={"Ordenes"} to={"/ordenes"} />
-              <DropdownItem img={logout} text={"Cerrar Sesión"} to={"/logout"} />
-            </ul>
+            <>
+              <Dropdown.Item as={Link} to="/user">
+                <PersonFill className="dropdown-icon me-2" />
+                Mi Perfil
+              </Dropdown.Item>
+              <Dropdown.Item as={Link} to="/ordenes">
+                <Pencil className="dropdown-icon me-2" />
+                Ordenes
+              </Dropdown.Item>
+              <Dropdown.Item as={Link} to="/logout">
+                <BoxArrowRight className="dropdown-icon me-2" />
+                Cerrar Sesión
+              </Dropdown.Item>
+            </>
           ) : (
-            <ul className="p-0 mb-0">
-              <DropdownItem img={logout} text={"Iniciar Sesión"} to={"/login"} />
-              <DropdownItem img={logout} text={"Registrarse"} to={"/signup"} />
-            </ul>
+            <>
+              <Dropdown.Item as={Link} to="/login">
+                <BoxArrowRight className="dropdown-icon me-2" />
+                Iniciar Sesión
+              </Dropdown.Item>
+              <Dropdown.Item as={Link} to="/signup">
+                <BoxArrowRight className="dropdown-icon me-2" />
+                Registrarse
+              </Dropdown.Item>
+            </>
           )}
-        </div>
-      </div>
+        </Dropdown.Menu>
+      </Dropdown>
     </div>
-  );
-}
-
-// eslint-disable-next-line react/prop-types
-function DropdownItem({ img, text, to }) {
-  return (
-    <li className="text-center dropdownItem border-top d-flex align-items-center p-2">
-      <img src={img} alt={text} />
-      <Link to={to} className="ps-3 text-decoration-none">
-        {text}
-      </Link>
-    </li>
   );
 }
 
