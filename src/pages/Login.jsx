@@ -121,7 +121,7 @@ const Login = () => {
       <Footer />
     </div>
   ) : (
-    <Navigate to="/ordenes" />
+    <Navigate to="/" />
   );
 };
 
