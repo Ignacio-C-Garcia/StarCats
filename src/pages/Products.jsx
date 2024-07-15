@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-
-import { Container, Row, Col } from "react-bootstrap";
-
+import { Container, Row, Col, Spinner } from "react-bootstrap";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
 import ProductList from "../components/ProductList";
@@ -15,6 +13,8 @@ function Products() {
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState(category);
   const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     axios
       .get(import.meta.env.VITE_API_URL + "/categories")
@@ -25,9 +25,11 @@ function Products() {
         console.error("Error fetching categories:", error);
       });
   }, []);
+
   let filteredProducts = selectedCategory
     ? products.filter((item) => item.categoryId == selectedCategory)
     : products;
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -41,6 +43,8 @@ function Products() {
         setProducts(data.products);
       } catch (error) {
         throw new Error(error);
+      } finally {
+        setLoading(true);
       }
     };
 
@@ -51,6 +55,16 @@ function Products() {
     setSelectedCategory(categoryId);
     console.log(categoryId);
   };
+
+  if (loading) {
+    return (
+      <div className="vh-100 d-flex justify-content-center align-items-center">
+        <Spinner animation="border" role="status">
+          <span className="visually-hidden bg-black">Loading...</span>
+        </Spinner>
+      </div>
+    );
+  }
 
   return (
     <div className={styles.products}>

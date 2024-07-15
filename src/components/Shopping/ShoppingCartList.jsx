@@ -13,7 +13,7 @@ export default function ShoppingCartList() {
       {products.length > 0 ? (
         products.map((product) => {
           const { price, volume, qty, name, categoryId, pic } = product;
-         
+
           const totalPrice = (qty * price[volume]).toFixed(2);
 
           const incrementQuantity = () => {
@@ -46,14 +46,27 @@ export default function ShoppingCartList() {
                   <p className="mt-2">${totalPrice}</p>
                   <Form.Group className="mb-2 d-flex justify-content-center align-items-center">
                     <div className="d-flex border rounded-pill border-black m-3">
-                      <Button
-                        variant="rounded-end-circle"
-                        className="btn rounded-pill border-0"
-                        onClick={decrementQuantity}
-                      >
-                        -
-                      </Button>
                       <div className="d-flex">
+                        {qty > 1 ? (
+                          <button
+                            variant="rounded-end-circle"
+                            className="btn rounded-pill border-0"
+                            onClick={decrementQuantity}
+                          >
+                            -
+                          </button>
+                        ) : (
+                          <button
+                            variant="rounded-end-circle"
+                            className="btn rounded-pill border-0"
+                            onClick={decrementQuantity}
+                          >
+                            <span className="m-0 p-0">
+                              <i class="bi bi-trash"></i>
+                            </span>
+                          </button>
+                        )}
+
                         <Form.Control
                           type="text"
                           value={qty}

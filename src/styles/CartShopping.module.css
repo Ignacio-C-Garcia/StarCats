@@ -25,6 +25,11 @@ body {
   text-align: center;
   border: none;
 }
+@media (max-width: 576px) {
+  .no-hover {
+    width: 10vw;
+  }
+}
 
 .no-hover:focus {
   border-color: inherit;

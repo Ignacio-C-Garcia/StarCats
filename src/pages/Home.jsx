@@ -54,11 +54,12 @@ function Home() {
 
   if (loading) {
     return (
-      <div className="d-flex  justify-content-center mt-5 ">
-        <Spinner animation="border" role="status"></Spinner>
+      <div className="vh-100 vw-100 d-flex align-items-center justify-content-center">
+        <Spinner animation="border" role="status" />
       </div>
     );
   }
+
   return (
     <>
       <NavBar />
@@ -96,7 +97,7 @@ function Home() {
         <div className="container container-fluid">
           <div className="row">
             <h2>Categorías</h2>
-            <p className="fs-3 text-center">
+            <p className="text-center">
               CADA PRODUCTO, UN COMPROMISO CON LA EXCELENCIA
             </p>
 
@@ -138,6 +139,10 @@ function Home() {
 
       <CarouselProducts products={products} />
       <CarouselCats cats={cats} />
+
+      <div className="skeleton-carousel"></div>
+      <div className="skeleton-carousel"></div>
+
       <img src="/gifcats.gif" alt="Animated GIF" className={styles.gif} />
 
       <Footer />

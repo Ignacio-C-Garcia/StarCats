@@ -175,12 +175,15 @@ header {
   font-family: "Chewy";
   text-align: center;
   color: #000;
+  padding-top: 24px;
+  font-size: 3.5vw;
 }
 
 .container-category p {
   font-family: "Hammersmith One";
-  font-size: 2.43vw;
+  font-size: 2.5vw;
   margin-top: 0;
+  padding-bottom: 24px;
 }
 
 .container-category a {
@@ -194,11 +197,19 @@ header {
   object-fit: cover;
   height: 21vw;
 }
-
 @media (max-width: 576px) {
+  .container-category {
+    background-image: url("/paper.png");
+    padding: 1.8%;
+    background-size: 1000%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    padding-bottom: 70px;
+  }
+
   .card {
-    height: 300px;
-    width: 80%; 
+    height: 250px;
+    width: 75%;
     margin-top: 10px;
   }
 
@@ -207,7 +218,12 @@ header {
   }
 
   .container-category h2 {
-    font-size: 8vw;
+    font-size: 7vw;
+  }
+
+  .container-category p {
+    font-size: 4.5vw;
+    padding-bottom: 0;
   }
 }
 
