@@ -16,7 +16,7 @@ function AboutUs() {
       <div className={`container-fluid ${styles["coffee-background"]}`}>
         <div className="container">
           <div className="row align-items-center py-5">
-            <div className="col-lg-8 col-md-12 text-white">
+            <div className="col-lg-7 col-md-12 text-white">
               <h2 className={`${styles["header-title"]}`}>
                 Sobre este Proyecto
               </h2>
@@ -267,7 +267,7 @@ function AboutUs() {
           <Row className={`${styles["members-box"]}`}>
             <div className={styles["members"]}>
               <img
-                src="https://i.pinimg.com/564x/54/08/39/5408399b4f0e4137961ef81ee61289c9.jpg"
+                src="members/nacho.jpeg"
                 className={styles["img-fluid"]}
                 alt=""
               />
@@ -310,7 +310,7 @@ function AboutUs() {
 
             <div className={styles["members"]}>
               <img
-                src="https://i.pinimg.com/originals/e4/8b/2f/e48b2f53314783acf8b12fbf8ce3fa8e.jpg"
+                src="members/abril-pereira.jpeg"
                 className={styles["img-fluid"]}
                 alt=""
               />
@@ -327,7 +327,7 @@ function AboutUs() {
 
             <div className={styles["members"]}>
               <img
-                src="https://i.pinimg.com/originals/ff/a1/56/ffa1564f87643dcb905707ecc3aed565.jpg"
+                src="members/agustin-acosta.jpeg"
                 className={styles["img-fluid"]}
                 alt=""
               />
