@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import styles from "../styles/Products.module.css";
 
 const Sidebar = ({ categories, onCategorySelect }) => {
@@ -7,16 +8,15 @@ const Sidebar = ({ categories, onCategorySelect }) => {
 
   return (
     <div
-      className={`${styles.sidebar} border border-black rounded-5 m-2 d-flex flex-row gap-1`}
+      className={`${styles.sidebar} row border border-black rounded-5 m-2 d-flex flex-row gap-1`}
     >
       {categories.map((category) => (
         <div
           key={category.id}
-          className={`${styles.category} p-2 col text-center`}
+          onClick={() => toggleCategory(category.id)}
+          className={`${styles.category} col p-2  text-center`}
         >
-          <span onClick={() => toggleCategory(category.id)}>
-            {category.name}
-          </span>
+          <span>{category.name}</span>
         </div>
       ))}
     </div>
