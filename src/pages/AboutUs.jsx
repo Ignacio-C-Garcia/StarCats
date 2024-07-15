@@ -316,10 +316,17 @@ function AboutUs() {
               />
               <p className="mt-2 mb-1">Abril Pereira Diaz</p>
               <div className="d-flex flex-row justify-content-center gap-2">
-                <a className={styles["member-accounts"]} href="">
+                <a
+                  className={styles["member-accounts"]}
+                  href="https://www.linkedin.com/in/abril-pereira-4024251a7/"
+                >
                   <i className="bi bi-linkedin"></i>
                 </a>
-                <a className={styles["member-accounts"]} href="">
+                <a
+                  className={styles["member-accounts"]}
+                  href="https://github.com/abrilpereira
+                  "
+                >
                   <i className="bi bi-github"></i>
                 </a>
               </div>
