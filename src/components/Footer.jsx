@@ -45,6 +45,11 @@ function Footer() {
             </ul>
           </div>
           <div className="col-lg-3 col-md-6 col-sm-6 mb-4">
+            <p className="mb-1">123 Cat Street, Meowtown, CA 12345</p>
+            <p className="mb-1">Teléfono: (555) 555-5555</p>
+            <p className="mb-0">Abierto de 8am a 6pm</p>
+          </div>
+          <div className="col-lg-3 col-md-6 col-sm-6 mb-4">
             <div className="d-flex justify-content-center justify-content-md-start">
               <Link to="/" className="text-white me-3" aria-label="Facebook">
                 <i className="bi bi-facebook fs-3"></i>
@@ -56,11 +61,6 @@ function Footer() {
                 <i className="bi bi-instagram fs-3"></i>
               </Link>
             </div>
-          </div>
-          <div className="col-lg-3 col-md-6 col-sm-6 mb-4">
-            <p className="mb-1">123 Cat Street, Meowtown, CA 12345</p>
-            <p className="mb-1">Teléfono: (555) 555-5555</p>
-            <p className="mb-0">Abierto de 8am a 6pm</p>
           </div>
         </div>
       </div>

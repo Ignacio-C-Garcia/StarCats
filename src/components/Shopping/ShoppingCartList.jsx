@@ -61,7 +61,7 @@ export default function ShoppingCartList() {
                             onClick={decrementQuantity}
                           >
                             <span className="m-0 p-0">
-                              <i class="bi bi-trash"></i>
+                              <i className="bi bi-trash"></i>
                             </span>
                           </button>
                         )}

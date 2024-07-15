@@ -56,7 +56,8 @@
 }
 /*  */
 .dropdown_menu ul li:hover a {
-  color: rgb(212, 33, 9);
+  color: #d6d4cb;
+
   cursor: pointer;
 }
 

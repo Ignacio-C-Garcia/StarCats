@@ -83,7 +83,7 @@ function ProductModal({ show, setShow, product }) {
 
               <div className="col-12 col-md-6 text-center d-flex flex-column justify-content-center ">
                 <Form>
-                  <Form.Group className="mt-5 mb-3">
+                  {/* <Form.Group className="mt-5 mb-3">
                     <div className="row">
                       <div className="col-6">
                         <div>
@@ -108,7 +108,7 @@ function ProductModal({ show, setShow, product }) {
                         ></i>
                       </div>
                     </div>
-                  </Form.Group>
+                  </Form.Group> */}
 
                   {product.categoryId == 1 && (
                     <Form.Group className="pb-5 text-center">
@@ -214,12 +214,12 @@ function ProductModal({ show, setShow, product }) {
                   alt={product.alt}
                   className={` ${styles.productImage}`}
                 />
-                <p className="mt-4 mb-4">{product.description}</p>
               </div>
-              <div className="col-12 col-md-6">
-                <hr />
+              <div className="col-12 col-md-6 d-flex flex-column justify-content-evenly">
+                <p className="">{product.description}</p>
+                {/* <hr /> */}
                 <Form>
-                  <Form.Group className="mb-5 mt-5">
+                  {/* <Form.Group className="mb-5 mt-5">
                     <div className="row text-center ">
                       <div className="col-6">
                         <span>Aquí</span>
@@ -240,9 +240,9 @@ function ProductModal({ show, setShow, product }) {
                         ></i>
                       </div>
                     </div>
-                  </Form.Group>
+                  </Form.Group> */}
 
-                  <Form.Group className="mb-2 d-flex justify-content-around ">
+                  <Form.Group className="d-flex justify-content-around ">
                     <div className="d-flex border rounded-pill border-black">
                       <Button
                         variant="rounded-end-circle"

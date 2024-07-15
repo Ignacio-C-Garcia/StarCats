@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import styles from "../styles/Sidebar.module.css";
+import styles from "../styles/Products.module.css";
 
 const Sidebar = ({ categories, onCategorySelect }) => {
   const toggleCategory = (categoryId) => {
@@ -15,7 +14,9 @@ const Sidebar = ({ categories, onCategorySelect }) => {
           key={category.id}
           className={`${styles.category} p-2 col text-center`}
         >
-          <h3 onClick={() => toggleCategory(category.id)}>{category.name}</h3>
+          <span onClick={() => toggleCategory(category.id)}>
+            {category.name}
+          </span>
         </div>
       ))}
     </div>

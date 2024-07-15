@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@paypal/react-paypal-js": "^8.5.0",
+    "@popperjs/core": "^2.11.8",
     "@reduxjs/toolkit": "^2.2.6",
     "@stripe/react-stripe-js": "^2.7.3",
     "@stripe/stripe-js": "^4.1.0",
@@ -36,6 +37,7 @@
     "tabulator-tables": "^6.2.1"
   },
   "devDependencies": {
+    "@types/bootstrap": "^5.2.10",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
     "@vitejs/plugin-react": "^4.2.1",

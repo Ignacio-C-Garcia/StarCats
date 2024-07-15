@@ -1,8 +1,12 @@
 import "../styles/NavBar.module.css";
 import { Link } from "react-router-dom";
 import UserIcon from "./UserIcon";
-import { BagHeart } from "react-bootstrap-icons";
+import { Bag } from "react-bootstrap-icons";
 4;
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+
 
 function NavBar() {
   return (
@@ -47,7 +51,7 @@ function NavBar() {
           <div className="d-flex align-items-center">
             <UserIcon></UserIcon>
             <Link to="/cart" className="nav-link ps-4">
-              <BagHeart size={30} />
+              <Bag size={30} />
             </Link>
           </div>
         </div>
