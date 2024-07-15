@@ -20,9 +20,11 @@ body {
   object-fit: cover;
 }
 
-.no-hover {
-  width: 5vw;
+.noHover {
+  min-width: 35px;
+  width: 4vw;
   text-align: center;
+  background-color: #ffffee;
   border: none;
 }
 @media (max-width: 576px) {
