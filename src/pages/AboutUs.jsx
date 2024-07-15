@@ -281,19 +281,28 @@ function AboutUs() {
                 </a>
               </div>
             </div>
-
             <div className={styles["members"]}>
               <img
-                src="https://i.pinimg.com/originals/80/38/ef/8038ef4599953301e18d739caf1b4d18.jpg"
+                src="members/jeanfranco.jpg"
                 className={styles["img-fluid"]}
-                alt=""
+                alt="Jean Franco Pisciottano"
               />
               <p className="mt-2 mb-1">Jean Franco Pisciottano</p>
               <div className="d-flex flex-row justify-content-center gap-2">
-                <a className={styles["member-accounts"]} href="">
+                <a
+                  className={styles["member-accounts"]}
+                  href="https://www.linkedin.com/in/jeanfranco-pisciottano/?trk=opento_sprofile_topcard"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <i className="bi bi-linkedin"></i>
                 </a>
-                <a className={styles["member-accounts"]} href="">
+                <a
+                  className={styles["member-accounts"]}
+                  href="https://github.com/jeanfranco60"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <i className="bi bi-github"></i>
                 </a>
               </div>
