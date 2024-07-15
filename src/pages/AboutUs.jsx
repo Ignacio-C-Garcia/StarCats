@@ -16,7 +16,7 @@ function AboutUs() {
       <div className={`container-fluid ${styles["coffee-background"]}`}>
         <div className="container">
           <div className="row align-items-center py-5">
-            <div className="col-md-8 text-white">
+            <div className="col-lg-8 col-md-12 text-white">
               <h2 className={`${styles["header-title"]}`}>
                 Sobre este Proyecto
               </h2>
