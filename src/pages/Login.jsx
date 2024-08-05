@@ -84,14 +84,14 @@ const Login = () => {
               >
                 <Form.Control
                   type="email"
-                  placeholder="Ingresá tu correo electrónico"
+                  placeholder="Ingresá: user@project.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className={`${styles.inputForm} rounded-pill p-2 ps-3 pe-3`}
                 />
                 <Form.Control
                   type="password"
-                  placeholder="Ingresá tu contraseña"
+                  placeholder="Ingresá: 1234"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   className={`${styles.inputForm} rounded-pill p-2 ps-3 pe-3`}
