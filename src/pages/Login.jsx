@@ -1,7 +1,7 @@
 // Login.jsx
 
 import React, { useState } from "react";
-import { Container, Row, Col, Form, Alert, Button } from "react-bootstrap";
+import { Container, Row, Col, Form, Alert, Button, Spinner } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
 import { saveToken } from "../redux/authReducer";
 import { Link, Navigate } from "react-router-dom";
@@ -13,17 +13,23 @@ import Footer from "../components/Footer";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState(false);
+  const [error, setError] = useState("");
   const [showAlert, setShowAlert] = useState(false);
+  const [loading, setLoading] = useState(false); 
   const dispatch = useDispatch();
   const auth = useSelector((state) => state.auth);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+
     if (!email || !password) {
+      setError("Por favor, completa ambos campos.");
       setShowAlert(true);
       return;
     }
+
+    setLoading(true);
+    setError(""); 
 
     try {
       const response = await fetch(`${import.meta.env.VITE_API_URL}/tokens`, {
@@ -35,14 +41,22 @@ const Login = () => {
       });
 
       if (!response.ok) {
-        setError(true);
+        if (response.status === 401) {
+          setError("Usuario o contraseña incorrectos.");
+        } else {
+          setError("Usuario o contraseña incorrectos.");
+        }
+        setShowAlert(true);
       } else {
         const data = await response.json();
         dispatch(saveToken({ token: `Bearer ${data.token}` }));
       }
     } catch (error) {
       console.error("Error submitting login:", error);
-      setError(true);
+      setError("Error en la conexión. Inténtalo nuevamente.");
+      setShowAlert(true);
+    } finally {
+      setLoading(false); 
     }
   };
 
@@ -51,12 +65,8 @@ const Login = () => {
       <NavBar />
       <Container className={`${styles.loginContainer}`}>
         <Row>
-          <Col
-            className="py-1 py-md-5 flex-column flex-md-row mx-auto"
-            xs={6}
-            md={4}
-          >
-            <Container className="d-flex justify-content-center align-items-center ">
+          <Col className="py-1 py-md-5 flex-column flex-md-row mx-auto" xs={6} md={4}>
+            <Container className="d-flex justify-content-center align-items-center">
               <img
                 src="logostarcats.svg"
                 className={`img-fluid ${styles.loginPic}`}
@@ -74,14 +84,11 @@ const Login = () => {
                   onClose={() => setShowAlert(false)}
                   dismissible
                 >
-                  Por favor, completa ambos campos.
+                  {error}
                   <button onClick={() => setShowAlert(false)}>×</button>
                 </Alert>
               )}
-              <Form
-                onSubmit={handleSubmit}
-                className="d-flex flex-column gap-2"
-              >
+              <Form onSubmit={handleSubmit} className="d-flex flex-column gap-2">
                 <Form.Control
                   type="email"
                   placeholder="Ingresá: user@project.com"
@@ -99,21 +106,32 @@ const Login = () => {
                 <ButtonComponent
                   type="submit"
                   className={`${styles.loginButton} rounded-pill`}
+                  disabled={loading}
                 >
-                  Ingresar
+                  {loading ? (
+                    <>
+                      <Spinner
+                        as="span"
+                        animation="border"
+                        size="sm"
+                        role="status"
+                        aria-hidden="true"
+                      />{" "}
+                      Cargando...
+                    </>
+                  ) : (
+                    "Ingresar"
+                  )}
                 </ButtonComponent>
               </Form>
-              <div className="d-flex gap-2 pt-2 flex-column text-center">
-                <Link
-                  to="/signup"
-                  className={`btn-component flex-fill rounded-pill`}
-                >
-                  Regístrate
-                </Link>
-                <Link className={`btn-component flex-fill rounded-pill`}>
-                  ¿Olvidaste tu contraseña?
-                </Link>
-              </div>
+                {/* <div className="d-flex gap-2 pt-2 flex-column text-center">
+                  <Link to="/signup" className={`btn-component flex-fill rounded-pill`}>
+                    Regístrate
+                  </Link>
+                  <Link className={`btn-component flex-fill rounded-pill`}>
+                    ¿Olvidaste tu contrseña?
+                  </Link>
+                </div> */}
             </div>
           </Col>
         </Row>
